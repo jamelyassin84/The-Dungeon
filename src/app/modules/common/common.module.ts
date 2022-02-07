@@ -7,8 +7,9 @@ import { HomeSection4Component } from '../home/home-section4/home-section4.compo
 import { WeightLiftingSection3Component } from '../weight-lifting/weight-lifting-section3/weight-lifting-section3.component'
 import { RouterModule } from '@angular/router'
 import { HomeCarouselImgsComponent } from './home-carousel-imgs/home-carousel-imgs.component'
-import { PackageCardComponent } from './package-card/package-card.component';
+import { PackageCardComponent } from './package-card/package-card.component'
 import { CommunityComponent } from './community/community.component'
+import { Title } from '@angular/platform-browser'
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,7 @@ import { CommunityComponent } from './community/community.component'
 		WeightLiftingSection3Component,
 		HomeCarouselImgsComponent,
 		PackageCardComponent,
-  CommunityComponent,
+		CommunityComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [
@@ -31,5 +32,6 @@ import { CommunityComponent } from './community/community.component'
 		HomeCarouselImgsComponent,
 		PackageCardComponent,
 	],
+	providers: [Title],
 })
 export class Common {}
