@@ -31,12 +31,12 @@ body {
 	letter-spacing: 2.1px;
 }
 
-.container {
+.container::ngd {
 	max-width: 1940px !important;
 }
 
 .danger {
-	color: var(--accent);
+	color: var(--accent) !important;
 }
 
 .btn-app-primary {
