@@ -1,0 +1,31 @@
+.container {
+	padding: 0;
+}
+
+img {
+	width: 100%;
+}
+
+.wrapper {
+	position: relative;
+	.story {
+		position: fixed;
+		padding: 10rem;
+		padding-top: 15vh;
+	}
+	.tilte {
+		letter-spacing: 1.75px;
+		font-size: 2.1rem;
+		margin-bottom: 1rem;
+	}
+	.description {
+		font-family: 'Montserrat';
+		color: #1d1d1b;
+		letter-spacing: 0.8px;
+		font-weight: 500;
+		line-height: 2.3rem;
+	}
+	.qoute {
+		font-size: 2.2rem;
+	}
+}
