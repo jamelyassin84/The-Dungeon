@@ -1,0 +1,60 @@
+.container {
+	height: 100vh;
+	position: relative;
+	margin-bottom: -3vh;
+}
+
+.bg {
+	position: absolute;
+	width: 100%;
+	object-fit: contain;
+	z-index: -1;
+}
+
+.logo {
+	height: 4.5rem;
+	object-fit: contain;
+}
+
+.map {
+	max-height: 725px;
+}
+
+* {
+	color: white;
+	text-align: center;
+}
+
+.address {
+	font-family: 'Montserrat';
+	margin-top: 4rem;
+	font-weight: 500;
+	letter-spacing: 1.05px;
+	font-size: 1.4rem;
+}
+.link {
+	margin-top: 4rem;
+	* {
+		font-family: 'Montserrat';
+		font-weight: 400;
+		cursor: pointer;
+		letter-spacing: 1.05px;
+		font-size: 1.4rem;
+		color: #0090ff;
+	}
+}
+.email {
+	margin-top: 8rem;
+	font-family: 'Montserrat';
+	font-family: 'Montserrat';
+	font-weight: 300;
+	letter-spacing: 1.05px;
+	font-size: 1.4rem;
+}
+.phone {
+	font-family: 'Montserrat';
+	font-family: 'Montserrat';
+	font-weight: 300;
+	letter-spacing: 1.05px;
+	font-size: 1.4rem;
+}
