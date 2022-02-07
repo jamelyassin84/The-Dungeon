@@ -6,7 +6,7 @@
 .others {
 	margin-left: 5rem;
 	* {
-		font-family: 'Montserrat';
+		font-family: Montserrat;
 		color: #ffffff;
 	}
 	li {
@@ -18,6 +18,9 @@
 			color: white;
 			cursor: pointer;
 			text-decoration: none;
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 	}
 }
@@ -26,5 +29,14 @@
 	img {
 		cursor: pointer;
 		margin-right: 1rem;
+		object-fit: contain;
+		height: 1.3rem;
+		width: 1.3rem;
+		position: relative;
+		transition: 0.3s ease;
+		&:hover {
+			transform: scale(1.1);
+			opacity: 0.5;
+		}
 	}
 }
