@@ -1,7 +1,21 @@
+@font-face {
+	font-family: 'sf';
+	src: url('./assets/fonts/sf.ttf');
+}
+@font-face {
+	font-family: 'normal';
+	src: url('./assets/fonts/normal.woff');
+}
+
+@font-face {
+	font-family: 'bold';
+	src: url('./assets/fonts/bold.woff');
+}
+
 html {
-  --darkest: #1d1d1b;
-  --accent: #d10000;
-  --darker: #575756;
-  --dark: #828385;
-  --bg: #ffffff;
+	--darkest: #1d1d1b;
+	--accent: #d10000;
+	--darker: #575756;
+	--dark: #828385;
+	--bg: #ffffff;
 }
