@@ -1,0 +1,21 @@
+.bg {
+	img {
+		width: 100%;
+		object-fit: contain;
+		margin-top: -9vh;
+	}
+	position: absolute;
+	z-index: -1;
+}
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	.btn {
+		position: relative;
+		z-index: 2;
+		margin: auto;
+		padding: 1rem 2rem;
+		transform: translateY(calc(5rem * 3));
+	}
+}
