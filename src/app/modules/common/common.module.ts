@@ -7,7 +7,8 @@ import { HomeSection4Component } from '../home/home-section4/home-section4.compo
 import { WeightLiftingSection3Component } from '../weight-lifting/weight-lifting-section3/weight-lifting-section3.component'
 import { RouterModule } from '@angular/router'
 import { HomeCarouselImgsComponent } from './home-carousel-imgs/home-carousel-imgs.component'
-import { PackageCardComponent } from './package-card/package-card.component'
+import { PackageCardComponent } from './package-card/package-card.component';
+import { CommunityComponent } from './community/community.component'
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { PackageCardComponent } from './package-card/package-card.component'
 		WeightLiftingSection3Component,
 		HomeCarouselImgsComponent,
 		PackageCardComponent,
+  CommunityComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [
