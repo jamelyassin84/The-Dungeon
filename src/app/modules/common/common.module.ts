@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component'
 import { HomeSection4Component } from '../home/home-section4/home-section4.component'
 import { WeightLiftingSection3Component } from '../weight-lifting/weight-lifting-section3/weight-lifting-section3.component'
 import { RouterModule } from '@angular/router'
+import { HomeCarouselImgsComponent } from './home-carousel-imgs/home-carousel-imgs.component'
 
 @NgModule({
 	declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router'
 		SidebarComponent,
 		HomeSection4Component,
 		WeightLiftingSection3Component,
+		HomeCarouselImgsComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [
@@ -22,6 +24,7 @@ import { RouterModule } from '@angular/router'
 		SidebarComponent,
 		HomeSection4Component,
 		WeightLiftingSection3Component,
+		HomeCarouselImgsComponent,
 	],
 })
 export class Common {}
