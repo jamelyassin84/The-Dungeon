@@ -5,6 +5,10 @@
 .package-card {
 	padding: 1.9rem 2rem;
 	cursor: pointer;
+	transition: 0.3s ease;
+	&:hover {
+		transform: scale(1.09);
+	}
 }
 
 .title {
