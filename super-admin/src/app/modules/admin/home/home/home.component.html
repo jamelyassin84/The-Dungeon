@@ -1,17 +1,38 @@
-<div class="flex flex-col flex-auto min-w-0">
+<div class="flex flex-col flex-auto min-w-0 bg-card">
     <!-- Header -->
     <div
         class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
     >
         <div class="flex-1 min-w-0">
             <!-- Title -->
-            <div class="mt-2">
+            <div class="flex flex-wrap aic">
                 <h2
-                    class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+                    class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
                 >
                     Home
                 </h2>
+
+                <!-- <button
+                    class="fuse-mat-button-large mt-6 rounded ml-auto"
+                    mat-flat-button
+                    [color]="'warn'"
+                >
+                    Publish
+                </button> -->
             </div>
         </div>
     </div>
+    <ul
+        class="flex flex-wrap border-b border-gray-200 dark:border-gray-700 tab p-5"
+    >
+        <li *ngFor="let tab of navigation">
+            <a
+                (click)="setActiveTab(tab)"
+                role="button"
+                [class.active]="activeTab === tab.id"
+                class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                >{{ tab.name }}</a
+            >
+        </li>
+    </ul>
 </div>

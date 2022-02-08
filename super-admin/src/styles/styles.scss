@@ -2,3 +2,22 @@
 /*  @ Import/write your custom styles here.
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
+
+.tab {
+    .active {
+        background: #18191a !important;
+        background-color: #18191a !important;
+        color: white !important;
+    }
+}
+
+.aic {
+    align-self: center;
+}
+
+.jcc {
+    justify-content: center;
+}
+.fdc {
+    flex-direction: column;
+}

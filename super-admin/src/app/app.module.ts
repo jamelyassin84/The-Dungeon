@@ -1,3 +1,4 @@
+import { WeightLiftingModule } from './modules/admin/weight-lifting/weight-lifting.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +13,11 @@ import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
 import { appRoutes } from 'app/app.routing';
+import { HomeModule } from './modules/admin/home/home.module';
+import { LocationModule } from './modules/admin/location/location.module';
+import { CoachingModule } from './modules/admin/coaching/coaching.module';
+import { OurStoryModule } from './modules/admin/our-story/our-story.module';
+import { InboxModule } from './modules/admin/inbox/inbox.module';
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy: PreloadAllModules,
@@ -38,6 +44,14 @@ const routerConfig: ExtraOptions = {
 
         // 3rd party modules that require global configuration via forRoot
         MarkdownModule.forRoot({}),
+
+        //APP Modules
+        HomeModule,
+        WeightLiftingModule,
+        LocationModule,
+        CoachingModule,
+        OurStoryModule,
+        InboxModule,
     ],
     bootstrap: [AppComponent],
 })
