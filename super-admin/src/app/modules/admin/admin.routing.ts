@@ -1,4 +1,5 @@
 import { Route } from '@angular/router'
+import { CoachingRoutes } from './coaching/coaching.routes'
 import { CoachingComponent } from './coaching/coaching/coaching.component'
 import { HomeRoutes } from './home/home.routes'
 import { HomeComponent } from './home/home/home.component'
@@ -26,6 +27,7 @@ export const adminRoutes: Route[] = [
 	{
 		path: 'coaching',
 		component: CoachingComponent,
+		children: CoachingRoutes,
 	},
 	{
 		path: 'our-story',
