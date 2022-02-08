@@ -2,7 +2,16 @@
     class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0"
 >
     <div
-        class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card"
+        style="background: black"
+        class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden dark:border-l"
+    >
+        <!-- Content -->
+        <div class="z-10 relative w-full max-w-2xl">
+            <img class="w-250 mb-5" src="../../../../assets/app/logo.svg" />
+        </div>
+    </div>
+    <div
+        class="md:flex md:justify-end w-full sm:w-auto md:h-full py-8 px-4 sm:p-12 md:p-16 md:pt-24 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card"
     >
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <!-- Title -->
@@ -81,13 +90,13 @@
                     class="inline-flex items-end justify-between w-full mt-1.5"
                 >
                     <mat-checkbox
-                        [color]="'warn'"
+                        [color]="'primary'"
                         [formControlName]="'rememberMe'"
                     >
                         Remember me
                     </mat-checkbox>
                     <a
-                        class="text-md font-medium text-warn-500 hover:underline"
+                        class="text-md font-medium text-dark-500 hover:underline"
                         [routerLink]="['/forgot-password']"
                         >Forgot password?
                     </a>
@@ -95,7 +104,7 @@
 
                 <!-- Submit button -->
                 <button
-                    class="fuse-mat-button-large w-full mt-6"
+                    class="fuse-mat-button-large w-full mt-6 rounded"
                     mat-flat-button
                     [color]="'warn'"
                     [disabled]="signInForm.disabled"
@@ -124,78 +133,6 @@
                     <div class="text-secondary">056-799-5775</div>
                 </div>
             </form>
-        </div>
-    </div>
-    <div
-        style="background: black"
-        class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden dark:border-l"
-    >
-        <!-- Background - @formatter:off -->
-        <!-- Rings -->
-        <svg
-            class="absolute inset-0 pointer-events-none"
-            viewBox="0 0 960 540"
-            width="100%"
-            height="100%"
-            preserveAspectRatio="xMidYMax slice"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <g
-                class="text-gray-700 opacity-75"
-                fill="transparent"
-                stroke="black"
-                stroke-width="100"
-            >
-                <circle r="234" cx="196" cy="23"></circle>
-                <circle r="234" cx="790" cy="491"></circle>
-            </g>
-        </svg>
-        <!-- Dots -->
-        <svg
-            class="absolute -top-16 -right-16 text-gray-700"
-            viewBox="0 0 220 192"
-            width="220"
-            height="192"
-            fill="none"
-        >
-            <defs>
-                <pattern
-                    id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
-                >
-                    <rect
-                        x="0"
-                        y="0"
-                        width="4"
-                        height="4"
-                        fill="currentColor"
-                    ></rect>
-                </pattern>
-            </defs>
-            <rect
-                width="220"
-                height="192"
-                fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"
-            ></rect>
-        </svg>
-        <!-- @formatter:on -->
-        <!-- Content -->
-        <div class="z-10 relative w-full max-w-2xl">
-            <img class="w-50 mb-5" src="../../../../assets/app/logo.svg" />
-            <div class="text-7xl font-bold leading-none text-gray-100">
-                <div>Welcome to Dungeon</div>
-                <div>Super Administrator</div>
-            </div>
-            <div class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
-                Customize your website by Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Tempora recusandae numquam impedit perferendis
-                temporibus vel maxime nihil officia animi officiis corrupti
-                rerum eius eveniet nesciunt accusantium deleniti veniam, rem id!
-            </div>
         </div>
     </div>
 </div>
