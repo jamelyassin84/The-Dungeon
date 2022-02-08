@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { CoachingComponent } from './coaching/coaching/coaching.component';
+import { HomeRoutes } from './home/home.routes';
 import { HomeComponent } from './home/home/home.component';
 import { InboxComponent } from './inbox/inbox/inbox.component';
 import { LocationComponent } from './location/location/location.component';
@@ -10,6 +11,7 @@ export const adminRoutes: Route[] = [
     {
         path: 'home',
         component: HomeComponent,
+        children: HomeRoutes,
     },
     {
         path: 'weight-lifting',
