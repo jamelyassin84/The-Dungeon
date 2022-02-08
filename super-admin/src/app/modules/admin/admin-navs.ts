@@ -20,7 +20,7 @@ export const adminNavigation: FuseNavigationItem[] = [
         id: 'location',
         title: 'Location',
         type: 'basic',
-        icon: 'feather:activity',
+        icon: 'feather:map-pin',
         link: '/example',
     },
     {
