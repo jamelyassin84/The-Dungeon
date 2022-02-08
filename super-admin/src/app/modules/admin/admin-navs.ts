@@ -2,32 +2,25 @@ import { FuseNavigationItem } from './../../../@fuse/components/navigation/navig
 
 export const adminNavigation: FuseNavigationItem[] = [
     {
-        id: 'example',
-        title: 'Example',
-        type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
-        link: '/example',
-    },
-    {
-        id: 'example',
+        id: 'home',
         title: 'Home',
         type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
+        icon: 'heroicons_outline:home',
         link: '/example',
     },
     {
-        id: 'example',
+        id: 'weight0lifting',
         title: 'Weight Lifting',
         type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
+        icon: 'iconsmind:dumbbell',
         link: '/example',
     },
 
     {
-        id: 'example',
+        id: 'location',
         title: 'Location',
         type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
+        icon: 'feather:activity',
         link: '/example',
     },
     {
@@ -41,14 +34,14 @@ export const adminNavigation: FuseNavigationItem[] = [
         id: 'example',
         title: 'Our Story',
         type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
+        icon: 'feather:clock',
         link: '/example',
     },
     {
         id: 'example',
         title: 'Inbox',
         type: 'basic',
-        icon: 'heroicons_outline:chart-pie',
+        icon: 'feather:inbox',
         link: '/example',
     },
 ];
