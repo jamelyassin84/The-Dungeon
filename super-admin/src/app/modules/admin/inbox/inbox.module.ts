@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InboxComponent } from './inbox/inbox.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    InboxComponent
+  ],
   imports: [
     CommonModule
   ]

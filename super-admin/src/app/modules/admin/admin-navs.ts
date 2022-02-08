@@ -6,14 +6,14 @@ export const adminNavigation: FuseNavigationItem[] = [
         title: 'Home',
         type: 'basic',
         icon: 'heroicons_outline:home',
-        link: '/example',
+        link: '/home',
     },
     {
         id: 'weight0lifting',
         title: 'Weight Lifting',
         type: 'basic',
         icon: 'iconsmind:dumbbell',
-        link: '/example',
+        link: '/weight-lifting',
     },
 
     {
@@ -21,27 +21,27 @@ export const adminNavigation: FuseNavigationItem[] = [
         title: 'Location',
         type: 'basic',
         icon: 'feather:map-pin',
-        link: '/example',
+        link: '/location',
     },
     {
         id: 'example',
         title: 'Coaching',
         type: 'basic',
         icon: 'heroicons_outline:chart-pie',
-        link: '/example',
+        link: '/coaching',
     },
     {
         id: 'example',
         title: 'Our Story',
         type: 'basic',
         icon: 'feather:clock',
-        link: '/example',
+        link: '/our-story',
     },
     {
         id: 'example',
         title: 'Inbox',
         type: 'basic',
         icon: 'feather:inbox',
-        link: '/example',
+        link: '/inbox',
     },
 ];

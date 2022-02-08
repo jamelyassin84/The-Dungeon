@@ -16,13 +16,13 @@
         <div class="flex items-center h-20 p-6 pb-0">
             <!-- Light version -->
             <img
-                class="dark:hidden w-30 mb-5"
+                class="dark:hidden w-30"
                 src="../../../../../assets/app/logo.svg"
                 alt="Logo image"
             />
             <!-- Dark version -->
             <img
-                class="hidden dark:flex w-30 mb-5"
+                class="hidden dark:flex w-30"
                 src="../../../../../assets/app/logo.svg"
                 alt="Logo image"
             />
@@ -42,8 +42,10 @@
         </button>
         <!-- Components -->
         <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
+            <languages></languages>
             <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
             <search [appearance]="'bar'"></search>
+            <user></user>
         </div>
     </div>
 
