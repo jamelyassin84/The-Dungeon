@@ -1,17 +1,119 @@
 <div class="flex flex-col flex-auto min-w-0">
-    <!-- Header -->
-    <div
-        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
-    >
-        <div class="flex-1 min-w-0">
-            <!-- Title -->
-            <div class="mt-2">
-                <h2
-                    class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
-                >
-                    Location
-                </h2>
-            </div>
-        </div>
-    </div>
+	<!-- Header -->
+	<div
+		class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+	>
+		<div class="flex-1 min-w-0">
+			<!-- Title -->
+			<div class="mt-2">
+				<h2
+					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+				>
+					Location
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="fuse-card-front p-5">
+		<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+			<div class="my-1 mb-5">
+				<div
+					class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+				>
+					MAP
+				</div>
+				<fuse-alert class="mb-15" [type]="'info'">
+					<span fuseAlertTitle>Image Format</span>
+					<div>
+						<span class="text-secondary">Aspect Ratio</span> square
+					</div>
+					<div>
+						<span class="text-secondary"> Image extensions:</span>
+						.jpg, .png, .gif
+					</div>
+					<div><span class="text-secondary">Max Images:</span> 1</div>
+				</fuse-alert>
+			</div>
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
+				<div class="">
+					<div
+						(click)="trigger('file')"
+						role="button"
+						class="file-input w-full"
+					>
+						<img src="/assets/app/cloud.svg" />
+					</div>
+					<input
+						accept="image/*"
+						type="file"
+						class="hidden"
+						id="file"
+					/>
+					<div class="text-secondary text-center w-full">
+						Map Screenshot
+					</div>
+				</div>
+				<div class="lg:ml-5 md:ml-5">
+					<div class="w-full mb-2">
+						<mat-form-field class="w-full">
+							<mat-label class="text-secondary font-normal"
+								>Street Address</mat-label
+							>
+							<input
+								matInput
+								placeholder="19trh St. - Umm Ramool -"
+							/>
+						</mat-form-field>
+					</div>
+					<div class="w-full mb-2">
+						<mat-form-field class="w-full">
+							<mat-label class="text-secondary font-normal"
+								>State & Country</mat-label
+							>
+							<input
+								matInput
+								placeholder="Dubai United arab Emirates"
+							/>
+						</mat-form-field>
+					</div>
+					<div class="w-full mb-2">
+						<mat-form-field class="w-full">
+							<mat-label class="text-secondary font-normal"
+								>Google Map Link To Location</mat-label
+							>
+							<input
+								matInput
+								placeholder="https://goo.gl/maps/uxMheyw739rmD3cQ8"
+							/>
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="lg:ml-5 md:ml-5">
+					<mat-form-field class="w-full mb-2">
+						<mat-label class="text-secondary font-normal"
+							>Email</mat-label
+						>
+						<input matInput placeholder="Thedungeon@gmail.com" />
+					</mat-form-field>
+					<mat-form-field class="w-full mb-2">
+						<mat-label class="text-secondary font-normal"
+							>Contact</mat-label
+						>
+						<input matInput placeholder="+971 50 000 000" />
+					</mat-form-field>
+				</div>
+			</div>
+			<button
+				class="fuse-mat-button-large mt-6 rounded"
+				mat-flat-button
+				[color]="'warn'"
+			>
+				<span class="mr-2"> Publish</span>
+				<mat-progress-spinner
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
+		</div>
+	</div>
 </div>
