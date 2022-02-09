@@ -36,5 +36,8 @@ export class WeightLiftingComponent implements OnInit {
 		if (this.router.url.includes('4')) {
 			this.activeTab = 4
 		}
+		if (this.router.url.includes('5')) {
+			this.activeTab = 5
+		}
 	}
 }

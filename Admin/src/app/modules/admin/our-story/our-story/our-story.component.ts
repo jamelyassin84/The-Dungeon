@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-our-story',
-  templateUrl: './our-story.component.html',
-  styleUrls: ['./our-story.component.scss']
+	selector: 'app-our-story',
+	templateUrl: './our-story.component.html',
+	styleUrls: ['./our-story.component.scss'],
 })
 export class OurStoryComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
+	ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+	trigger(id: string) {
+		document.getElementById(id).click()
+	}
 }

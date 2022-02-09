@@ -13,12 +13,17 @@ export const WeightLiftingTabs: Tab[] = [
 	},
 	{
 		id: 3,
-		name: 'PARTICIPANTS',
+		name: 'RULES',
 		route: '/competition/3',
 	},
 	{
 		id: 4,
-		name: 'REVIEWS',
+		name: 'PARTICIPANTS',
 		route: '/competition/4',
+	},
+	{
+		id: 5,
+		name: 'REVIEWS',
+		route: '/competition/5',
 	},
 ]

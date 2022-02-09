@@ -14,7 +14,8 @@ import { WeightLiftingSection2Component } from './pages/weight-lifting-section2/
 import { WeightLiftingSection3Component } from './pages/weight-lifting-section3/weight-lifting-section3.component'
 import { WeightLiftingSection4Component } from './pages/weight-lifting-section4/weight-lifting-section4.component'
 import { RouterModule } from '@angular/router'
-import { SharedModule } from 'app/shared/shared.module'
+import { SharedModule } from 'app/shared/shared.module';
+import { WeightLiftingSecondSectionComponent } from './pages/weight-lifting-second-section/weight-lifting-second-section.component'
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import { SharedModule } from 'app/shared/shared.module'
 		WeightLiftingSection2Component,
 		WeightLiftingSection3Component,
 		WeightLiftingSection4Component,
+  WeightLiftingSecondSectionComponent,
 	],
 	imports: [
 		CommonModule,
