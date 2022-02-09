@@ -5,15 +5,15 @@
 		</div>
 		<fuse-alert class="mb-15" [type]="'info'">
 			<span fuseAlertTitle>Image Format</span>
-			<div><span class="text-secondary">Aspect Ratio</span> 16:9</div>
+			<div><span class="text-secondary">Aspect Ratio</span> square</div>
 			<div>
-				<span class="text-secondary"> Image extensions:</span> .jpg,
+				<span class="text-secondary"> Image extensions</span> .jpg,
 				.png, .gif
 			</div>
-			<div><span class="text-secondary">Max Images:</span> 1</div>
+			<div><span class="text-secondary">Max Images</span> 1</div>
 		</fuse-alert>
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
 		<div class="">
 			<div
 				(click)="trigger('file')"

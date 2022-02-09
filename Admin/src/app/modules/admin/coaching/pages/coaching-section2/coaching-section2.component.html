@@ -1,1 +1,69 @@
-<p>coaching-section2 works!</p>
+<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+	<div class="my-1 mb-5">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+			COACHES
+		</div>
+	</div>
+
+	<div class="flex">
+		<button
+			class="fuse-mat-button-large rounded ml-auto"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2">Add Coach</span>
+		</button>
+	</div>
+
+	<div class="flex flex-wrap">
+		<div
+			class="p-5 pl-0 sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/8"
+			*ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+		>
+			<div class="card border-2 border-slate-100 p-5">
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Name</mat-label
+					>
+					<input matInput placeholder="AHMED KHUMAR" />
+				</mat-form-field>
+				<div
+					(click)="trigger('file')"
+					role="button"
+					class="file-input w-full"
+				>
+					<img src="/assets/app/cloud.svg" />
+				</div>
+				<input accept="image/*" type="file" class="hidden" id="file" />
+				<fuse-alert class="mb-5" [type]="'info'">
+					<span fuseAlertTitle>Coach Photo Format</span>
+					<div>
+						<span class="text-secondary">Aspect Ratio</span> 5:6
+					</div>
+					<div>
+						<span class="text-secondary"> Image extensions:</span>
+						.jpg, .png, .gif
+					</div>
+					<div>
+						<span class="text-secondary"
+							>Max images per coach:</span
+						>
+						1
+					</div>
+				</fuse-alert>
+			</div>
+		</div>
+	</div>
+
+	<button
+		class="fuse-mat-button-large mt-6 rounded"
+		mat-flat-button
+		[color]="'warn'"
+	>
+		<span class="mr-2"> Publish</span>
+		<mat-progress-spinner
+			[diameter]="16"
+			[mode]="'indeterminate'"
+		></mat-progress-spinner>
+	</button>
+</div>
