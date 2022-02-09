@@ -16,7 +16,7 @@ export const adminRoutes: Route[] = [
 		children: HomeRoutes,
 	},
 	{
-		path: 'weight-lifting',
+		path: 'competition',
 		component: WeightLiftingComponent,
 		children: WeightLiftingRoutes,
 	},

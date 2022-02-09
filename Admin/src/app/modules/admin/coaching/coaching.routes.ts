@@ -4,6 +4,11 @@ import { CoachingSection2Component } from './pages/coaching-section2/coaching-se
 
 export const CoachingRoutes: Route[] = [
 	{
+		path: '',
+		redirectTo: '1',
+		pathMatch: 'full',
+	},
+	{
 		path: '1',
 		component: CoachingSection1Component,
 	},

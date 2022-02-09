@@ -6,6 +6,11 @@ import { WeightLiftingSection4Component } from './pages/weight-lifting-section4/
 
 export const WeightLiftingRoutes: Route[] = [
 	{
+		path: '',
+		redirectTo: '1',
+		pathMatch: 'full',
+	},
+	{
 		path: '1',
 		component: WeightLiftingSection1Component,
 	},
