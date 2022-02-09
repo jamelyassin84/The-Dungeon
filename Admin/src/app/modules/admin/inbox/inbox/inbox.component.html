@@ -1,17 +1,40 @@
 <div class="flex flex-col flex-auto min-w-0">
-    <!-- Header -->
-    <div
-        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
-    >
-        <div class="flex-1 min-w-0">
-            <!-- Title -->
-            <div class="mt-2">
-                <h2
-                    class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
-                >
-                    Inbox
-                </h2>
-            </div>
-        </div>
-    </div>
+	<!-- Header -->
+	<div
+		class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+	>
+		<div class="flex-1 min-w-0">
+			<!-- Title -->
+			<div class="mt-2">
+				<h2
+					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+				>
+					Inbox
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="fuse-card-front p-5 bg-card shadow w-full">
+		<table class="table w-full p-5">
+			<thead class="w-full bg-zinc-900 text-white">
+				<tr>
+					<td>Email</td>
+					<td>Message</td>
+					<td>Date</td>
+					<td>Time</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr role="button" *ngFor="let item of [1, 2, 3, 4, 5]">
+					<td>Mohammed@gmail</td>
+					<td>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing
+						elit,
+					</td>
+					<td>01-01-22</td>
+					<td>08:53 PM</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
