@@ -10,6 +10,7 @@
 				<span class="text-secondary"> Image extensions:</span> .jpg,
 				.png, .gif
 			</div>
+			<div><span class="text-secondary">Max Images:</span> 25</div>
 		</fuse-alert>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
@@ -22,7 +23,6 @@
 				<img src="/assets/app/cloud.svg" />
 			</div>
 			<input accept="image/*" type="file" class="hidden" id="file" />
-			<span class="text-blue-300"> Multiple Images</span>
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<mat-form-field class="w-full mb-2">
@@ -32,6 +32,10 @@
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Body</mat-label>
 				<textarea
+					cdkTextareaAutosize
+					#autosize="cdkTextareaAutosize"
+					cdkAutosizeMinRows="1"
+					cdkAutosizeMaxRows="5"
 					matInput
 					placeholder="Top of the line equipment’s that are only available in this gym. We have the Best trainer in this field."
 				></textarea>

@@ -10,6 +10,7 @@
 				<span class="text-secondary"> Image extensions:</span> .jpg,
 				.png, .gif
 			</div>
+			<div><span class="text-secondary">Max Images:</span> 1</div>
 		</fuse-alert>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
@@ -22,7 +23,6 @@
 				<img src="/assets/app/cloud.svg" />
 			</div>
 			<input accept="image/*" type="file" class="hidden" id="file" />
-			<span class="text-blue-300"> Single Image</span>
 		</div>
 
 		<div class="lg:ml-5 md:ml-5">
@@ -33,6 +33,10 @@
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Body</mat-label>
 				<textarea
+					cdkTextareaAutosize
+					#autosize="cdkTextareaAutosize"
+					cdkAutosizeMinRows="1"
+					cdkAutosizeMaxRows="5"
 					matInput
 					placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
 				></textarea>

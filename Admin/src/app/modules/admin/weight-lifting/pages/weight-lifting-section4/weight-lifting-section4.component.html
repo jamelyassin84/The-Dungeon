@@ -1,1 +1,65 @@
-<p>weight-lifting-section4 works!</p>
+<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0 custom">
+	<div class="my-1">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+			Reviews
+		</div>
+	</div>
+
+	<div class="flex">
+		<button
+			class="fuse-mat-button-large mt-6 rounded ml-auto"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2"> Add Participants</span>
+		</button>
+	</div>
+
+	<div class="flex flex-wrap">
+		<div
+			class="p-5 pl-0 sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/8"
+			*ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+		>
+			<div class="card border-2 border-slate-100 p-5">
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Name</mat-label
+					>
+					<input matInput placeholder="AHMED KHUMAR" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Comment</mat-label
+					>
+					<textarea
+						matInput
+						cdkTextareaAutosize
+						#autosize="cdkTextareaAutosize"
+						cdkAutosizeMinRows="1"
+						cdkAutosizeMaxRows="5"
+						placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
+					></textarea>
+				</mat-form-field>
+
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Rating</mat-label
+					>
+					<input matInput placeholder="4" type="number" />
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+
+	<button
+		class="fuse-mat-button-large mt-6 rounded"
+		mat-flat-button
+		[color]="'warn'"
+	>
+		<span class="mr-2"> Publish</span>
+		<mat-progress-spinner
+			[diameter]="16"
+			[mode]="'indeterminate'"
+		></mat-progress-spinner>
+	</button>
+</div>

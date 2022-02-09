@@ -1,1 +1,88 @@
-<p>weight-lifting-section2 works!</p>
+<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+	<div class="my-1 mb-5">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+			Registration Form
+		</div>
+		<fuse-alert class="mb-5" [type]="'info'">
+			<span fuseAlertTitle>Image Format</span>
+			<div><span class="text-secondary">Aspect Ration</span> 16:9</div>
+			<div>
+				<span class="text-secondary"> Image extensions:</span> .jpg,
+				.png, .gif
+			</div>
+			<div><span class="text-secondary">Max Images:</span> 1</div>
+		</fuse-alert>
+	</div>
+	<div class="inline-flex items-end justify-between w-full mb-5">
+		<mat-checkbox [color]="'warn'" class="text-secondary font-normal">
+			Enable Registration Form
+		</mat-checkbox>
+	</div>
+	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
+		<div class="">
+			<div
+				(click)="trigger('file')"
+				role="button"
+				class="file-input w-full"
+			>
+				<img src="/assets/app/cloud.svg" />
+			</div>
+			<input accept="image/*" type="file" class="hidden" id="file" />
+		</div>
+
+		<mat-form-field class="w-full mb-2">
+			<mat-label class="text-secondary font-normal"
+				>Small Title</mat-label
+			>
+			<input matInput placeholder="Weight lifting" />
+		</mat-form-field>
+		<mat-form-field class="w-full mb-2">
+			<mat-label class="text-secondary font-normal"
+				>Large Title</mat-label
+			>
+			<input matInput placeholder="COMPETITION" />
+		</mat-form-field>
+		<mat-form-field class="w-full mb-2">
+			<mat-label class="text-secondary font-normal"
+				>Call to Action Title</mat-label
+			>
+			<input matInput placeholder="Register Now!" />
+		</mat-form-field>
+	</div>
+
+	<div class="flex">
+		<button
+			class="fuse-mat-button-large mt-6 rounded ml-auto"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2"> Add Field</span>
+		</button>
+	</div>
+
+	<div class="grid grid-cols-1 lg:grid-cols-6 gap-6 mt-10">
+		<mat-form-field
+			[color]="'rose'"
+			class="w-full mb-2"
+			*ngFor="let item of [1, 2, 3, 4, 5, 6]"
+		>
+			<mat-label class="text-secondary font-normal flex"
+				>Field Name
+				<span role="button" class="ml-auto text-warn">Remove</span>
+			</mat-label>
+			<input matInput placeholder="Full name" />
+		</mat-form-field>
+	</div>
+
+	<button
+		class="fuse-mat-button-large mt-6 rounded"
+		mat-flat-button
+		[color]="'warn'"
+	>
+		<span class="mr-2"> Publish</span>
+		<mat-progress-spinner
+			[diameter]="16"
+			[mode]="'indeterminate'"
+		></mat-progress-spinner>
+	</button>
+</div>
