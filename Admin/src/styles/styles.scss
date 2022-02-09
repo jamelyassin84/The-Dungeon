@@ -4,20 +4,29 @@
 /* ----------------------------------------------------------------------------------------------------- */
 
 .tab {
-    .active {
-        background: #18191a !important;
-        background-color: #18191a !important;
-        color: white !important;
-    }
+	.active {
+		background: #18191a !important;
+		background-color: #18191a !important;
+		color: white !important;
+	}
 }
 
 .aic {
-    align-self: center;
+	align-self: center;
 }
 
 .jcc {
-    justify-content: center;
+	justify-content: center;
 }
 .fdc {
-    flex-direction: column;
+	flex-direction: column;
+}
+
+.bg-black {
+	background-color: black !important;
+	background: black !important;
+}
+
+.text-white {
+	color: white !important;
 }
