@@ -5,7 +5,7 @@
 		</div>
 		<fuse-alert class="mb-15" [type]="'info'">
 			<span fuseAlertTitle>Image Format</span>
-			<div><span class="text-secondary">Aspect Ratio:</span>3:4</div>
+			<div><span class="text-secondary">Aspect Ratio:</span>16:9</div>
 			<div>
 				<span class="text-secondary"> Image extensions:</span> .jpg,
 				.png, .gif
@@ -27,13 +27,20 @@
 		<div class="lg:ml-5 md:ml-5">
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Title</mat-label>
-				<input matInput placeholder="BODYBUILDING + POWER LIFTING" />
+				<input matInput placeholder="START YOUR FREE TRIAL TODAY" />
+			</mat-form-field>
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Notice</mat-label>
+				<input
+					matInput
+					placeholder="Payments start after 30 days free trial."
+				/>
 			</mat-form-field>
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Body</mat-label>
 				<textarea
 					matInput
-					placeholder="Top of the line equipment’s that are only available in this gym. We have the Best trainer in this field."
+					placeholder="Subscriptions auto-renew at the end of each billing period at the standard price, unless cancelled."
 				></textarea>
 			</mat-form-field>
 		</div>
