@@ -1,22 +1,19 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
 	<div class="my-1 mb-5">
-		<div class="text-2xl md:text-2xl font-extrabold sm: truncate">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
 			HOME BANNER
 		</div>
-		<fuse-alert [type]="'info'">
-			<span fuseAlertTitle>Content Formats</span>
+		<fuse-alert class="mb-15" [type]="'info'">
+			<span fuseAlertTitle>Image Format</span>
+			<div><span class="text-secondary">Aspect Ration</span> 16:9</div>
 			<div>
-				<span class="text-secondary">Image size:</span> 920x X 850px
-			</div>
-			<div>
-				<span class="text-secondary"> File extensions:</span> .jpg,
+				<span class="text-secondary"> Image extensions:</span> .jpg,
 				.png, .gif
 			</div>
-			<div><span class="text-secondary">Resolution:</span> 300dpi</div>
 		</fuse-alert>
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
-		<div class="mt-5 lg:mr-5 md:mr-5 lg:ml-5 md:ml-5">
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
+		<div class="">
 			<div
 				(click)="trigger('file')"
 				role="button"
@@ -25,6 +22,7 @@
 				<img src="/assets/app/cloud.svg" />
 			</div>
 			<input accept="image/*" type="file" class="hidden" id="file" />
+			<span class="text-blue-300"> Single Image</span>
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<div class="inline-flex items-end justify-between w-full mb-5">
@@ -40,7 +38,7 @@
 					<mat-label class="text-secondary font-normal"
 						>Button Text</mat-label
 					>
-					<input matInput />
+					<input matInput placeholder="Weight Lifting Competition" />
 				</mat-form-field>
 			</div>
 			<div class="w-full mb-2">
@@ -63,11 +61,14 @@
 			</div>
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Title</mat-label>
-				<input matInput />
+				<input matInput placeholder="Winners Train, Losers Complain." />
 			</mat-form-field>
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Body</mat-label>
-				<textarea matInput></textarea>
+				<textarea
+					matInput
+					placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
+				></textarea>
 			</mat-form-field>
 		</div>
 	</div>

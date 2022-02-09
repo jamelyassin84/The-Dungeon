@@ -1,1 +1,107 @@
-<p>home-section4 works!</p>
+<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+	<div class="my-1 mb-5">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+			PRICING SECTION
+		</div>
+		<fuse-alert class="mb-15" [type]="'info'">
+			<span fuseAlertTitle>Image Format</span>
+			<div><span class="text-secondary">Aspect Ratio:</span>3:4</div>
+			<div>
+				<span class="text-secondary"> Image extensions:</span> .jpg,
+				.png, .gif
+			</div>
+		</fuse-alert>
+	</div>
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
+		<div>
+			<div
+				(click)="trigger('file')"
+				role="button"
+				class="file-input w-full"
+			>
+				<img src="/assets/app/cloud.svg" />
+			</div>
+			<input accept="image/*" type="file" class="hidden" id="file" />
+			<span class="text-blue-300"> Single Image</span>
+		</div>
+		<div class="lg:ml-5 md:ml-5">
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Title</mat-label>
+				<input matInput placeholder="BODYBUILDING + POWER LIFTING" />
+			</mat-form-field>
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Body</mat-label>
+				<textarea
+					matInput
+					placeholder="Top of the line equipment’s that are only available in this gym. We have the Best trainer in this field."
+				></textarea>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<button
+		class="fuse-mat-button-large mt-6 mb-6 rounded"
+		mat-flat-button
+		[color]="'accent'"
+	>
+		<span class="mr-2"> Add Pricing</span>
+	</button>
+
+	<div class="flex flex-wrap">
+		<div
+			class="p-5 pl-0 sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/8"
+			*ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+		>
+			<div class="card border-2 border-slate-100 p-5">
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Duration</mat-label
+					>
+					<input matInput placeholder="1 MONTH" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Price</mat-label
+					>
+					<input matInput placeholder="650" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Bill Interval</mat-label
+					>
+					<input matInput placeholder="Billed Monthly" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Summary</mat-label
+					>
+					<input matInput placeholder="650.00 AED Monthly" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Trial Period</mat-label
+					>
+					<input matInput placeholder="630-Day Free Trial" />
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Background Color (Hex)</mat-label
+					>
+					<input matInput placeholder="#828385" />
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+
+	<button
+		class="fuse-mat-button-large mt-6 rounded"
+		mat-flat-button
+		[color]="'warn'"
+	>
+		<span class="mr-2"> Publish</span>
+		<mat-progress-spinner
+			[diameter]="16"
+			[mode]="'indeterminate'"
+		></mat-progress-spinner>
+	</button>
+</div>

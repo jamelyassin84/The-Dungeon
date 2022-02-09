@@ -1,1 +1,53 @@
-<p>home-section2 works!</p>
+<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+	<div class="my-1 mb-5">
+		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+			SECTION II
+		</div>
+		<fuse-alert class="mb-15" [type]="'info'">
+			<span fuseAlertTitle>Image Format</span>
+			<div><span class="text-secondary">Aspect Ration</span> 16:9</div>
+			<div>
+				<span class="text-secondary"> Image extensions:</span> .jpg,
+				.png, .gif
+			</div>
+		</fuse-alert>
+	</div>
+	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
+		<div class="">
+			<div
+				(click)="trigger('file')"
+				role="button"
+				class="file-input w-full"
+			>
+				<img src="/assets/app/cloud.svg" />
+			</div>
+			<input accept="image/*" type="file" class="hidden" id="file" />
+			<span class="text-blue-300"> Single Image</span>
+		</div>
+
+		<div class="lg:ml-5 md:ml-5">
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Title</mat-label>
+				<input matInput placeholder="WE ARE THE DUNGEON GYM" />
+			</mat-form-field>
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Body</mat-label>
+				<textarea
+					matInput
+					placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
+				></textarea>
+			</mat-form-field>
+		</div>
+	</div>
+	<button
+		class="fuse-mat-button-large mt-6 rounded"
+		mat-flat-button
+		[color]="'warn'"
+	>
+		<span class="mr-2"> Publish</span>
+		<mat-progress-spinner
+			[diameter]="16"
+			[mode]="'indeterminate'"
+		></mat-progress-spinner>
+	</button>
+</div>
