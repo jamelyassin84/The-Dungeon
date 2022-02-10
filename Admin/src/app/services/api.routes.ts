@@ -9,7 +9,7 @@ export enum API {
 	HOME_SECTION_4 = 'home-section4',
 	HOME_SLIDER = 'home-slider',
 	HOME_PRICING = 'home-pricing',
-	HOME_PHOTO = 'footer',
+	FOOTER = 'footer',
 	COMPETITION_SECTION_1 = 'competition-section1',
 	COMPETITION_SECTION_2 = 'competition-section2',
 	COMPETITION_SECTION_3 = 'competition-section3',
