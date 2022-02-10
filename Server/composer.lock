@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e85f9f959c0b087110331754d451cf",
+    "content-hash": "91c5882b7d2c5e520af7b06c7969fea4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1260,6 +1260,73 @@
                 "source": "https://github.com/laravel/serializable-closure"
             },
             "time": "2022-02-01T16:29:39+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v4.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "2baeb9313ce3cfd213b23b52dbaf61615a44f907"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/2baeb9313ce3cfd213b23b52dbaf61615a44f907",
+                "reference": "2baeb9313ce3cfd213b23b52dbaf61615a44f907",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^8.29|^9.0",
+                "php": "^7.3|^8.0",
+                "symfony/var-dumper": "^5.0|^6.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "orchestra/testbench": "^6.0|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/",
+                    "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/telescope/issues",
+                "source": "https://github.com/laravel/telescope/tree/v4.7.2"
+            },
+            "time": "2022-02-04T07:19:09+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -6998,16 +7065,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "23bd5951f7ff26f12d4e3242864df3e08dec4e49"
+                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23bd5951f7ff26f12d4e3242864df3e08dec4e49",
-                "reference": "23bd5951f7ff26f12d4e3242864df3e08dec4e49",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
+                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
                 "shasum": ""
             },
             "require": {
@@ -7050,7 +7117,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
-                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.3"
+                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.4"
             },
             "funding": [
                 {
@@ -7058,7 +7125,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-11T13:31:12+00:00"
+            "time": "2022-02-10T07:01:19+00:00"
         },
         {
             "name": "sebastian/lines-of-code",
@@ -7655,16 +7722,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "68250225a9f83b086462c2af1b1139dfde48fbd2"
+                "reference": "ca49c7f74022de49910715e8f1ac5ce52123eb3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/68250225a9f83b086462c2af1b1139dfde48fbd2",
-                "reference": "68250225a9f83b086462c2af1b1139dfde48fbd2",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/ca49c7f74022de49910715e8f1ac5ce52123eb3e",
+                "reference": "ca49c7f74022de49910715e8f1ac5ce52123eb3e",
                 "shasum": ""
             },
             "require": {
@@ -7738,7 +7805,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-04T15:25:56+00:00"
+            "time": "2022-02-10T08:50:40+00:00"
         },
         {
             "name": "theseer/tokenizer",
