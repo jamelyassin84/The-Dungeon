@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Interacted extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'email',
+        'phone',
+    ];
 }

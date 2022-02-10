@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class RegistrationField extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'fieldName',
+        'value',
+        'order',
+    ];
 }

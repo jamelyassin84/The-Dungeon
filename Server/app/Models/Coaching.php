@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Coaching extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'uri',
+        'price',
+    ];
 }

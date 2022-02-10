@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CompetitionSection5 extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'isSectionEnabled',
+    ];
 }

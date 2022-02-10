@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class RuleValue extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'rule_id',
+        'name',
+    ];
 }

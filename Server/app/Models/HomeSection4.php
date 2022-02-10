@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class HomeSection4 extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'isSectionEnabled',
+        'isParticipantsEnabled',
+        'title',
+        'body',
+        'uri',
+    ];
 }
