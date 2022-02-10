@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class HomeSection2Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except('index');
+    }
+
     public function index()
     {
         //

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class CoachingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except('index');
+    }
+
     public function index()
     {
         //
