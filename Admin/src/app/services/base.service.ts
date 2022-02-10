@@ -17,9 +17,10 @@ export class BaseService<T> {
 		let headers: any = {
 			Accept: 'application/json',
 			'Access-Control-Allow-Origin': '*',
+			Authorization: 'Bearer ' + token,
 		}
-		if (token !== null) {
-			headers['Authorization'] + 'Bearer ' + token
+		if (token === null) {
+			delete headers['Authorization']
 		}
 		return {
 			headers: new HttpHeaders(headers),

@@ -1,91 +1,150 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-	<div class="my-1 mb-5">
+	<div class="my-1 mb-5 w-full">
 		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
 			HOME BANNER
 		</div>
-		<fuse-alert class="mb-15" [type]="'info'">
-			<span fuseAlertTitle>Image Format</span>
-			<div><span class="text-secondary">Aspect Ratio</span> 16:9</div>
-			<div>
-				<span class="text-secondary"> Image extensions:</span> .jpg,
-				.png, .gif
-			</div>
-			<div><span class="text-secondary">Max Images:</span> 1</div>
-		</fuse-alert>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
 		<div class="">
 			<div
+				*ngIf="src === undefined && data.uri === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input w-full"
+				class="file-input px16-9"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
-			<input accept="image/*" type="file" class="hidden" id="file" />
-			<div class="text-secondary text-center w-full">
-				Background Image
-			</div>
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="src !== undefined && data.uri === undefined"
+				[src]="src"
+				alt=""
+				class="px16-9"
+			/>
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="data.uri !== undefined"
+				[src]="data.uri"
+				alt=""
+				class="px16-9"
+			/>
+
+			<input
+				(change)="readFile($event)"
+				accept="image/*"
+				type="file"
+				class="hidden"
+				id="file"
+			/>
+			<fuse-alert class="mb-15" [type]="'info'">
+				<span fuseAlertTitle>Background Image Format</span>
+				<div><span class="text-secondary">Aspect Ratio</span> 16:9</div>
+				<div>
+					<span class="text-secondary"> Image extensions:</span> .jpg,
+					.png, .gif
+				</div>
+				<div><span class="text-secondary">Max Images:</span> 1</div>
+			</fuse-alert>
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<div class="inline-flex items-end justify-between w-full mb-5">
 				<mat-checkbox
+					[(ngModel)]="data.isButtonEnabled"
 					[color]="'warn'"
 					class="text-secondary font-normal"
 				>
 					Enable Button
 				</mat-checkbox>
 			</div>
-			<div class="w-full mb-2">
-				<mat-form-field class="w-full">
-					<mat-label class="text-secondary font-normal"
-						>Button Text</mat-label
-					>
-					<input matInput placeholder="Weight Lifting Competition" />
-				</mat-form-field>
-			</div>
-			<div class="w-full mb-2">
-				<mat-form-field class="w-full">
-					<mat-label class="text-secondary font-normal"
-						>Button Color (Hex)</mat-label
-					>
-					<input matInput placeholder="#FFFF" />
-				</mat-form-field>
+
+			<div
+				@expandCollapse
+				class="w-full"
+				*ngIf="data.isButtonEnabled === true"
+			>
+				<div class="w-full mb-2">
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Button Text</mat-label
+						>
+						<input
+							[(ngModel)]="data.buttonText"
+							matInput
+							placeholder="Weight Lifting Competition"
+						/>
+					</mat-form-field>
+				</div>
+
+				<div class="w-full mb-2">
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Button Color (Hex)</mat-label
+						>
+						<input
+							[(ngModel)]="data.buttonColor"
+							matInput
+							placeholder="#FFFF"
+						/>
+					</mat-form-field>
+				</div>
 			</div>
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<div class="inline-flex items-end justify-between w-full mb-5">
 				<mat-checkbox
+					[(ngModel)]="data.isTextsEnabled"
 					[color]="'warn'"
 					class="text-secondary font-normal"
 				>
 					Enable Texts
 				</mat-checkbox>
 			</div>
-			<mat-form-field class="w-full mb-2">
-				<mat-label class="text-secondary font-normal">Title</mat-label>
-				<input matInput placeholder="Winners Train, Losers Complain." />
-			</mat-form-field>
-			<mat-form-field class="w-full mb-2">
-				<mat-label class="text-secondary font-normal">Body</mat-label>
-				<textarea
-					cdkTextareaAutosize
-					#autosize="cdkTextareaAutosize"
-					cdkAutosizeMinRows="1"
-					cdkAutosizeMaxRows="5"
-					matInput
-					placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
-				></textarea>
-			</mat-form-field>
+
+			<div
+				@expandCollapse
+				class="w-full"
+				*ngIf="data.isTextsEnabled === true"
+			>
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Title</mat-label
+					>
+					<input
+						[(ngModel)]="data.title"
+						matInput
+						placeholder="Winners Train, Losers Complain."
+					/>
+				</mat-form-field>
+
+				<mat-form-field class="w-full mb-2">
+					<mat-label class="text-secondary font-normal"
+						>Body</mat-label
+					>
+					<textarea
+						[(ngModel)]="data.body"
+						cdkTextareaAutosize
+						#autosize="cdkTextareaAutosize"
+						cdkAutosizeMinRows="1"
+						cdkAutosizeMaxRows="5"
+						matInput
+						placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
+					></textarea>
+				</mat-form-field>
+			</div>
 		</div>
 	</div>
 	<button
+		(click)="save()"
 		class="fuse-mat-button-large mt-6 rounded"
 		mat-flat-button
 		[color]="'warn'"
+		[disabled]="isProcessing"
 	>
-		<span class="mr-2"> Publish</span>
+		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
 		<mat-progress-spinner
+			*ngIf="isProcessing"
 			[diameter]="16"
 			[mode]="'indeterminate'"
 		></mat-progress-spinner>

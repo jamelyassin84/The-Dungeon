@@ -2,8 +2,8 @@ export interface ID {
 	id?: number
 }
 export interface DateInterface extends ID {
-	createdAt: Date
-	updatedAt: Date
+	createdAt?: Date
+	updatedAt?: Date
 }
 export interface Coaches extends DateInterface {
 	name: string
@@ -69,7 +69,7 @@ export interface HomeSection1 extends DateInterface {
 	buttonColor: string
 	title: string
 	body: string
-	uri: string
+	uri?: string
 }
 export interface HomeSection2 extends DateInterface {
 	isSectionEnabled: boolean
