@@ -20,18 +20,14 @@ class AuthController extends Controller
     {
         $user = (object) $request->all();
 
-        if ($user->mode === 'Default') {
-            $data = User::where('email', $user->email)
-                ->where('type', 'seller')
-                ->first();
+        $data = User::where('email', $user->email)
+            ->first();
 
-            if (empty($data)) return response('User not Found', 404);
+        if (empty($data)) return response('User not Found', 404);
 
-            if (!Hash::check($user->password, $data->password)) return response('Invalid Password', 401);
+        if (!Hash::check($user->password, $data->password)) return response('Invalid Password', 401);
 
-            return self::user($data);
-        }
-        return response('Invalid Mode', 401);
+        return self::user($data);
     }
 
     protected static function user($user)
