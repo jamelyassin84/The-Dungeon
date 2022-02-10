@@ -40,19 +40,15 @@
 			</fuse-alert>
 
 			<!-- Sign in form -->
-			<form class="mt-8" [formGroup]="signInForm" #signInNgForm="ngForm">
+			<form class="mt-8" [formGroup]="form" #signInNgForm="ngForm">
 				<!-- Email field -->
 				<mat-form-field class="w-full">
 					<mat-label>Email address</mat-label>
 					<input id="email" matInput [formControlName]="'email'" />
-					<mat-error
-						*ngIf="signInForm.get('email').hasError('required')"
-					>
+					<mat-error *ngIf="form.get('email').hasError('required')">
 						Email address is required
 					</mat-error>
-					<mat-error
-						*ngIf="signInForm.get('email').hasError('email')"
-					>
+					<mat-error *ngIf="form.get('email').hasError('email')">
 						Please enter a valid email address
 					</mat-error>
 				</mat-form-field>
@@ -95,12 +91,6 @@
 				<div
 					class="inline-flex items-end justify-between w-full mt-1.5"
 				>
-					<mat-checkbox
-						[color]="'primary'"
-						[formControlName]="'rememberMe'"
-					>
-						Remember me
-					</mat-checkbox>
 					<a
 						class="text-md font-medium text-dark-500 hover:underline"
 						[routerLink]="['/forgot-password']"
@@ -113,14 +103,17 @@
 					class="fuse-mat-button-large w-full mt-6 rounded"
 					mat-flat-button
 					[color]="'warn'"
-					[disabled]="signInForm.disabled"
+					[disabled]="form.disabled"
 					(click)="signIn()"
 				>
-					<span *ngIf="!signInForm.disabled">
+					<span *ngIf="isProcessing === false">
 						Log-in as Super Administrator</span
 					>
+					<span *ngIf="isProcessing === 'complete'">
+						Redirecting...</span
+					>
 					<mat-progress-spinner
-						*ngIf="signInForm.disabled"
+						*ngIf="isProcessing === true"
 						[diameter]="24"
 						[mode]="'indeterminate'"
 					></mat-progress-spinner>
