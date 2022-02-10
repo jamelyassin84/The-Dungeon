@@ -6,24 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('rule_values', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->integer('rule_id')
+                ->foreignIdFor(Rule::class)
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->string('name');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('rule_values');

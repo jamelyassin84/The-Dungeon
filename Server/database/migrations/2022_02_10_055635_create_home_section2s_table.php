@@ -6,24 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('home_section2s', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->boolean('isSectionEnabled');
+            $table->string('title')->nullable();
+            $table->string('body')->nullable();
+            $table->string('uri')->nullable();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('home_section2s');

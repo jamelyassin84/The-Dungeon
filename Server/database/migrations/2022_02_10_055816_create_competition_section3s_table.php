@@ -6,24 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('competition_section3s', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->boolean('isSectionEnabled');
+
+            $table->string('uri');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('competition_section3s');

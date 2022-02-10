@@ -6,24 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('registration_fields', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->string('fieldName');
+
+            $table->string('value');
+
+            $table->integer('order');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('registration_fields');
