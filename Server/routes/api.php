@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('auth/login', [AuthController::class, 'log_in']);
-Route::post('auth/login', [AuthController::class, 'log_out']);
+Route::post('auth/log_out', [AuthController::class, 'log_out']);
 
 Route::resource('user', UserController::class);
 Route::resource('email', EmailController::class);
