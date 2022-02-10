@@ -14,7 +14,7 @@ return new class extends Migration
 
             $table->boolean('isSectionEnabled');
             $table->boolean('isButtonEnabled');
-            $table->string('isTextsEnabled');
+            $table->boolean('isTextsEnabled');
             $table->string('buttonText')->nullable();
             $table->string('buttonColor')->nullable();
             $table->string('title')->nullable();
