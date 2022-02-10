@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CoachesController;
 use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\CompetitionSection1Controller;
@@ -25,14 +26,11 @@ use App\Http\Controllers\RuleController;
 use App\Http\Controllers\RuleValueController;
 use App\Http\Controllers\StoryImagesController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+Route::post('auth/login', [AuthController::class, 'log_in']);
+Route::post('auth/login', [AuthController::class, 'log_out']);
 
 Route::resource('user', UserController::class);
 Route::resource('email', EmailController::class);
