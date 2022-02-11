@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from 'app/shared/shared.module'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -40,6 +41,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		FuseAlertModule,
 		SharedModule,
 		RouterModule,
+		FormsModule,
 	],
 })
 export class HomeModule {}

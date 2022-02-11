@@ -14,8 +14,10 @@ import { WeightLiftingSection2Component } from './pages/weight-lifting-section2/
 import { WeightLiftingSection3Component } from './pages/weight-lifting-section3/weight-lifting-section3.component'
 import { WeightLiftingSection4Component } from './pages/weight-lifting-section4/weight-lifting-section4.component'
 import { RouterModule } from '@angular/router'
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/shared/shared.module'
 import { WeightLiftingSecondSectionComponent } from './pages/weight-lifting-second-section/weight-lifting-second-section.component'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -24,11 +26,11 @@ import { WeightLiftingSecondSectionComponent } from './pages/weight-lifting-seco
 		WeightLiftingSection2Component,
 		WeightLiftingSection3Component,
 		WeightLiftingSection4Component,
-  WeightLiftingSecondSectionComponent,
+		WeightLiftingSecondSectionComponent,
 	],
 	imports: [
 		CommonModule,
-		RouterModule,
+		IvyCarouselModule,
 		MatButtonModule,
 		MatCheckboxModule,
 		MatFormFieldModule,
@@ -38,6 +40,8 @@ import { WeightLiftingSecondSectionComponent } from './pages/weight-lifting-seco
 		FuseCardModule,
 		FuseAlertModule,
 		SharedModule,
+		RouterModule,
+		FormsModule,
 	],
 })
 export class WeightLiftingModule {}

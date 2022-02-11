@@ -68,7 +68,10 @@ export class HomeSection1Component implements OnInit {
 	isProcessing: boolean | 'complete' = false
 
 	save() {
-		if (!this.data.buttonColor.includes('#')) {
+		if (
+			this.data.isButtonEnabled === true &&
+			!this.data.buttonColor.includes('#')
+		) {
 			return AlertMessage(
 				'Button Color not supported!',
 				'Button Color should be in a hexadecimal format (eg. #FFFFF)',

@@ -25,7 +25,7 @@ export interface CompetitionSection1 extends DateInterface {
 	deadline: string
 	date: string
 	time: string
-	uri: string
+	uri?: string
 }
 export interface CompetitionSection2 extends DateInterface {
 	isSectionEnabled: boolean
