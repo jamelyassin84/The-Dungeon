@@ -10,7 +10,7 @@
 				*ngIf="src === undefined && data.uri === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input px16-9"
+				class="file-input square"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
@@ -20,7 +20,7 @@
 				*ngIf="src !== undefined && data.uri === undefined"
 				[src]="src"
 				alt=""
-				class="px16-9"
+				class="square"
 			/>
 
 			<img
@@ -28,7 +28,7 @@
 				*ngIf="data.uri !== undefined"
 				[src]="data.uri"
 				alt=""
-				class="px16-9"
+				class="square"
 			/>
 
 			<input

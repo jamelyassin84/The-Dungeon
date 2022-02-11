@@ -82,14 +82,14 @@ export interface HomeSection3 extends DateInterface {
 	isSliderEnabled: boolean
 	title: string
 	body: string
-	images?: any[]
+	images?: HomeSliderImage[]
 }
 export interface HomeSection4 extends DateInterface {
 	isSectionEnabled: boolean
 	isParticipantsEnabled: boolean
 	title: string
 	body: string
-	uri: string
+	uri?: string
 }
 export interface HomeSliderImage extends DateInterface {
 	uri: string
