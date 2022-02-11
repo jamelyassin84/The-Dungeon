@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->string('fieldName');
 
-            $table->string('value');
+            $table->string('value')->nullable();
 
             $table->integer('order');
         });
