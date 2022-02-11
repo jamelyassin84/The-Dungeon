@@ -35,30 +35,37 @@ class HomeSection3Controller extends Controller
 
         $dto['isSliderEnabled'] = HelperController::tooBooleanNumber('isSliderEnabled');
 
-        $URLS = FileController::save_and_get_url($request, $this->target)['urls'];
+        $URLS = FileController::save_and_get_url($request, $this->target);
 
-        $data = $this->index();
+        $data = HomeSection3::first();
 
-        if (!IsNull($data)) {
-            foreach ($URLS as $uri) {
-                HomeSliderImage::create(['uri' => $uri]);
-            }
+        if (!empty($data)) {
+            $this->saveImages($URLS);
+
 
             $data->fill($dto)->save();
 
             return $this->index();
         }
 
-        $data =  HomeSection3::create($dto);
+        HomeSection3::create($dto);
 
-        foreach ($URLS as $uri) {
-            HomeSliderImage::create(['uri' => $uri]);
-        }
-
-        $response = HomeSection3::first();
-
-        $response['images'] = HomeSliderImage::all();
+        $this->saveImages($URLS);
 
         return $this->index();
+    }
+
+    public static function saveImages($URLS)
+    {
+        if ($URLS !== false) {
+            foreach ($URLS['urls'] as $uri) {
+                HomeSliderImage::create(['uri' => $uri]);
+            }
+        }
+    }
+
+    public function destroy($id)
+    {
+        return  HomeSliderImage::find($id)->delete();
     }
 }
