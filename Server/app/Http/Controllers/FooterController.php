@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
-use App\Http\Requests\StoreFooterRequest;
-use App\Http\Requests\UpdateFooterRequest;
 use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except('index');
@@ -16,16 +15,22 @@ class FooterController extends Controller
 
     public function index()
     {
-        //
+        return Footer::first();
     }
 
     public function store(Request $request)
     {
-        //
-    }
+        $dto = $request->all();
 
-    public function destroy($id)
-    {
-        //
+        $data = Footer::first();
+
+        if (!empty($data)) {
+
+            $data->fill($request->all())->save();
+
+            return $data;
+        }
+
+        return Footer::create($dto);
     }
 }

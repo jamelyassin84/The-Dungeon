@@ -12,4 +12,8 @@ class Footer extends Model
     protected $fillable = [
         'isSectionEnabled',
     ];
+
+     protected $casts = [
+        'isSectionEnabled' => 'boolean',
+    ];
 }
