@@ -5,7 +5,12 @@
 		</div>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
-		<mat-checkbox [color]="'warn'" class="text-secondary font-normal">
+		<mat-checkbox
+			(change)="save()"
+			[(ngModel)]="data.isSectionEnabled"
+			[color]="'warn'"
+			class="text-secondary font-normal"
+		>
 			Enable Footer
 		</mat-checkbox>
 	</div>
