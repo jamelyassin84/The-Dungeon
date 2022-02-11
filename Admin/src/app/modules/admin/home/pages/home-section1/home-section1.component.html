@@ -10,7 +10,7 @@
 				*ngIf="src === undefined && data.uri === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input px16-9"
+				class="px16-9 file-input"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
@@ -39,7 +39,7 @@
 				id="file"
 			/>
 
-			<fuse-alert class="mb-15" [type]="'info'">
+			<fuse-alert class="mb-15" [type]="'accent'">
 				<span fuseAlertTitle>Background Image Format</span>
 				<div><span class="text-secondary">Aspect Ratio</span> 16:9</div>
 				<div>

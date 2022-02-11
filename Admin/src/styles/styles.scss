@@ -32,11 +32,15 @@
 }
 
 .file-input {
-	height: 200px;
-	background: #f3f3f3 0% 0% no-repeat padding-box;
+	border: 3px solid rgba($color: #f1f5f9, $alpha: 1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: -8px;
+	&:hover {
+		background: rgba($color: #f1f5f9, $alpha: 0.5);
+		border: none;
+	}
 	img {
 		width: 72px;
 		height: 49px;
@@ -55,8 +59,22 @@ body fuse-splash-screen {
 }
 
 .px16-9 {
-	// width: calc(1920px / 4) !important;
-	width: 100%;
-	height: calc(1080px / 4) !important;
-	object-fit: cover;
+	aspect-ratio: 16 / 9;
+}
+
+.square {
+	aspect-ratio: 1 / 1;
+	object-fit: cover !important;
+}
+.ap3-4 {
+	aspect-ratio: 3 / 4;
+	object-fit: cover !important;
+}
+.ap4-3 {
+	aspect-ratio: 4 / 3;
+	object-fit: cover !important;
+}
+
+carousel {
+	z-index: 1 !important;
 }

@@ -79,7 +79,10 @@ export interface HomeSection2 extends DateInterface {
 }
 export interface HomeSection3 extends DateInterface {
 	isSectionEnabled: boolean
-	uri: string
+	isSliderEnabled: boolean
+	title: string
+	body: string
+	images?: any[]
 }
 export interface HomeSection4 extends DateInterface {
 	isSectionEnabled: boolean

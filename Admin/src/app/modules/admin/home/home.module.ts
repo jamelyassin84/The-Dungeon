@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from 'app/shared/shared.module'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { SharedModule } from 'app/shared/shared.module'
 	],
 	imports: [
 		CommonModule,
+		IvyCarouselModule,
 		MatButtonModule,
 		MatCheckboxModule,
 		MatFormFieldModule,

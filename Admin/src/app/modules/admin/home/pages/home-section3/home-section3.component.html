@@ -1,63 +1,127 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-	<div class="my-1 mb-5">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+	<div class="my-1 mb-5 flex w-full aic">
+		<div class="text-2xl md:text-2xl font-extrabold sm: truncate">
 			SLIDING IMAGES
 		</div>
-		<fuse-alert class="mb-15" [type]="'info'">
-			<span fuseAlertTitle>Image Format</span>
-			<div><span class="text-secondary">Aspect Ratio:</span>3:4</div>
-			<div>
-				<span class="text-secondary"> Image extensions:</span> .jpg,
-				.png, .gif
-			</div>
-			<div><span class="text-secondary">Max Images:</span> 25</div>
-		</fuse-alert>
+		<button
+			(click)="trigger('file')"
+			class="fuse-mat-button-large rounded ml-auto"
+			mat-flat-button
+			[color]="'accent'"
+			*ngIf="data.images.length !== 0"
+		>
+			Add Images
+		</button>
+		<button
+			(click)="clearFiles()"
+			class="fuse-mat-button-large rounded bg-zinc-900 ml-5 text-white px-2"
+			*ngIf="images.length !== 0"
+		>
+			Clear New Images
+		</button>
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
+	<div
+		class="grid grid-cols-1 lg:grid-cols-1 gap-1 mt-5"
+		[class.lg:grid-cols-4]="data.images.length === 0 && files === undefined"
+		[class.lg:gap-4]="data.images.length === 0 && files === undefined"
+	>
 		<div>
 			<div
+				*ngIf="data.images.length === 0 && files === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input w-full"
+				class="file-input ap4-3"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
+
+			<carousel
+				*ngIf="images.length !== 0"
+				[height]="500"
+				[cellsToShow]="images.length"
+				[dots]="true"
+				[margin]="0"
+				class="mb-3"
+			>
+				<div *ngFor="let uri of images" class="carousel-cell ap4-3">
+					<img [src]="uri" alt="" class="ap4-3" />
+				</div>
+			</carousel>
+
+			<carousel
+				*ngIf="data.images.length !== 0"
+				[height]="500"
+				[cellsToShow]="4"
+				[dots]="true"
+				[margin]="0"
+			>
+				<div
+					*ngFor="let image of data.images"
+					class="carousel-cell ap4-3"
+				>
+					<button
+						[color]="'warn'"
+						mat-flat-button
+						class="rounded ml-auto delete"
+						(click)="remove(image.id)"
+					>
+						Remove
+					</button>
+					<img [src]="image.uri" alt="" class="ap4-3" />
+				</div>
+			</carousel>
+
 			<input
+				(change)="readFiles($event)"
 				accept="image/*"
-				multiple
 				type="file"
+				multiple
 				class="hidden"
 				id="file"
 			/>
-			<div class="text-secondary text-center w-full">
-				Images for Slider (Select Multiple)
-			</div>
+			<fuse-alert class="mb-15" [type]="'accent'">
+				<span fuseAlertTitle>Slider Images Format</span>
+				<div><span class="text-secondary">Aspect Ratio:</span>4:3</div>
+				<div>
+					<span class="text-secondary"> Image extensions:</span> .jpg,
+					.png, .gif
+				</div>
+				<div><span class="text-secondary">Max Images:</span> 25</div>
+			</fuse-alert>
 		</div>
-		<div class="lg:ml-5 md:ml-5">
-			<mat-form-field class="w-full mb-2">
-				<mat-label class="text-secondary font-normal">Title</mat-label>
-				<input matInput placeholder="BODYBUILDING + POWER LIFTING" />
-			</mat-form-field>
-			<mat-form-field class="w-full mb-2">
-				<mat-label class="text-secondary font-normal">Body</mat-label>
-				<textarea
-					cdkTextareaAutosize
-					#autosize="cdkTextareaAutosize"
-					cdkAutosizeMinRows="1"
-					cdkAutosizeMaxRows="5"
-					matInput
-					placeholder="Top of the line equipment’s that are only available in this gym. We have the Best trainer in this field."
-				></textarea>
-			</mat-form-field>
-		</div>
+
+		<mat-form-field class="w-full mb-2 pr-10">
+			<mat-label class="text-secondary font-normal">Title</mat-label>
+			<input
+				[(ngModel)]="data.title"
+				matInput
+				placeholder="WE ARE THE DUNGEON GYM"
+			/>
+		</mat-form-field>
+		<mat-form-field class="w-full mb-2 pr-10">
+			<mat-label class="text-secondary font-normal">Body</mat-label>
+			<textarea
+				[(ngModel)]="data.body"
+				cdkTextareaAutosize
+				#autosize="cdkTextareaAutosize"
+				cdkAutosizeMinRows="1"
+				cdkAutosizeMaxRows="5"
+				matInput
+				placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
+			></textarea>
+		</mat-form-field>
 	</div>
+
 	<button
+		(click)="save()"
 		class="fuse-mat-button-large mt-6 rounded"
 		mat-flat-button
 		[color]="'warn'"
+		[disabled]="isProcessing"
 	>
-		<span class="mr-2"> Publish</span>
+		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
 		<mat-progress-spinner
+			*ngIf="isProcessing"
 			[diameter]="16"
 			[mode]="'indeterminate'"
 		></mat-progress-spinner>
