@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeSection2;
-use App\Http\Requests\StoreHomeSection2Request;
-use App\Http\Requests\UpdateHomeSection2Request;
 use Illuminate\Http\Request;
 
 class HomeSection2Controller extends Controller
 {
+    public $target = '/HomeSection2/';
+
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except('index');
@@ -16,16 +16,30 @@ class HomeSection2Controller extends Controller
 
     public function index()
     {
-        //
+        return HomeSection2::first();
     }
 
     public function store(Request $request)
     {
-        //
-    }
+        $dto = $request->all();
 
-    public function destroy($id)
-    {
-        //
+        $url = FileController::save_and_get_url($request, $this->target);
+
+        if ($url !== false) {
+            $dto['uri'] = $url['url'];
+        }
+
+        $data = HomeSection2::first();
+
+        if (!empty($data)) {
+            FileController::deleteFile($data['uri'], $this->target);
+
+            $data->fill($dto)->save();
+
+            return $data;
+        }
+
+
+        return HomeSection2::create($dto);
     }
 }

@@ -11,8 +11,12 @@ class HomeSection2 extends Model
 
     protected $fillable = [
         'isSectionEnabled',
-        'smallTitle',
-        'largeTitle',
-        'callToActionTitle',
+        'title',
+        'body',
+        'uri',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
     ];
 }
