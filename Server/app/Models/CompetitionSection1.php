@@ -23,4 +23,8 @@ class CompetitionSection1 extends Model
 
         'uri',
     ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
+    ];
 }
