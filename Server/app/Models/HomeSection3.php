@@ -11,6 +11,13 @@ class HomeSection3 extends Model
 
     protected $fillable = [
         'isSectionEnabled',
-        'uri',
+        'isSliderEnabled',
+        'title',
+        'body',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
+        'isSliderEnabled' => 'boolean',
     ];
 }

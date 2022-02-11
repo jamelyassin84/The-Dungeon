@@ -21,40 +21,31 @@ class FileController extends Controller
         unlink($path);
     }
 
-    public static function save_and_get_url(Request $request, $target)
+    public static function save_and_get_url(Request $request, String $target)
     {
-        $files = $request->file('files');
+        $data = $request->all();
+
+        $hasFiles = isset($data['length']);
 
         $file = $request->file('file');
 
-        $path = '';
+        if (!$file && !$hasFiles) return false;
 
         $urls = [];
 
-        $index = 0;
-
-        if ($files) {
-            foreach ($files as $file) {
-                if ($index === 0) $path =  self::moveImageToProductsFolder($file, $target);
-
-                else  array_push($urls, self::moveImageToProductsFolder($file, $target));
-
-                $index += 1;
+        if ($hasFiles) {
+            for ($i = 0; $i < $request->input('length'); $i++) {
+                array_push($urls, self::saveFile($request->file('file' . $i), $target));
             }
         }
 
-        if ($file) $path = self::moveImageToProductsFolder($file, $target);
-
-
-        if (!$file & !$files) return false;
-
         return [
-            'url' => $path,
+            'url' => !$file ? null : self::saveFile($file, $target),
             'urls' => $urls
         ];
     }
 
-    static function moveImageToProductsFolder($file, $target)
+    static function saveFile($file, String $target)
     {
         $data = [];
 
@@ -82,12 +73,12 @@ class FileController extends Controller
         return url($path);
     }
 
-    public static function generateFileName(string $mimeType)
+    public static function generateFileName(String $mimeType): String
     {
         return Str::random(40) . '.' . self::convertMimeToExtension($mimeType);
     }
 
-    public static function convertMimeToExtension(string $mime)
+    public static function convertMimeToExtension(String $mime)
     {
         $mime_map = [
             'video/3gpp2' => '3g2',

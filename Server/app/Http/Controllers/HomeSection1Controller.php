@@ -39,7 +39,6 @@ class HomeSection1Controller extends Controller
             return $data;
         }
 
-
         return HomeSection1::create($dto);
     }
 }
