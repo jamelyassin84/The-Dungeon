@@ -1,5 +1,4 @@
 import { HomeSection1Service } from './../../../../../services/api.service'
-import { trigger } from '@angular/animations'
 import { Component, OnInit } from '@angular/core'
 import { HomeSection1 } from 'app/models/types'
 import { AlertMessage } from 'app/constants/Alert'

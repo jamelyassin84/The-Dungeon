@@ -32,6 +32,7 @@ export interface CompetitionSection2 extends DateInterface {
 	smallTitle: string
 	largeTitle: string
 	callToActionTitle: string
+	fields: RegistrationField[]
 }
 export interface CompetitionSection3 extends DateInterface {
 	isSectionEnabled: boolean
