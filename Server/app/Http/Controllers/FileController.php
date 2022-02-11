@@ -7,32 +7,47 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class FileController extends Controller
 {
+
+    public static function deleteFile(String $url, String $target): void
+    {
+        $file = explode($target, $url);
+
+        $path = public_path() . $target . $file[count($file) - 1];
+
+        unlink($path);
+    }
+
     public static function save_and_get_url(Request $request, $target)
     {
         $files = $request->file('files');
+
         $file = $request->file('file');
+
         $path = '';
+
         $urls = [];
+
         $index = 0;
+
         if ($files) {
             foreach ($files as $file) {
-                if ($index === 0) {
-                    $path =  self::moveImageToProductsFolder($file, $target);
-                } else {
-                    array_push($urls, self::moveImageToProductsFolder($file, $target));
-                }
+                if ($index === 0) $path =  self::moveImageToProductsFolder($file, $target);
+
+                else  array_push($urls, self::moveImageToProductsFolder($file, $target));
+
                 $index += 1;
             }
         }
-        if ($file) {
-            $path =  self::moveImageToProductsFolder($file, $target);
-        }
-        if (!$file & !$files) {
-            return false;
-        }
+
+        if ($file) $path = self::moveImageToProductsFolder($file, $target);
+
+
+        if (!$file & !$files) return false;
+
         return [
             'url' => $path,
             'urls' => $urls
@@ -42,19 +57,28 @@ class FileController extends Controller
     static function moveImageToProductsFolder($file, $target)
     {
         $data = [];
+
         $binary = @file_get_contents($file);
+
         if ($binary === false) {
+
             if (base64_encode(base64_decode($file, true)) !== $file) {
                 throw new InvalidArgumentException(
                     'File must be either a string url, base64 encoded file or an instance of Illuminate\Http\UploadedFile'
                 );
             }
+
             $binary = base64_decode($file);
         }
+
         $data['type'] = (new finfo(FILEINFO_MIME_TYPE))->buffer($binary);
+
         $data['name'] = self::generateFileName($data['type']);
+
         $path = $target . $data['name'];
+
         $file->move(public_path($target), $data['name']);
+
         return url($path);
     }
 
