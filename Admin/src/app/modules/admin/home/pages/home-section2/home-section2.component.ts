@@ -35,10 +35,6 @@ export class HomeSection2Component implements OnInit {
 				if (data !== null) {
 					this.data = data
 				}
-				console.log(data)
-			},
-			error: () => {
-				this.isProcessing = false
 			},
 		})
 	}

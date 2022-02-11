@@ -9,10 +9,10 @@ export interface Coaches extends DateInterface {
 	name: string
 	experience: string
 	sex: string
-	uri: string
+	uri?: string
 }
 export interface Coaching extends DateInterface {
-	uri: string
+	uri?: string
 	price: string
 }
 export interface CompetitionSection1 extends DateInterface {
@@ -35,14 +35,14 @@ export interface CompetitionSection2 extends DateInterface {
 }
 export interface CompetitionSection3 extends DateInterface {
 	isSectionEnabled: boolean
-	uri: string
+	uri?: string
 }
 export interface CompetitionSection4 extends DateInterface {
 	isSectionEnabled: boolean
 	isParticipantsEnabled: boolean
 	title: string
 	body: string
-	uri: string
+	uri?: string
 }
 export interface CompetitionSection5 extends DateInterface {
 	isSectionEnabled: boolean
@@ -92,7 +92,7 @@ export interface HomeSection4 extends DateInterface {
 	uri?: string
 }
 export interface HomeSliderImage extends DateInterface {
-	uri: string
+	uri?: string
 }
 export interface Inbox extends DateInterface {
 	email: string
@@ -108,8 +108,8 @@ export interface Location extends DateInterface {
 	email: string
 	state: string
 	contact: string
-	googleMapURI: string
-	uri: string
+	googleMapUri?: string
+	uri?: string
 }
 export interface OurStory extends DateInterface {
 	title: string
@@ -119,7 +119,7 @@ export interface Participant extends DateInterface {
 	name: string
 	age: string
 	sex: string
-	uri: string
+	uri?: string
 }
 export interface RegistrationField extends DateInterface {
 	fieldName: string
@@ -130,7 +130,7 @@ export interface Review extends DateInterface {
 	name: string
 	comment: string
 	rating: string
-	uri: string
+	uri?: string
 }
 export interface Rule extends DateInterface {
 	name: string
@@ -140,7 +140,7 @@ export interface RuleValue extends DateInterface {
 	name: string
 }
 export interface StoryImages extends DateInterface {
-	uri: string
+	uri?: string
 }
 export interface User extends DateInterface {
 	name: string
