@@ -13,7 +13,6 @@ class Location extends Model
         'address',
         'email',
         'state',
-
         'contact',
         'googleMapURI',
         'uri',
