@@ -16,24 +16,53 @@
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
 		<div class="">
 			<div
+				*ngIf="src === undefined && data.uri === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input w-full"
+				class="file-input px16-9"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
-			<input accept="image/*" type="file" class="hidden" id="file" />
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="src !== undefined && data.uri === undefined"
+				[src]="src"
+				alt=""
+				class="px16-9"
+			/>
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="data.uri !== undefined"
+				[src]="data.uri"
+				alt=""
+				class="px16-9"
+			/>
+
+			<input
+				(change)="readFile($event)"
+				accept="image/*"
+				type="file"
+				class="hidden"
+				id="file"
+			/>
 			<div class="text-secondary text-center w-full">Photo</div>
 		</div>
 
 		<div class="lg:ml-5 md:ml-5">
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Title</mat-label>
-				<input matInput placeholder="WE ARE THE DUNGEON GYM" />
+				<input
+					[(ngModel)]="data.title"
+					matInput
+					placeholder="WE ARE THE DUNGEON GYM"
+				/>
 			</mat-form-field>
 			<mat-form-field class="w-full mb-2">
 				<mat-label class="text-secondary font-normal">Body</mat-label>
 				<textarea
+					[(ngModel)]="data.body"
 					cdkTextareaAutosize
 					#autosize="cdkTextareaAutosize"
 					cdkAutosizeMinRows="1"
@@ -44,13 +73,17 @@
 			</mat-form-field>
 		</div>
 	</div>
+
 	<button
+		(click)="save()"
 		class="fuse-mat-button-large mt-6 rounded"
 		mat-flat-button
 		[color]="'warn'"
+		[disabled]="isProcessing"
 	>
-		<span class="mr-2"> Publish</span>
+		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
 		<mat-progress-spinner
+			*ngIf="isProcessing"
 			[diameter]="16"
 			[mode]="'indeterminate'"
 		></mat-progress-spinner>

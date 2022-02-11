@@ -73,9 +73,9 @@ export interface HomeSection1 extends DateInterface {
 }
 export interface HomeSection2 extends DateInterface {
 	isSectionEnabled: boolean
-	smallTitle: string
-	largeTitle: string
-	callToActionTitle: string
+	title: string
+	body: string
+	uri?: string
 }
 export interface HomeSection3 extends DateInterface {
 	isSectionEnabled: boolean
