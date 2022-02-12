@@ -1,102 +1,122 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
 	<div class="my-1">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
-			Participants
+		<div
+			class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+		>
+			PARTICIPANTS
+
+			<button
+				(click)="save()"
+				class="fuse-mat-button-large rounded ml-auto"
+				mat-flat-button
+				[color]="'warn'"
+				[disabled]="isProcessing"
+			>
+				<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
+				<mat-progress-spinner
+					*ngIf="isProcessing"
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
 		</div>
 	</div>
 	<div class="inline-flex items-end justify-between w-full mb-5">
-		<mat-checkbox [color]="'warn'" class="text-secondary font-normal">
+		<mat-checkbox
+			[(ngModel)]="data.isSectionEnabled"
+			[color]="'warn'"
+			class="text-secondary font-normal"
+		>
 			Enable Participants Section
 		</mat-checkbox>
 	</div>
 
-	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
-		<div class="">
-			<div class="w-full mb-2">
-				<mat-form-field class="w-full">
-					<mat-label class="text-secondary font-normal"
-						>Title</mat-label
-					>
-					<input matInput placeholder="Weight Lifter Competitors" />
-				</mat-form-field>
-			</div>
-			<div class="w-full mb-2">
-				<mat-form-field class="w-full">
-					<mat-label class="text-secondary font-normal"
-						>Body</mat-label
-					>
-					<textarea
-						cdkTextareaAutosize
-						#autosize="cdkTextareaAutosize"
-						cdkAutosizeMinRows="1"
-						cdkAutosizeMaxRows="5"
-						matInput
-						placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
-					></textarea>
-				</mat-form-field>
-			</div>
-		</div>
-		<div class="lg:ml-5 md:ml-5">
-			<div
-				(click)="trigger('file')"
-				role="button"
-				class="file-input w-full"
-			>
-				<img src="/assets/app/cloud.svg" />
-			</div>
-			<input accept="image/*" type="file" class="hidden" id="file" />
-			<fuse-alert class="mb-5" [type]="'info'">
-				<span fuseAlertTitle>Background Image Format</span>
-				<div><span class="text-secondary">Aspect Ratio</span> 16:9</div>
-				<div>
-					<span class="text-secondary"> Image extensions:</span> .jpg,
-					.png, .gif
-				</div>
-				<div><span class="text-secondary">Max Images:</span> 1</div>
-			</fuse-alert>
-		</div>
-	</div>
+	<div *ngIf="data.isSectionEnabled === true" @expandCollapse>
+		<ul class="flex flex-wrap border-b border-gray-200 tab bg-card mt-5">
+			<li *ngFor="let tab of navigation">
+				<a
+					(click)="setActiveTab(tab)"
+					role="button"
+					[class.active]="activeTab === tab.id"
+					class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 hover:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+					>{{ tab.name }}</a
+				>
+			</li>
+		</ul>
 
-	<div class="flex">
-		<button
-			class="fuse-mat-button-large mt-6 rounded ml-auto"
-			mat-flat-button
-			[color]="'accent'"
-		>
-			<span class="mr-2"> Add Participants</span>
-		</button>
-	</div>
-
-	<div class="flex flex-wrap">
 		<div
-			class="p-5 pl-0 sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/8"
-			*ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+			class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5"
+			@expandCollapse
+			*ngIf="activeTab === 1"
 		>
-			<div class="card border-2 border-slate-100 p-5">
-				<mat-form-field class="w-full mb-2">
-					<mat-label class="text-secondary font-normal"
-						>Name</mat-label
-					>
-					<input matInput placeholder="AHMED KHUMAR" />
-				</mat-form-field>
-				<mat-form-field class="w-full mb-2">
-					<mat-label class="text-secondary font-normal"
-						>Age</mat-label
-					>
-					<input matInput placeholder="33 Yrs" />
-				</mat-form-field>
+			<div class="">
+				<div class="w-full mb-2">
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Title</mat-label
+						>
+						<input
+							[(ngModel)]="data.title"
+							matInput
+							placeholder="Weight Lifter Competitors"
+						/>
+					</mat-form-field>
+				</div>
+				<div class="w-full mb-2">
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Body</mat-label
+						>
+						<textarea
+							[(ngModel)]="data.body"
+							cdkTextareaAutosize
+							#autosize="cdkTextareaAutosize"
+							cdkAutosizeMinRows="1"
+							cdkAutosizeMaxRows="5"
+							matInput
+							placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
+						></textarea>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="">
 				<div
+					*ngIf="src === undefined && data.uri === undefined"
 					(click)="trigger('file')"
 					role="button"
-					class="file-input w-full"
+					class="px16-9 file-input"
 				>
 					<img src="/assets/app/cloud.svg" />
 				</div>
-				<input accept="image/*" type="file" class="hidden" id="file" />
-				<fuse-alert class="mb-5" [type]="'info'">
-					<span fuseAlertTitle>Participant Photo Format</span>
+
+				<img
+					(click)="trigger('file')"
+					*ngIf="src !== undefined && data.uri === undefined"
+					[src]="src"
+					alt=""
+					class="px16-9"
+				/>
+
+				<img
+					(click)="trigger('file')"
+					*ngIf="data.uri !== undefined"
+					[src]="data.uri"
+					alt=""
+					class="px16-9"
+				/>
+
+				<input
+					(change)="readFile($event)"
+					accept="image/*"
+					type="file"
+					class="hidden"
+					id="file"
+				/>
+
+				<fuse-alert class="mb-15" [type]="'accent'">
+					<span fuseAlertTitle>Background Image Format</span>
 					<div>
-						<span class="text-secondary">Aspect Ratio</span> 9:16
+						<span class="text-secondary">Aspect Ratio</span> 16:9
 					</div>
 					<div>
 						<span class="text-secondary"> Image extensions:</span>
@@ -106,17 +126,359 @@
 				</fuse-alert>
 			</div>
 		</div>
-	</div>
 
-	<button
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-	>
-		<span class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
+		<button
+			(click)="addParticipant('males')"
+			*ngIf="activeTab === 2"
+			class="fuse-mat-button-large mt-6 rounded ml-auto"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2"> New Participant</span>
+		</button>
+
+		<button
+			(click)="addParticipant('females')"
+			*ngIf="activeTab === 3"
+			class="fuse-mat-button-large mt-6 rounded"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2"> New Participant</span>
+		</button>
+
+		<button
+			(click)="addParticipant('wildCards')"
+			*ngIf="activeTab === 4"
+			class="fuse-mat-button-large mt-6 rounded"
+			mat-flat-button
+			[color]="'accent'"
+		>
+			<span class="mr-2"> New Participant </span>
+		</button>
+
+		<div
+			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			@expandCollapse
+			*ngIf="activeTab === 2"
+		>
+			<div
+				class="w-full"
+				*ngFor="let person of data.participants['males']; let i = index"
+			>
+				<div
+					class="card p-5 flex flex-col w-full"
+					style="
+						box-shadow: rgba(210, 210, 193, 0.15) 0px 30px 60px -12px,
+							rgba(210, 210, 210, 0.2) 0px 18px 36px -18px;
+						box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+							rgba(210, 210, 210, 0.2) 0px 30px 60px -30px;
+					"
+				>
+					<div class="flex aic w-full">
+						<div
+							class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+						>
+							PARTICIPANT {{ i + 1 }}
+						</div>
+						<div
+							(click)="
+								removePerson(
+									i,
+									'males',
+									person.id,
+									person.id !== undefined
+								)
+							"
+							role="button"
+							class="ml-auto"
+						>
+							Remove
+						</div>
+					</div>
+					<div class="card border-2 border-slate-100 p-5">
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Name</mat-label
+							>
+							<input
+								[(ngModel)]="person.name"
+								matInput
+								placeholder="John Doe"
+							/>
+						</mat-form-field>
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Age</mat-label
+							>
+							<input
+								[(ngModel)]="person.age"
+								matInput
+								placeholder="33 Yrs"
+							/>
+						</mat-form-field>
+						<div
+							(click)="trigger('fileMales' + i)"
+							role="button"
+							class="file-input ap9-16 w-full"
+						>
+							<img
+								[src]="
+									person.src === undefined
+										? person.uri === undefined
+											? '/assets/placeholder/male.jpg'
+											: person.uri
+										: person.src
+								"
+								class="ap9-16"
+								style="width: 100%; height: 100%"
+							/>
+						</div>
+						<input
+							accept="image/*"
+							type="file"
+							class="hidden"
+							(change)="readPersonFile($event, i, 'males')"
+							[id]="'fileMales' + i"
+						/>
+						<fuse-alert class="mb-5" [type]="'accent'">
+							<span fuseAlertTitle>Participant Photo Format</span>
+							<div>
+								<span class="text-secondary">Aspect Ratio</span>
+								9:16
+							</div>
+							<div>
+								<span class="text-secondary">
+									Image extensions:</span
+								>
+								.jpg, .png, .gif
+							</div>
+							<div>
+								<span class="text-secondary">Max Images:</span>
+								1
+							</div>
+						</fuse-alert>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			@expandCollapse
+			*ngIf="activeTab === 3"
+		>
+			<div
+				class="w-full"
+				*ngFor="
+					let person of data.participants['females'];
+					let i = index
+				"
+			>
+				<div
+					class="card p-5 flex flex-col w-full"
+					style="
+						box-shadow: rgba(210, 210, 193, 0.15) 0px 30px 60px -12px,
+							rgba(210, 210, 210, 0.2) 0px 18px 36px -18px;
+						box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+							rgba(210, 210, 210, 0.2) 0px 30px 60px -30px;
+					"
+				>
+					<div class="flex aic w-full">
+						<div
+							class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+						>
+							PARTICIPANT {{ i + 1 }}
+						</div>
+						<div
+							(click)="
+								removePerson(
+									i,
+									'females',
+									person.id,
+									person.id !== undefined
+								)
+							"
+							role="button"
+							class="ml-auto"
+						>
+							Remove
+						</div>
+					</div>
+					<div class="card border-2 border-slate-100 p-5">
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Name</mat-label
+							>
+							<input
+								[(ngModel)]="person.name"
+								matInput
+								placeholder="Jane Doe"
+							/>
+						</mat-form-field>
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Age</mat-label
+							>
+							<input
+								[(ngModel)]="person.age"
+								matInput
+								placeholder="33 Yrs"
+							/>
+						</mat-form-field>
+						<div
+							(click)="trigger('fileFemales' + i)"
+							role="button"
+							class="file-input ap9-16 w-full"
+						>
+							<img
+								[src]="
+									person.src === undefined
+										? person.uri === undefined
+											? '/assets/placeholder/female.jpg'
+											: person.uri
+										: person.src
+								"
+								class="ap9-16"
+								style="width: 100%; height: 100%"
+							/>
+						</div>
+						<input
+							accept="image/*"
+							type="file"
+							class="hidden"
+							(change)="readPersonFile($event, i, 'females')"
+							[id]="'fileFemales' + i"
+						/>
+						<fuse-alert class="mb-5" [type]="'accent'">
+							<span fuseAlertTitle>Participant Photo Format</span>
+							<div>
+								<span class="text-secondary">Aspect Ratio</span>
+								9:16
+							</div>
+							<div>
+								<span class="text-secondary">
+									Image extensions:</span
+								>
+								.jpg, .png, .gif
+							</div>
+							<div>
+								<span class="text-secondary">Max Images:</span>
+								1
+							</div>
+						</fuse-alert>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			@expandCollapse
+			*ngIf="activeTab === 4"
+		>
+			<div
+				class="w-full"
+				*ngFor="
+					let person of data.participants['wildCards'];
+					let i = index
+				"
+			>
+				<div
+					class="card p-5 flex flex-col w-full"
+					style="
+						box-shadow: rgba(210, 210, 193, 0.15) 0px 30px 60px -12px,
+							rgba(210, 210, 210, 0.2) 0px 18px 36px -18px;
+						box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+							rgba(210, 210, 210, 0.2) 0px 30px 60px -30px;
+					"
+				>
+					<div class="flex aic w-full">
+						<div
+							class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+						>
+							PARTICIPANT {{ i + 1 }}
+						</div>
+						<div
+							(click)="
+								removePerson(
+									i,
+									'wildCards',
+									person.id,
+									person.id !== undefined
+								)
+							"
+							role="button"
+							class="ml-auto"
+						>
+							Remove
+						</div>
+					</div>
+					<div class="card border-2 border-slate-100 p-5">
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Name</mat-label
+							>
+							<input
+								[(ngModel)]="person.name"
+								matInput
+								placeholder="Raul"
+							/>
+						</mat-form-field>
+						<mat-form-field class="w-full mb-2">
+							<mat-label class="text-secondary font-normal"
+								>Age</mat-label
+							>
+							<input
+								[(ngModel)]="person.age"
+								matInput
+								placeholder="33 Yrs"
+							/>
+						</mat-form-field>
+						<div
+							(click)="trigger('fileWildCards' + i)"
+							role="button"
+							class="file-input ap9-16 w-full"
+						>
+							<img
+								[src]="
+									person.src === undefined
+										? person.uri === undefined
+											? '/assets/placeholder/wildcard.jpg'
+											: person.uri
+										: person.src
+								"
+								class="ap9-16"
+								style="width: 100%; height: 100%"
+							/>
+						</div>
+						<input
+							accept="image/*"
+							type="file"
+							class="hidden"
+							(change)="readPersonFile($event, i, 'wildCards')"
+							[id]="'fileWildCards' + i"
+						/>
+						<fuse-alert class="mb-5" [type]="'accent'">
+							<span fuseAlertTitle>Participant Photo Format</span>
+							<div>
+								<span class="text-secondary">Aspect Ratio</span>
+								9:16
+							</div>
+							<div>
+								<span class="text-secondary">
+									Image extensions:</span
+								>
+								.jpg, .png, .gif
+							</div>
+							<div>
+								<span class="text-secondary">Max Images:</span>
+								1
+							</div>
+						</fuse-alert>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
