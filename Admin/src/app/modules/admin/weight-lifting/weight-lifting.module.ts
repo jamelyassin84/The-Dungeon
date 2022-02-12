@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms'
 
 import { MatSelectModule } from '@angular/material/select'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 @NgModule({
 	declarations: [
 		WeightLiftingComponent,
@@ -46,6 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 		FormsModule,
 		MatSelectModule,
 		BrowserAnimationsModule,
+		MatSlideToggleModule,
 	],
 })
 export class WeightLiftingModule {}

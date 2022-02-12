@@ -19,7 +19,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from 'app/shared/shared.module'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { FormsModule } from '@angular/forms'
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 @NgModule({
 	declarations: [
 		HomeComponent,
@@ -44,6 +44,7 @@ import { FormsModule } from '@angular/forms'
 		RouterModule,
 		FormsModule,
 		BrowserAnimationsModule,
+		MatSlideToggleModule,
 	],
 })
 export class HomeModule {}

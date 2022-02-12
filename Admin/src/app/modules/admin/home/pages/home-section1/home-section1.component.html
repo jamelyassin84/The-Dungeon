@@ -94,13 +94,13 @@
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<div class="inline-flex items-end justify-between w-full mb-5">
-				<mat-checkbox
+				<mat-slide-toggle
+					class="example-margin"
 					[(ngModel)]="data.isButtonEnabled"
 					[color]="'warn'"
-					class="text-secondary font-normal"
 				>
 					Enable Button
-				</mat-checkbox>
+				</mat-slide-toggle>
 			</div>
 
 			<div
@@ -137,13 +137,13 @@
 		</div>
 		<div class="lg:ml-5 md:ml-5">
 			<div class="inline-flex items-end justify-between w-full mb-5">
-				<mat-checkbox
+				<mat-slide-toggle
+					class="example-margin"
 					[(ngModel)]="data.isTextsEnabled"
 					[color]="'warn'"
-					class="text-secondary font-normal"
 				>
 					Enable Texts
-				</mat-checkbox>
+				</mat-slide-toggle>
 			</div>
 
 			<div

@@ -1,37 +1,90 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0 custom">
 	<div class="my-1">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
-			Reviews
+		<div
+			class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+		>
+			REVIEWS
+
+			<button
+				(click)="save()"
+				class="fuse-mat-button-large rounded ml-auto"
+				mat-flat-button
+				[color]="'warn'"
+				[disabled]="isProcessing"
+			>
+				<span *ngIf="!isProcessing" class="mr-2 flex aic">
+					<mat-icon
+						svgIcon="mat_solid:published_with_changes"
+						class="m-0 mr-3"
+					></mat-icon>
+					<span class="m-auto"> Publish </span>
+				</span>
+				<mat-progress-spinner
+					*ngIf="isProcessing"
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
 		</div>
 	</div>
 
-	<div class="flex">
-		<button
-			class="fuse-mat-button-large mt-6 rounded ml-auto"
-			mat-flat-button
-			[color]="'accent'"
-		>
-			<span class="mr-2"> Add Reviewer</span>
-		</button>
-	</div>
+	<button
+		class="fuse-mat-button-large mt-6 rounded ml-auto"
+		mat-flat-button
+		(click)="add()"
+		[color]="'accent'"
+	>
+		<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+		<span class="m-auto"> Add Review </span>
+	</button>
 
-	<div class="flex flex-wrap">
+	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full">
 		<div
-			class="p-5 pl-0 sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/8"
-			*ngFor="let item of [1, 1, 1, 1, 1, 1, 1]"
+			[@listAnimation]="data"
+			class="p-5 w-full"
+			*ngFor="let person of data; let i = index"
+			style="
+				box-shadow: rgba(150, 150, 193, 0.15) 0px 30px 60px -12px,
+					rgba(150, 150, 150, 0.2) 0px 18px 36px -18px;
+				box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+					rgba(150, 150, 150, 0.2) 0px 30px 60px -30px;
+			"
 		>
-			<div class="card border-2 border-slate-100 p-5">
+			<div class="flex aic w-full">
+				<div
+					class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+				>
+					<mat-icon
+						svgIcon="mat_outline:star"
+						style="transform: translateY(3px)"
+						class="text-orange-500"
+					></mat-icon>
+					REVIEW {{ i + 1 }}
+				</div>
+				<div (click)="remove(i)" role="button" class="ml-auto">
+					<mat-icon
+						svgIcon="feather:minus-circle"
+						class="icon-size-7 text-warn top-icon"
+					></mat-icon>
+				</div>
+			</div>
+			<div>
 				<mat-form-field class="w-full mb-2">
 					<mat-label class="text-secondary font-normal"
 						>Name</mat-label
 					>
-					<input matInput placeholder="AHMED KHUMAR" />
+					<input
+						[(ngModel)]="person.name"
+						matInput
+						placeholder="AHMED KHUMAR"
+					/>
 				</mat-form-field>
 				<mat-form-field class="w-full mb-2">
 					<mat-label class="text-secondary font-normal"
 						>Comment</mat-label
 					>
 					<textarea
+						[(ngModel)]="person.comment"
 						matInput
 						cdkTextareaAutosize
 						#autosize="cdkTextareaAutosize"
@@ -45,21 +98,14 @@
 					<mat-label class="text-secondary font-normal"
 						>Rating</mat-label
 					>
-					<input matInput placeholder="4" type="number" />
+					<input
+						[(ngModel)]="person.rating"
+						matInput
+						placeholder="4"
+						type="number"
+					/>
 				</mat-form-field>
 			</div>
 		</div>
 	</div>
-
-	<button
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-	>
-		<span class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
 </div>
