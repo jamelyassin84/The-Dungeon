@@ -87,10 +87,12 @@ export interface HomeSection3 extends DateInterface {
 }
 export interface HomeSection4 extends DateInterface {
 	isSectionEnabled: boolean
-	isParticipantsEnabled: boolean
+	isPricingEnabled: boolean
 	title: string
 	body: string
+	notice: string
 	uri?: string
+	prices?: HomePricing[]
 }
 export interface HomeSliderImage extends DateInterface {
 	uri?: string
