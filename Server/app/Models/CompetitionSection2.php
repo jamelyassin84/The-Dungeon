@@ -11,9 +11,12 @@ class CompetitionSection2 extends Model
 
     protected $fillable = [
         'isSectionEnabled',
-
         'smallTitle',
         'largeTitle',
         'callToActionTitle',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
     ];
 }
