@@ -1,4 +1,4 @@
-import { RegistrationFieldService } from './../../../../../services/api.service'
+import { listAnimation } from './../../../../../animations/list.animation'
 import { Component, OnInit } from '@angular/core'
 import { fuseAnimations } from '@fuse/animations'
 import { AlertMessage } from 'app/constants/Alert'
@@ -9,7 +9,7 @@ import { CompetitionSection2Service } from 'app/services/api.service'
 	selector: 'app-weight-lifting-section2',
 	templateUrl: './weight-lifting-section2.component.html',
 	styleUrls: ['./weight-lifting-section2.component.scss'],
-	animations: fuseAnimations,
+	animations: [...fuseAnimations, listAnimation],
 })
 export class WeightLiftingSection2Component implements OnInit {
 	constructor(private service: CompetitionSection2Service) {}
@@ -48,7 +48,6 @@ export class WeightLiftingSection2Component implements OnInit {
 				if (data !== null) {
 					this.data = data
 				}
-				console.log(data)
 			},
 			error: () => {
 				this.isProcessing = false

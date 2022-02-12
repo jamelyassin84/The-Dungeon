@@ -137,7 +137,11 @@
 	</button>
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full">
-		<div class="w-full" *ngFor="let price of data.prices; let i = index">
+		<div
+			class="w-full"
+			*ngFor="let price of data.prices; let i = index"
+			[@listAnimation]="data.prices"
+		>
 			<div
 				class="card border-2 border-slate-100 p-5 flex flex-col w-full"
 				style="

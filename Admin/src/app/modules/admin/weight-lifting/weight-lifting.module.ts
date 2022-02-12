@@ -20,6 +20,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { FormsModule } from '@angular/forms'
 
 import { MatSelectModule } from '@angular/material/select'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
 	declarations: [
 		WeightLiftingComponent,
@@ -44,6 +45,7 @@ import { MatSelectModule } from '@angular/material/select'
 		RouterModule,
 		FormsModule,
 		MatSelectModule,
+		BrowserAnimationsModule,
 	],
 })
 export class WeightLiftingModule {}

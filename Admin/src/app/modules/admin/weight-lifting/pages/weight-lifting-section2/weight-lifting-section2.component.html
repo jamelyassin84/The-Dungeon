@@ -91,6 +91,7 @@
 		@expandCollapse
 	>
 		<mat-form-field
+			[@listAnimation]="data.prices"
 			[color]="'rose'"
 			class="w-full mb-2"
 			*ngFor="let field of data.fields; let i = index"

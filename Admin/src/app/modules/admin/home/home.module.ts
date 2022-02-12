@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FuseAlertModule } from './../../../../@fuse/components/alert/alert.module'
 import { FuseCardModule } from './../../../../@fuse/components/card/card.module'
 import { MatCheckboxModule } from '@angular/material/checkbox'
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms'
 		SharedModule,
 		RouterModule,
 		FormsModule,
+		BrowserAnimationsModule,
 	],
 })
 export class HomeModule {}

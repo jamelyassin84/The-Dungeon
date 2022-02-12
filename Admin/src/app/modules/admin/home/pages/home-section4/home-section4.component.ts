@@ -1,4 +1,3 @@
-import { HomePricing } from './../../../../../models/types'
 import { AlertMessage } from 'app/constants/Alert'
 import { Component, OnInit } from '@angular/core'
 import { HomeSection4 } from 'app/models/types'
@@ -6,11 +5,13 @@ import {
 	HomePricingService,
 	HomeSection4Service,
 } from 'app/services/api.service'
+import { listAnimation } from 'app/animations/list.animation'
 
 @Component({
 	selector: 'app-home-section4',
 	templateUrl: './home-section4.component.html',
 	styleUrls: ['./home-section4.component.scss'],
+	animations: [listAnimation],
 })
 export class HomeSection4Component implements OnInit {
 	constructor(

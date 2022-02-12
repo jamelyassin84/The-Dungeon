@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core'
 import { CompetitionSection3 } from 'app/models/types'
 import { ParticipantTabs } from './participants.tabs'
 import { Tab } from 'app/modules/admin/home/home.tabs'
+import { listAnimation } from 'app/animations/list.animation'
 
 @Component({
 	selector: 'app-weight-lifting-section3',
 	templateUrl: './weight-lifting-section3.component.html',
 	styleUrls: ['./weight-lifting-section3.component.scss'],
-	animations: fuseAnimations,
+	animations: [...fuseAnimations, listAnimation],
 })
 export class WeightLiftingSection3Component implements OnInit {
 	constructor(
