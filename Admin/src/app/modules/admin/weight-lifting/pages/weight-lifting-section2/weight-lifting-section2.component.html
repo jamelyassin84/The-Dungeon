@@ -11,7 +11,13 @@
 			[color]="'warn'"
 			[disabled]="isProcessing"
 		>
-			<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
+			<span *ngIf="!isProcessing" class="mr-2 flex aic">
+				<mat-icon
+					svgIcon="mat_solid:published_with_changes"
+					class="m-0 mr-3"
+				></mat-icon>
+				<span class="m-auto"> Publish </span>
+			</span>
 			<mat-progress-spinner
 				*ngIf="isProcessing"
 				[diameter]="16"
@@ -74,7 +80,8 @@
 			mat-flat-button
 			[color]="'accent'"
 		>
-			<span class="mr-2"> Add Field</span>
+			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+			<span class="m-auto"> Add Field </span>
 		</button>
 	</div>
 
@@ -102,7 +109,10 @@
 				role="button"
 				class="ml-auto text-warn"
 			>
-				Remove
+				<mat-icon
+					svgIcon="feather:minus-circle"
+					class="icon-size-7 text-warn"
+				></mat-icon>
 			</span>
 		</mat-form-field>
 	</div>
