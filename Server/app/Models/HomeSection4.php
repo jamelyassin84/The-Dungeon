@@ -11,9 +11,15 @@ class HomeSection4 extends Model
 
     protected $fillable = [
         'isSectionEnabled',
-        'isParticipantsEnabled',
+        'isPricingEnabled',
         'title',
         'body',
+        'notice',
         'uri',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
+        'isPricingEnabled' => 'boolean',
     ];
 }

@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeSection3;
 use App\Models\HomeSliderImage;
-use Hamcrest\Core\IsNull;
 use Illuminate\Http\Request;
-
-use function PHPUnit\Framework\isNull;
 
 class HomeSection3Controller extends Controller
 {

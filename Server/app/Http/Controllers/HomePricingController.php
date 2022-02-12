@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomePricing;
-use App\Http\Requests\StoreHomePricingRequest;
-use App\Http\Requests\UpdateHomePricingRequest;
 use Illuminate\Http\Request;
 
 class HomePricingController extends Controller
@@ -14,18 +12,18 @@ class HomePricingController extends Controller
         $this->middleware('auth:sanctum')->except('index');
     }
 
-    public function index()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
-        //
-    }
+        $dto = (object) $request->all();
 
-    public function destroy($id)
-    {
-        //
+        $pricing = HomePricing::all();
+
+        foreach ($pricing as $price) {
+            HomePricing::find($price->id)->delete();
+        }
+
+        foreach ($dto->prices as $price) {
+            HomePricing::create($price);
+        }
     }
 }
