@@ -1,7 +1,24 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
 	<div class="my-1 mb-5">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+		<div
+			class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+		>
 			PRICING SECTION
+
+			<button
+				(click)="save()"
+				class="fuse-mat-button-large rounded ml-auto"
+				mat-flat-button
+				[color]="'warn'"
+				[disabled]="isProcessing"
+			>
+				<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
+				<mat-progress-spinner
+					*ngIf="isProcessing"
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
 		</div>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
@@ -182,19 +199,4 @@
 			</div>
 		</div>
 	</div>
-
-	<button
-		(click)="save()"
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-		[disabled]="isProcessing"
-	>
-		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			*ngIf="isProcessing"
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
 </div>

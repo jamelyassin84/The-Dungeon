@@ -1,11 +1,27 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-	<div class="my-1 mb-5 flex w-full aic">
-		<div class="text-2xl md:text-2xl font-extrabold sm: truncate">
-			SLIDING IMAGES
-		</div>
+	<div
+		class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+	>
+		SLIDING IMAGES
+
+		<button
+			(click)="save()"
+			class="fuse-mat-button-large rounded ml-auto"
+			mat-flat-button
+			[color]="'warn'"
+			[disabled]="isProcessing"
+		>
+			<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
+			<mat-progress-spinner
+				*ngIf="isProcessing"
+				[diameter]="16"
+				[mode]="'indeterminate'"
+			></mat-progress-spinner>
+		</button>
+
 		<button
 			(click)="trigger('file')"
-			class="fuse-mat-button-large rounded ml-auto"
+			class="fuse-mat-button-large rounded ml-2"
 			mat-flat-button
 			[color]="'accent'"
 			*ngIf="data.images.length !== 0"
@@ -14,12 +30,15 @@
 		</button>
 		<button
 			(click)="clearFiles()"
-			class="fuse-mat-button-large rounded bg-zinc-900 ml-5 text-white px-2"
+			class="fuse-mat-button-large rounded ml-2"
+			mat-flat-button
+			[color]="'accent'"
 			*ngIf="images.length !== 0"
 		>
 			Clear New Images
 		</button>
 	</div>
+
 	<div
 		class="grid grid-cols-1 lg:grid-cols-1 gap-1 mt-5"
 		[class.lg:grid-cols-4]="data.images.length === 0 && files === undefined"
@@ -111,19 +130,4 @@
 			></textarea>
 		</mat-form-field>
 	</div>
-
-	<button
-		(click)="save()"
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-		[disabled]="isProcessing"
-	>
-		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			*ngIf="isProcessing"
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
 </div>
