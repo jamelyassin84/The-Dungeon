@@ -18,7 +18,10 @@ class FileController extends Controller
 
         $path = public_path() . $target . $file[count($file) - 1];
 
-        unlink($path);
+        try {
+            unlink($path);
+        } catch (\Throwable $th) {
+        }
     }
 
     public static function save_and_get_url(Request $request, String $target)

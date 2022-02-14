@@ -11,8 +11,9 @@ return new class extends Migration
         Schema::create('rules', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->string('name');
+            $table->boolean('isSectionEnabled');
+            $table->string('name')->nullable();
+            $table->string('uri')->nullable();
         });
     }
 

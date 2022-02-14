@@ -10,7 +10,12 @@ class RuleValue extends Model
     use HasFactory;
 
     protected $fillable = [
-        'rule_id',
+        'isSectionEnabled',
         'name',
+        'data',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
     ];
 }

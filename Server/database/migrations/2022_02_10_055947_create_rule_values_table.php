@@ -11,13 +11,9 @@ return new class extends Migration
         Schema::create('rule_values', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->integer('rule_id')
-                ->foreignIdFor(Rule::class)
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
+            $table->boolean('isSectionEnabled');
             $table->string('name');
+            $table->string('data', 999);
         });
     }
 

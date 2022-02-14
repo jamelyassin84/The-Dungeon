@@ -10,6 +10,12 @@ class Rule extends Model
     use HasFactory;
 
     protected $fillable = [
+        'isSectionEnabled',
         'name',
+        'uri',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
     ];
 }
