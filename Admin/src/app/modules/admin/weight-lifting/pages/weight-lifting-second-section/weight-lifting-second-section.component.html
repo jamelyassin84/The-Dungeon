@@ -1,17 +1,40 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
 	<div class="my-1 mb-5">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
+		<div
+			class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+		>
 			RULES
+
+			<button
+				(click)="save()"
+				class="fuse-mat-button-large rounded ml-auto"
+				mat-flat-button
+				[color]="'warn'"
+				[disabled]="isProcessing"
+			>
+				<span *ngIf="!isProcessing" class="mr-2 flex aic">
+					<mat-icon
+						svgIcon="mat_solid:published_with_changes"
+						class="m-0 mr-3"
+					></mat-icon>
+					<span class="m-auto"> Publish </span>
+				</span>
+				<mat-progress-spinner
+					*ngIf="isProcessing"
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
 		</div>
 	</div>
 	<div class="items-end justify-between w-full mb-5">
-		<mat-checkbox
-			[color]="'warn'"
+		<mat-slide-toggle
+			class="example-margin"
 			[(ngModel)]="data.isSectionEnabled"
-			class="text-secondary font-normal"
+			[color]="'warn'"
 		>
 			Show Rules Section
-		</mat-checkbox>
+		</mat-slide-toggle>
 	</div>
 	<div
 		class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5"
@@ -85,23 +108,35 @@
 		</div>
 
 		<div
-			class="shadow p-5"
+			[@listAnimation]="data.rules.length"
+			class="p-5"
 			*ngFor="let rule of data.rules; let ruleIndex = index"
+			style="
+				box-shadow: rgba(210, 210, 193, 0.15) 0px 30px 60px -12px,
+					rgba(210, 210, 210, 0.2) 0px 18px 36px -18px;
+				box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+					rgba(210, 210, 210, 0.2) 0px 30px 60px -30px;
+			"
 		>
-			<div class="items-end justify-between w-full mb-5 flex w-full">
-				<mat-checkbox
+			<div class="items-end justify-between w-full mb-5 flex w-full aic">
+				<mat-slide-toggle
+					style="transform: translateY(-5px)"
+					class="example-margin"
 					[(ngModel)]="rule.isSectionEnabled"
 					[color]="'warn'"
-					class="text-secondary font-normal flex"
 				>
 					Show {{ rule.name }} Rules
-				</mat-checkbox>
-				<span
+				</mat-slide-toggle>
+
+				<button
 					(click)="addRule(ruleIndex)"
-					role="button"
-					class="ml-auto text-red-500"
-					>Add Rule</span
+					class="rounded ml-auto mt-3"
+					mat-flat-button
+					[color]="'link'"
 				>
+					<mat-icon svgIcon="feather:plus" class="mr-2"></mat-icon>
+					<span class="m-auto"> Add Rule </span>
+				</button>
 			</div>
 
 			<div @expandCollapse *ngIf="rule.isSectionEnabled === true">
@@ -125,24 +160,14 @@
 						(click)="removeRule(ruleIndex, dataIndex)"
 						role="button"
 						class="ml-auto text-warn"
-						>Remove</span
 					>
+						<mat-icon
+							svgIcon="feather:minus-circle"
+							class="icon-size-7 text-warn"
+						></mat-icon
+					></span>
 				</mat-form-field>
 			</div>
 		</div>
 	</div>
-	<button
-		(click)="save()"
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-		[disabled]="isProcessing"
-	>
-		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			*ngIf="isProcessing"
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
 </div>

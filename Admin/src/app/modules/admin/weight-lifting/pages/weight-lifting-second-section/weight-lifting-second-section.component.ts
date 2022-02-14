@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { fuseAnimations } from '@fuse/animations'
+import { listAnimation } from 'app/animations/list.animation'
 import { AlertMessage } from 'app/constants/Alert'
 import { Rule } from 'app/models/types'
 import { RuleService } from 'app/services/api.service'
@@ -8,7 +9,7 @@ import { RuleService } from 'app/services/api.service'
 	selector: 'app-weight-lifting-second-section',
 	templateUrl: './weight-lifting-second-section.component.html',
 	styleUrls: ['./weight-lifting-second-section.component.scss'],
-	animations: fuseAnimations,
+	animations: [...fuseAnimations, listAnimation],
 })
 export class WeightLiftingSecondSectionComponent implements OnInit {
 	constructor(private service: RuleService) {}
@@ -96,6 +97,7 @@ export class WeightLiftingSecondSectionComponent implements OnInit {
 			next: (data) => {
 				this.isProcessing = false
 				this.saveFile()
+				this.data = data
 				AlertMessage(
 					'Rules Updated!',
 					'Refresh the Dungeon website to see the changes.',
@@ -119,7 +121,7 @@ export class WeightLiftingSecondSectionComponent implements OnInit {
 
 		this.service.create(form).subscribe({
 			next: (data) => {
-				this.ngOnInit()
+				this.data = data
 			},
 		})
 	}
