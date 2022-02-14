@@ -40,6 +40,13 @@
 				>
 			</li>
 		</ul>
+		<fuse-alert class="" [type]="'warning'">
+			<span fuseAlertTitle>Important</span>
+			<div>
+				When changing the photo of a coach, please delete the coach and
+				add a new one with the same name.
+			</div>
+		</fuse-alert>
 
 		<div class="flex">
 			<button
@@ -71,8 +78,9 @@
 			>
 				<div
 					class="w-full"
-					[@listAnimation]="data['males']"
+					[@listAnimation]="data['males'].length"
 					*ngFor="let person of data['males']; let i = index"
+					[class.unclickable]="person.id !== undefined"
 				>
 					<div
 						class="card p-5 flex flex-col w-full"
@@ -190,8 +198,9 @@
 			>
 				<div
 					class="w-full"
-					[@listAnimation]="data['females']"
+					[@listAnimation]="data['females'].length"
 					*ngFor="let person of data['females']; let i = index"
+					[class.unclickable]="person.id !== undefined"
 				>
 					<div
 						class="card p-5 flex flex-col w-full"

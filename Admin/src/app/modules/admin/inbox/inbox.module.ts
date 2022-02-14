@@ -11,9 +11,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { FuseCardModule } from '@fuse/components/card'
 import { FuseAlertModule } from '@fuse/components/alert'
 import { SharedModule } from 'app/shared/shared.module'
+import { InboxDetailsComponent } from './inbox-details/inbox-details.component'
+import { Settings1Component } from './settings/settings.component'
 
 @NgModule({
-	declarations: [InboxComponent],
+	declarations: [InboxComponent, InboxDetailsComponent, Settings1Component],
 	imports: [
 		CommonModule,
 		RouterModule,

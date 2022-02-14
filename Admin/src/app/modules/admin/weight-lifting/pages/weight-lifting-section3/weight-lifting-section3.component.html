@@ -37,7 +37,7 @@
 		</mat-slide-toggle>
 	</div>
 
-	<div *ngIf="data.isSectionEnabled === true" @expandCollapse>
+	<div *ngIf="data.isSectionEnabled === true">
 		<ul class="flex flex-wrap border-b border-gray-200 tab bg-card mt-5">
 			<li
 				[@listAnimation]="navigation.length"
@@ -55,7 +55,6 @@
 
 		<div
 			class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5"
-			@expandCollapse
 			*ngIf="activeTab === 1"
 		>
 			<div class="">
@@ -156,6 +155,14 @@
 			</div>
 		</div>
 
+		<fuse-alert *ngIf="activeTab !== 1" [type]="'warning'">
+			<span fuseAlertTitle>Important</span>
+			<div>
+				When changing the photo of a participant, please delete the
+				participant and add a new one with the same name.
+			</div>
+		</fuse-alert>
+
 		<div class="flex">
 			<button
 				(click)="addParticipant('males')"
@@ -190,13 +197,13 @@
 
 		<div
 			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
-			@expandCollapse
 			*ngIf="activeTab === 2"
 		>
 			<div
 				class="w-full"
 				[@listAnimation]="data.prices"
 				*ngFor="let person of data.participants['males']; let i = index"
+				[class.unclickable]="person.id !== undefined"
 			>
 				<div
 					class="card p-5 flex flex-col w-full"
@@ -305,7 +312,6 @@
 
 		<div
 			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
-			@expandCollapse
 			*ngIf="activeTab === 3"
 		>
 			<div
@@ -315,6 +321,7 @@
 					let person of data.participants['females'];
 					let i = index
 				"
+				[class.unclickable]="person.id !== undefined"
 			>
 				<div
 					class="card p-5 flex flex-col w-full"
@@ -423,8 +430,8 @@
 
 		<div
 			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
-			@expandCollapse
 			*ngIf="activeTab === 4"
+			[class.unclickable]="person.id !== undefined"
 		>
 			<div
 				class="w-full"

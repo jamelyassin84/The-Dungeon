@@ -8,6 +8,8 @@ import { LocationComponent } from './location/location/location.component'
 import { OurStoryComponent } from './our-story/our-story/our-story.component'
 import { WeightLiftingRoutes } from './weight-lifting/weight-lifting.routes'
 import { WeightLiftingComponent } from './weight-lifting/weight-lifting/weight-lifting.component'
+import { Settings1Component } from './inbox/settings/settings.component'
+import { InboxDetailsComponent } from './inbox/inbox-details/inbox-details.component'
 
 export const adminRoutes: Route[] = [
 	{
@@ -36,5 +38,13 @@ export const adminRoutes: Route[] = [
 	{
 		path: 'inbox',
 		component: InboxComponent,
+	},
+	{
+		path: 'settings',
+		component: Settings1Component,
+	},
+	{
+		path: 'message/:id',
+		component: InboxDetailsComponent,
 	},
 ]

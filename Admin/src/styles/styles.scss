@@ -99,3 +99,10 @@ carousel {
 		border-color: #c62222 !important;
 	}
 }
+
+.unclickable {
+	pointer-events: none;
+}
+settings {
+	display: none !important;
+}

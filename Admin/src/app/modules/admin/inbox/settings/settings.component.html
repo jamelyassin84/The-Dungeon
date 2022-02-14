@@ -1,0 +1,212 @@
+<div class="flex flex-col flex-auto min-w-0">
+	<div
+		class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+	>
+		<div class="flex-1 min-w-0">
+			<div class="mt-2">
+				<h2
+					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5 aic flex"
+				>
+					<mat-icon
+						svgIcon="feather:settings"
+						class="icon-size-10 text-warn top-icon mr-2"
+					></mat-icon>
+					SETTINGS
+
+					<button
+						(click)="save()"
+						class="fuse-mat-button-large rounded ml-auto"
+						mat-flat-button
+						[color]="'warn'"
+						[disabled]="isProcessing"
+					>
+						<span *ngIf="!isProcessing" class="mr-2 flex aic">
+							<mat-icon
+								svgIcon="heroicons_outline:save"
+								class="m-0 mr-3"
+							></mat-icon>
+							<span class="m-auto"> Save </span>
+						</span>
+						<mat-progress-spinner
+							*ngIf="isProcessing"
+							[diameter]="16"
+							[mode]="'indeterminate'"
+						></mat-progress-spinner>
+					</button>
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="fuse-card-front p-5">
+		<div
+			class="p-10 w-full bg-card shadow sm:w-full sm:mx-0"
+			[@listAnimation]="5"
+		>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
+				<div class="group">
+					<h2
+						class="text-2xl md:text-3xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5 mb-5"
+					>
+						ACCOUNT
+					</h2>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Old Username</mat-label
+						>
+						<input
+							[(ngModel)]="data.oldUsername"
+							matInput
+							placeholder="admin@gmail.com"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>New Username</mat-label
+						>
+						<input
+							[(ngModel)]="data.newUsername"
+							matInput
+							placeholder="admin@gmail.com"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Old Password</mat-label
+						>
+						<input
+							[(ngModel)]="data.oldPassword"
+							matInput
+							placeholder="12345678"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>New Password</mat-label
+						>
+						<input
+							[(ngModel)]="data.newPassword"
+							matInput
+							placeholder="12345678"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Confirm Password</mat-label
+						>
+						<input
+							[(ngModel)]="data.confirmPassword"
+							matInput
+							placeholder="12345678"
+						/>
+					</mat-form-field>
+				</div>
+				<div class="group">
+					<h2
+						class="text-2xl md:text-3xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5 mb-5"
+					>
+						SOCIAL PROFILES
+					</h2>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Facebook</mat-label
+						>
+						<input
+							[(ngModel)]="data.facebook"
+							matInput
+							placeholder="https://facebook.com/the-dungeon"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Instagram</mat-label
+						>
+						<input
+							[(ngModel)]="data.instagram"
+							matInput
+							placeholder="https://instagram.com/the-dungeon"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Twitter</mat-label
+						>
+						<input
+							[(ngModel)]="data.twitter"
+							matInput
+							placeholder="https://twitter.com/the-dungeon"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Youtube</mat-label
+						>
+						<input
+							[(ngModel)]="data.youtube"
+							matInput
+							placeholder="https://youtube.com/the-dungeon"
+						/>
+					</mat-form-field>
+					<mat-form-field class="w-full">
+						<mat-label class="text-secondary font-normal"
+							>Whats App</mat-label
+						>
+						<input
+							[(ngModel)]="data.whatsApp"
+							matInput
+							placeholder="+97100-000-0000"
+						/>
+					</mat-form-field>
+				</div>
+			</div>
+			<hr />
+
+			<div class="flex">
+				<h2
+					class="text-2xl md:text-3xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5 mb-5"
+				>
+					EMAIL THAT WILL RECEIVE ALL DATA
+				</h2>
+				<button
+					(click)="addEmail()"
+					class="fuse-mat-button-large ml-auto mt-5 bg-zinc-400 text-white"
+					mat-flat-button
+				>
+					<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+					<span class="m-auto"> Add Email </span>
+				</button>
+			</div>
+
+			<div
+				class="grid grid-cols-2 lg:grid-cols-6 gap-6 mt-10"
+				[@listAnimation]="data.emails.length"
+			>
+				<mat-form-field
+					*ngFor="let email of data.emails; let i = index"
+					[color]="'rose'"
+					class="w-full mb-2"
+				>
+					<mat-label class="text-secondary font-normal flex aic"
+						>Email
+					</mat-label>
+
+					<input
+						[(ngModel)]="email.email"
+						value="Email"
+						matInput
+						placeholder="admin@gmail.com"
+					/>
+					<span
+						role="button"
+						class="ml-auto text-warn"
+						(click)="remove(i)"
+					>
+						<mat-icon
+							svgIcon="feather:minus-circle"
+							class="icon-size-7 text-warn"
+						></mat-icon>
+					</span>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+</div>

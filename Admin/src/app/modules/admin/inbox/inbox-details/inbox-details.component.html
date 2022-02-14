@@ -1,0 +1,62 @@
+<div class="flex flex-col flex-auto min-w-0">
+	<div
+		class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+	>
+		<div class="flex-1 min-w-0">
+			<div class="mt-2">
+				<h2
+					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
+				>
+					<mat-icon
+						svgIcon="heroicons_outline:mail-open"
+						class="icon-size-10 text-warn top-icon mr-2"
+					></mat-icon>
+					JAMEL EID YASSIN
+				</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="fuse-card-front p-5">
+		<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
+			<div class="header flex border-b border-zinc-200 py-5">
+				<div class="icon" role="button">
+					<mat-icon
+						svgIcon="heroicons_outline:chevron-left"
+						class="icon-size-7 text-zinc-900 top-icon mr-3"
+					></mat-icon>
+				</div>
+				<div class="text">
+					<h1 class="font-bold">
+						From: Jamel Eid Yassin | jamelyassin84@gmail.com
+					</h1>
+					<div>To: Admin</div>
+				</div>
+			</div>
+			<div class="body">
+				<h1
+					class="text-1xl md:text-2xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
+				>
+					Subject: Competition Submission
+				</h1>
+				<p>
+					Hi There! Attached below is my data for your review and
+					consideration.
+				</p>
+				<br />
+				<p>Best Regards,</p>
+				<span class="font-bold">Jamel Eid Yassin</span>
+
+				<ul [@listAnimation]="5" class="mt-5 w-1/4">
+					<li
+						class="w-full flex aic border-b border-zinc-200 py-5"
+						*ngFor="let item of [1, 2, 3, 4, 5, 6]"
+					>
+						<span class="w-1/2">Phone</span>
+						<span class="w-1/2 ml-auto text-right">0567995775</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

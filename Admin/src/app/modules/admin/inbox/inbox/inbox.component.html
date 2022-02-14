@@ -29,7 +29,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr role="button" *ngFor="let item of [1, 2, 3, 4, 5]">
+				<tr
+					class="hover:bg-zinc-100"
+					routerLink="/message/1"
+					role="button"
+					*ngFor="let item of [1, 2, 3, 4, 5]"
+				>
 					<td>Mohammed@gmail</td>
 					<td>
 						Lorem ipsum dolor sit amet, consectetuer adipiscing
