@@ -10,7 +10,7 @@ class Coaching extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uri',
+        'classes',
         'price',
     ];
 }

@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->integer('uri');
-            $table->integer('price');
+            $table->string('classes');
+            $table->string('price');
         });
     }
 
