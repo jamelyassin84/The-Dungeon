@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { Review } from 'app/models/types'
 import { fuseAnimations } from '@fuse/animations'
 import { listAnimation } from 'app/animations/list.animation'
+import { AlertMessage } from 'app/constants/Alert'
 
 @Component({
 	selector: 'app-weight-lifting-section4',
@@ -16,14 +17,6 @@ export class WeightLiftingSection4Component implements OnInit {
 	ngOnInit(): void {
 		this.get()
 	}
-
-	trigger(id: string) {
-		document.getElementById(id).click()
-	}
-
-	file!: File | any
-
-	src: any = undefined
 
 	data: Review[] = []
 
@@ -55,8 +48,13 @@ export class WeightLiftingSection4Component implements OnInit {
 	isProcessing: boolean | 'complete' = false
 
 	save() {
-		this.service
-			.create({ data: this.data })
-			.subscribe((data: any) => (this.data = data.reverse()))
+		this.service.create({ data: this.data }).subscribe((data: any) => {
+			AlertMessage(
+				'Reviews Updated!',
+				'Refresh the Dungeon website to see the changes.',
+				'success',
+			)
+			this.data = data.reverse()
+		})
 	}
 }

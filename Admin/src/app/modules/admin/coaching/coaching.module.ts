@@ -13,6 +13,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { FuseCardModule } from '@fuse/components/card'
 import { FuseAlertModule } from '@fuse/components/alert'
 import { SharedModule } from 'app/shared/shared.module'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { _MatSlideToggleRequiredValidatorModule } from '@angular/material/slide-toggle'
+import { MatSelectModule } from '@angular/material/select'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -22,7 +27,7 @@ import { SharedModule } from 'app/shared/shared.module'
 	],
 	imports: [
 		CommonModule,
-		RouterModule,
+		IvyCarouselModule,
 		MatButtonModule,
 		MatCheckboxModule,
 		MatFormFieldModule,
@@ -32,6 +37,11 @@ import { SharedModule } from 'app/shared/shared.module'
 		FuseCardModule,
 		FuseAlertModule,
 		SharedModule,
+		RouterModule,
+		FormsModule,
+		MatSelectModule,
+		BrowserAnimationsModule,
+		_MatSlideToggleRequiredValidatorModule,
 	],
 })
 export class CoachingModule {}

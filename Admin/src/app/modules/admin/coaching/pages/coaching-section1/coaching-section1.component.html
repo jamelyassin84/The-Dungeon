@@ -1,42 +1,97 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-	<div class="flex">
-		<button
-			class="fuse-mat-button-large rounded ml-auto"
-			mat-flat-button
-			[color]="'accent'"
+	<div class="my-1">
+		<div
+			class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
 		>
-			<span class="mr-2"> Add Price Category</span>
-		</button>
-	</div>
-	<div
-		*ngFor="let items of [1, 2, 3, 4, 5, 6]"
-		class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-2 mb-3 p-5 pl-0"
-	>
-		<div class="w-full px-5 pl-0">
-			<mat-form-field class="w-full">
-				<mat-label class="text-secondary font-normal">
-					Number of Classes</mat-label
-				>
-				<input matInput placeholder="10 CLASSES" />
-			</mat-form-field>
-		</div>
-		<div class="w-full px-5">
-			<mat-form-field class="w-full">
-				<mat-label class="text-secondary font-normal">PRICE</mat-label>
-				<input matInput placeholder="1,000 AED" />
-			</mat-form-field>
+			PRICING
+
+			<button
+				(click)="save()"
+				class="fuse-mat-button-large rounded ml-auto"
+				mat-flat-button
+				[color]="'warn'"
+				[disabled]="isProcessing"
+			>
+				<span *ngIf="!isProcessing" class="mr-2 flex aic">
+					<mat-icon
+						svgIcon="mat_solid:published_with_changes"
+						class="m-0 mr-3"
+					></mat-icon>
+					<span class="m-auto"> Publish </span>
+				</span>
+				<mat-progress-spinner
+					*ngIf="isProcessing"
+					[diameter]="16"
+					[mode]="'indeterminate'"
+				></mat-progress-spinner>
+			</button>
+			<button
+				(click)="add()"
+				class="fuse-mat-button-large ml-5 bg-zinc-400 text-white"
+				mat-flat-button
+			>
+				<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+				<span class="m-auto"> Add Coaching </span>
+			</button>
 		</div>
 	</div>
 
-	<button
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
+	<div
+		class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
+		[@listAnimation]="data.length"
 	>
-		<span class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
+		<div
+			*ngFor="let item of data; let i = index"
+			class="p-5 w-full"
+			style="
+				box-shadow: rgba(150, 150, 193, 0.15) 0px 30px 60px -12px,
+					rgba(150, 150, 150, 0.2) 0px 18px 36px -18px;
+				box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px,
+					rgba(150, 150, 150, 0.2) 0px 30px 60px -30px;
+			"
+		>
+			<div class="flex aic w-full">
+				<div
+					class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate"
+				>
+					<mat-icon
+						svgIcon="heroicons_outline:ticket"
+						style="transform: translateY(3px)"
+						class="text-orange-500"
+					></mat-icon>
+					COACHING {{ i + 1 }}
+				</div>
+				<div (click)="remove(i)" role="button" class="ml-auto">
+					<mat-icon
+						svgIcon="feather:minus-circle"
+						class="icon-size-7 text-warn top-icon"
+					></mat-icon>
+				</div>
+			</div>
+			<div class="w-full">
+				<mat-form-field class="w-full">
+					<mat-label class="text-secondary font-normal">
+						Number of Classes</mat-label
+					>
+					<input
+						[(ngModel)]="item.classes"
+						matInput
+						placeholder="10 CLASSES"
+					/>
+				</mat-form-field>
+			</div>
+			<div class="w-full">
+				<mat-form-field class="w-full">
+					<mat-label class="text-secondary font-normal"
+						>PRICE</mat-label
+					>
+					<input
+						[(ngModel)]="item.price"
+						matInput
+						placeholder="1,000 AED"
+					/>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
 </div>

@@ -11,11 +11,16 @@ import { FuseCardModule } from '@fuse/components/card'
 import { FuseAlertModule } from '@fuse/components/alert'
 import { SharedModule } from 'app/shared/shared.module'
 import { RouterModule } from '@angular/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSelectModule } from '@angular/material/select'
+import { FormsModule } from '@angular/forms'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [OurStoryComponent],
 	imports: [
 		CommonModule,
+		IvyCarouselModule,
 		MatButtonModule,
 		MatCheckboxModule,
 		MatFormFieldModule,
@@ -26,6 +31,9 @@ import { RouterModule } from '@angular/router'
 		FuseAlertModule,
 		SharedModule,
 		RouterModule,
+		FormsModule,
+		MatSelectModule,
+		BrowserAnimationsModule,
 	],
 })
 export class OurStoryModule {}

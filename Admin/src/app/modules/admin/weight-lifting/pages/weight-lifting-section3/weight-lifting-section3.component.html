@@ -39,7 +39,10 @@
 
 	<div *ngIf="data.isSectionEnabled === true" @expandCollapse>
 		<ul class="flex flex-wrap border-b border-gray-200 tab bg-card mt-5">
-			<li [@listAnimation]="data.prices" *ngFor="let tab of navigation">
+			<li
+				[@listAnimation]="navigation.length"
+				*ngFor="let tab of navigation"
+			>
 				<a
 					(click)="setActiveTab(tab)"
 					role="button"

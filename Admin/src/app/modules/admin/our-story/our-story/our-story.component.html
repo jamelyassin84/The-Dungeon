@@ -10,7 +10,7 @@
 					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
 				>
 					<mat-icon
-						svgIcon="feather:HEART"
+						svgIcon="feather:heart"
 						class="icon-size-10 text-warn top-icon mr-2"
 					></mat-icon>
 					COACHING
@@ -20,27 +20,67 @@
 	</div>
 	<div class="fuse-card-front p-5">
 		<div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-			<div class="my-1 mb-5">
-				<fuse-alert class="mb-15" [type]="'info'">
-					<span fuseAlertTitle>Image Format</span>
-					<div>
-						<span class="text-secondary">Aspect Ratio</span> square
-					</div>
-					<div>
-						<span class="text-secondary"> Image extensions:</span>
-						.jpg, .png, .gif
-					</div>
-					<div>
-						<span class="text-secondary">Max Images:</span> 25
-					</div>
-				</fuse-alert>
+			<div
+				class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+			>
+				OUR STORY
+
+				<button
+					(click)="save()"
+					class="fuse-mat-button-large rounded ml-auto"
+					mat-flat-button
+					[color]="'warn'"
+					[disabled]="isProcessing"
+				>
+					<span *ngIf="!isProcessing" class="mr-2 flex aic">
+						<mat-icon
+							svgIcon="mat_solid:published_with_changes"
+							class="m-0 mr-3"
+						></mat-icon>
+						<span class="m-auto"> Publish </span>
+					</span>
+					<mat-progress-spinner
+						*ngIf="isProcessing"
+						[diameter]="16"
+						[mode]="'indeterminate'"
+					></mat-progress-spinner>
+				</button>
+
+				<button
+					(click)="trigger('file')"
+					class="fuse-mat-button-large rounded ml-2"
+					mat-flat-button
+					[color]="'accent'"
+					*ngIf="data.images.length !== 0"
+				>
+					Add Images
+				</button>
+				<button
+					(click)="clearFiles()"
+					class="fuse-mat-button-large rounded ml-2"
+					mat-flat-button
+					[color]="'accent'"
+					*ngIf="images.length !== 0"
+				>
+					Clear New Images
+				</button>
 			</div>
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
-				<div class="">
+
+			<div
+				class="grid grid-cols-1 lg:grid-cols-1 gap-1 mt-5"
+				[class.lg:grid-cols-4]="
+					data.images.length === 0 && files === undefined
+				"
+				[class.lg:gap-4]="
+					data.images.length === 0 && files === undefined
+				"
+			>
+				<div>
 					<div
+						*ngIf="data.images.length === 0 && files === undefined"
 						(click)="trigger('file')"
 						role="button"
-						class="file-input w-full"
+						class="file-input ap5-6"
 					>
 						<svg
 							viewBox="0 0 24 24"
@@ -67,53 +107,96 @@
 							</g>
 						</svg>
 					</div>
+
+					<carousel
+						*ngIf="images.length !== 0"
+						[height]="500"
+						[cellsToShow]="images.length"
+						[dots]="true"
+						[margin]="0"
+						class="mb-3"
+					>
+						<div
+							*ngFor="let uri of images"
+							class="carousel-cell ap5-6"
+						>
+							<img [src]="uri" alt="" class="ap5-6" />
+						</div>
+					</carousel>
+
+					<carousel
+						*ngIf="data.images.length !== 0"
+						[height]="500"
+						[cellsToShow]="4"
+						[dots]="true"
+						[margin]="0"
+					>
+						<div
+							*ngFor="let image of data.images"
+							class="carousel-cell ap5-6"
+						>
+							<button
+								[color]="'warn'"
+								mat-flat-button
+								class="rounded ml-auto delete"
+								(click)="remove(image.id)"
+							>
+								Remove
+							</button>
+							<img [src]="image.uri" alt="" class="ap5-6" />
+						</div>
+					</carousel>
+
 					<input
+						(change)="readFiles($event)"
 						accept="image/*"
 						type="file"
+						multiple
 						class="hidden"
 						id="file"
 					/>
-					<div class="text-secondary text-center w-full">
-						Multiple Story Images
-					</div>
-				</div>
-				<div class="lg:ml-5 md:ml-5">
-					<div class="w-full mb-2">
-						<mat-form-field class="w-full">
-							<mat-label class="text-secondary font-normal"
-								>Story Title</mat-label
+					<fuse-alert class="mb-15" [type]="'accent'">
+						<span fuseAlertTitle>Story Images Format</span>
+						<div>
+							<span class="text-secondary">Aspect Ratio:</span>5:6
+						</div>
+						<div>
+							<span class="text-secondary">
+								Image extensions:</span
 							>
-							<input matInput placeholder="Our Story" />
-						</mat-form-field>
-					</div>
-					<div class="w-full mb-2">
-						<mat-form-field class="w-full">
-							<mat-label class="text-secondary font-normal"
-								>Story</mat-label
-							>
-							<textarea
-								cdkTextareaAutosize
-								#autosize="cdkTextareaAutosize"
-								cdkAutosizeMinRows="1"
-								cdkAutosizeMaxRows="5"
-								matInput
-								placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptatibus sed voluptate repellendus,"
-							></textarea>
-						</mat-form-field>
-					</div>
+							.jpg, .png, .gif
+						</div>
+						<div>
+							<span class="text-secondary">Max Images:</span> 25
+						</div>
+					</fuse-alert>
 				</div>
+
+				<mat-form-field class="w-full mb-2 pr-10">
+					<mat-label class="text-secondary font-normal"
+						>Story Title</mat-label
+					>
+					<input
+						[(ngModel)]="data.title"
+						matInput
+						placeholder="WE ARE THE DUNGEON GYM"
+					/>
+				</mat-form-field>
+				<mat-form-field class="w-full mb-2 pr-10">
+					<mat-label class="text-secondary font-normal"
+						>Story Body</mat-label
+					>
+					<textarea
+						[(ngModel)]="data.body"
+						cdkTextareaAutosize
+						#autosize="cdkTextareaAutosize"
+						cdkAutosizeMinRows="1"
+						cdkAutosizeMaxRows="5"
+						matInput
+						placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
+					></textarea>
+				</mat-form-field>
 			</div>
-			<button
-				class="fuse-mat-button-large mt-6 rounded"
-				mat-flat-button
-				[color]="'warn'"
-			>
-				<span class="mr-2"> Publish</span>
-				<mat-progress-spinner
-					[diameter]="16"
-					[mode]="'indeterminate'"
-				></mat-progress-spinner>
-			</button>
 		</div>
 	</div>
 </div>

@@ -6,13 +6,19 @@ export interface DateInterface extends ID {
 	updated_at?: Date
 }
 export interface Coaches extends DateInterface {
+	males: Coach[]
+	females: Coach[]
+}
+export interface Coach extends DateInterface {
 	name: string
 	experience: string
 	sex: string
-	uri?: string
+	uri?: any
+	src?: any
+	file?: any
 }
 export interface Coaching extends DateInterface {
-	uri?: string
+	classes: string
 	price: string
 }
 export interface CompetitionSection1 extends DateInterface {
@@ -124,6 +130,7 @@ export interface Location extends DateInterface {
 export interface OurStory extends DateInterface {
 	title: string
 	body: string
+	images?: StoryImages[]
 }
 export interface Participant extends DateInterface {
 	name: string
