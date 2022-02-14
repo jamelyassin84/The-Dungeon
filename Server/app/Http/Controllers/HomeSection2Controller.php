@@ -32,7 +32,9 @@ class HomeSection2Controller extends Controller
         $data = HomeSection2::first();
 
         if (!empty($data)) {
-            FileController::deleteFile($data['uri'], $this->target);
+            if ($url !== false) {
+                FileController::deleteFile($data['uri'], $this->target);
+            }
 
             $data->fill($dto)->save();
 

@@ -13,7 +13,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('title');
-            $table->string('body');
+            $table->longText('body');
         });
     }
 

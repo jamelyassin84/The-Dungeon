@@ -26,6 +26,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = $request->all();
+        if (!isset($user['oldPassword'])) return 'Invalid Request. Please put your  passwords';
+
 
         $data = User::where('email', $user['email'])
             ->first();

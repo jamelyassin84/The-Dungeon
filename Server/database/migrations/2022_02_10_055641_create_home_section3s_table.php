@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->boolean('isSectionEnabled');
-            $table->boolean('isSliderEnabled');
+            $table->boolean('isSectionEnabled')->nullable();
+            $table->boolean('isSliderEnabled')->nullable();
             $table->string('title')->nullable();
             $table->string('body')->nullable();
         });
