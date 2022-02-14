@@ -13,6 +13,7 @@ export class OurStoryComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getHomeData()
+		this.innerWidth = window.innerWidth
 	}
 
 	data: OurStory = {
@@ -20,6 +21,7 @@ export class OurStoryComponent implements OnInit {
 		body: '',
 		images: [],
 	}
+	innerWidth: number
 
 	files: File[] | any
 
@@ -48,7 +50,7 @@ export class OurStoryComponent implements OnInit {
 		Array.from(this.files).forEach((file: File) => {
 			const reader = new FileReader()
 			reader.onload = () => {
-				this.images.push(String(reader.result))
+				this.images.unshift(String(reader.result))
 			}
 			reader.readAsDataURL(file)
 		})

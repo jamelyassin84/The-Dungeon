@@ -14,9 +14,11 @@
 			<span *ngIf="!isProcessing" class="mr-2 flex aic">
 				<mat-icon
 					svgIcon="mat_solid:published_with_changes"
-					class="m-0 mr-3"
+					class="m-0"
 				></mat-icon>
-				<span class="m-auto"> Publish </span>
+				<span *ngIf="innerWidth > 1139" class="my-auto ml-3">
+					Publish
+				</span>
 			</span>
 			<mat-progress-spinner
 				*ngIf="isProcessing"
@@ -27,21 +29,28 @@
 
 		<button
 			(click)="trigger('file')"
-			class="fuse-mat-button-large rounded ml-2"
+			class="fuse-mat-button-large ml-2 text-white bg-zinc-500"
 			mat-flat-button
-			[color]="'accent'"
 			*ngIf="data.images.length !== 0"
 		>
-			Add Images
+			<mat-icon svgIcon="feather:plus" class="m-0"></mat-icon>
+			<span *ngIf="innerWidth > 1139" class="my-auto ml-3">
+				Add Images
+			</span>
 		</button>
 		<button
 			(click)="clearFiles()"
-			class="fuse-mat-button-large rounded ml-2"
+			class="fuse-mat-button-large ml-2 text-white bg-zinc-400"
 			mat-flat-button
-			[color]="'accent'"
 			*ngIf="images.length !== 0"
 		>
-			Clear New Images
+			<mat-icon
+				svgIcon="heroicons_outline:refresh"
+				class="m-0"
+			></mat-icon>
+			<span *ngIf="innerWidth > 1139" class="my-auto ml-3">
+				Clear New Images
+			</span>
 		</button>
 	</div>
 
@@ -83,7 +92,7 @@
 			<carousel
 				*ngIf="images.length !== 0"
 				[height]="500"
-				[cellsToShow]="images.length"
+				[cellsToShow]="innerWidth > 1139 ? 4 : 1"
 				[dots]="true"
 				[margin]="0"
 				class="mb-3"
@@ -96,7 +105,7 @@
 			<carousel
 				*ngIf="data.images.length !== 0"
 				[height]="500"
-				[cellsToShow]="4"
+				[cellsToShow]="innerWidth > 1139 ? 4 : 1"
 				[dots]="true"
 				[margin]="0"
 			>
@@ -135,25 +144,27 @@
 			</fuse-alert>
 		</div>
 
-		<mat-form-field class="w-full mb-2 pr-10">
-			<mat-label class="text-secondary font-normal">Title</mat-label>
-			<input
-				[(ngModel)]="data.title"
-				matInput
-				placeholder="WE ARE THE DUNGEON GYM"
-			/>
-		</mat-form-field>
-		<mat-form-field class="w-full mb-2 pr-10">
-			<mat-label class="text-secondary font-normal">Body</mat-label>
-			<textarea
-				[(ngModel)]="data.body"
-				cdkTextareaAutosize
-				#autosize="cdkTextareaAutosize"
-				cdkAutosizeMinRows="1"
-				cdkAutosizeMaxRows="5"
-				matInput
-				placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
-			></textarea>
-		</mat-form-field>
+		<div class="w-full">
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Title</mat-label>
+				<input
+					[(ngModel)]="data.title"
+					matInput
+					placeholder="WE ARE THE DUNGEON GYM"
+				/>
+			</mat-form-field>
+			<mat-form-field class="w-full mb-2">
+				<mat-label class="text-secondary font-normal">Body</mat-label>
+				<textarea
+					[(ngModel)]="data.body"
+					cdkTextareaAutosize
+					#autosize="cdkTextareaAutosize"
+					cdkAutosizeMinRows="1"
+					cdkAutosizeMaxRows="5"
+					matInput
+					placeholder="Big community of bodybuilders and powerlifters from all over the UAE."
+				></textarea>
+			</mat-form-field>
+		</div>
 	</div>
 </div>

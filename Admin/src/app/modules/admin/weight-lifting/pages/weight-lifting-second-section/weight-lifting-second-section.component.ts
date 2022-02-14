@@ -62,7 +62,7 @@ export class WeightLiftingSecondSectionComponent implements OnInit {
 		this.data.rules = []
 		const rulesFor = ['General', 'Male', 'Female']
 		rulesFor.forEach((rule) =>
-			this.data.rules.push({
+			this.data.rules.unshift({
 				isSectionEnabled: true,
 				name: rule,
 				data: [],
@@ -71,7 +71,7 @@ export class WeightLiftingSecondSectionComponent implements OnInit {
 	}
 
 	addRule(index: number) {
-		this.data.rules[index].data.push({
+		this.data.rules[index].data.unshift({
 			name: '',
 		})
 	}

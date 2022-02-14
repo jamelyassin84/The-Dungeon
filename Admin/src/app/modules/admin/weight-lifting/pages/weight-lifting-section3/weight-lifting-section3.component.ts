@@ -56,7 +56,7 @@ export class WeightLiftingSection3Component implements OnInit {
 	}
 
 	addParticipant(sex: 'males' | 'females' | 'wildCards' = 'wildCards') {
-		this.data.participants[sex].push({
+		this.data.participants[sex].unshift({
 			sex: sex,
 			name: '',
 			age: '',

@@ -126,15 +126,16 @@
 		</div>
 	</div>
 
-	<button
-		(click)="addField()"
-		class="fuse-mat-button-large mt-6 rounded ml-auto"
-		mat-flat-button
-		[color]="'accent'"
-	>
-		<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
-		<span class="m-auto"> Add Pricing </span>
-	</button>
+	<div class="flex w-full">
+		<button
+			(click)="addField()"
+			class="fuse-mat-button-large ml-auto text-white bg-zinc-500"
+			mat-flat-button
+		>
+			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+			<span class="m-auto"> Add Pricing </span>
+		</button>
+	</div>
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full">
 		<div

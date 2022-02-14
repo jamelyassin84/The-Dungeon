@@ -13,6 +13,7 @@ export class HomeSection3Component implements OnInit {
 
 	ngOnInit(): void {
 		this.getHomeData()
+		this.innerWidth = window.innerWidth
 	}
 
 	trigger(id: string) {
@@ -20,6 +21,8 @@ export class HomeSection3Component implements OnInit {
 	}
 
 	files: File[] | any
+
+	innerWidth: number
 
 	images: any[] = []
 
@@ -50,7 +53,7 @@ export class HomeSection3Component implements OnInit {
 		Array.from(this.files).forEach((file: File) => {
 			const reader = new FileReader()
 			reader.onload = () => {
-				this.images.push(String(reader.result))
+				this.images.unshift(String(reader.result))
 			}
 			reader.readAsDataURL(file)
 		})

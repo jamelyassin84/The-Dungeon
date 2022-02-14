@@ -156,41 +156,40 @@
 			</div>
 		</div>
 
-		<button
-			(click)="addParticipant('males')"
-			*ngIf="activeTab === 2"
-			class="fuse-mat-button-large mt-6 rounded ml-auto"
-			mat-flat-button
-			[color]="'accent'"
-		>
-			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
-			<span class="m-auto"> Add Participant </span>
-		</button>
+		<div class="flex">
+			<button
+				(click)="addParticipant('males')"
+				*ngIf="activeTab === 2"
+				class="fuse-mat-button-large ml-auto mt-5 bg-zinc-400 text-white"
+				mat-flat-button
+			>
+				<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+				<span class="m-auto"> Add Participant </span>
+			</button>
 
-		<button
-			(click)="addParticipant('females')"
-			*ngIf="activeTab === 3"
-			class="fuse-mat-button-large mt-6 rounded"
-			mat-flat-button
-			[color]="'accent'"
-		>
-			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
-			<span class="m-auto"> Add Participant </span>
-		</button>
+			<button
+				(click)="addParticipant('females')"
+				*ngIf="activeTab === 3"
+				class="fuse-mat-button-large ml-auto mt-5 bg-zinc-400 text-white"
+				mat-flat-button
+			>
+				<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+				<span class="m-auto"> Add Participant </span>
+			</button>
 
-		<button
-			(click)="addParticipant('wildCards')"
-			*ngIf="activeTab === 4"
-			class="fuse-mat-button-large mt-6 rounded"
-			mat-flat-button
-			[color]="'accent'"
-		>
-			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
-			<span class="m-auto"> Add Participant </span>
-		</button>
+			<button
+				(click)="addParticipant('wildCards')"
+				*ngIf="activeTab === 4"
+				class="fuse-mat-button-large ml-auto mt-5 bg-zinc-400 text-white"
+				mat-flat-button
+			>
+				<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+				<span class="m-auto"> Add Participant </span>
+			</button>
+		</div>
 
 		<div
-			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
 			@expandCollapse
 			*ngIf="activeTab === 2"
 		>
@@ -305,7 +304,7 @@
 		</div>
 
 		<div
-			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
 			@expandCollapse
 			*ngIf="activeTab === 3"
 		>
@@ -423,7 +422,7 @@
 		</div>
 
 		<div
-			class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5 w-full"
+			class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
 			@expandCollapse
 			*ngIf="activeTab === 4"
 		>

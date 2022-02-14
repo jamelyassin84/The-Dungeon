@@ -21,7 +21,7 @@ export class CoachingSection1Component implements OnInit {
 	data: Coaching[] = []
 
 	add(): void {
-		this.data.push({
+		this.data.unshift({
 			price: '',
 			classes: '',
 		})

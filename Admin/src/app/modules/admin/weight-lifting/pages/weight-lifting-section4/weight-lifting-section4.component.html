@@ -28,19 +28,22 @@
 		</div>
 	</div>
 
-	<button
-		class="fuse-mat-button-large mt-6 rounded ml-auto"
-		mat-flat-button
-		(click)="add()"
-		[color]="'accent'"
-	>
-		<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
-		<span class="m-auto"> Add Review </span>
-	</button>
+	<div class="flex">
+		<button
+			class="fuse-mat-button-large ml-auto mt-5 bg-zinc-400 text-white"
+			mat-flat-button
+			(click)="add()"
+		>
+			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+			<span class="m-auto"> Add Review </span>
+		</button>
+	</div>
 
-	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full">
+	<div
+		class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 w-full"
+		[@listAnimation]="data.length"
+	>
 		<div
-			[@listAnimation]="data"
 			class="p-5 w-full"
 			*ngFor="let person of data; let i = index"
 			style="
