@@ -12,7 +12,7 @@ export const adminNavigation: FuseNavigationItem[] = [
 		id: 'competition',
 		title: 'Competition',
 		type: 'basic',
-		icon: 'mat_outline:directions_run',
+		icon: 'iconsmind:dumbbell',
 		link: '/competition',
 	},
 

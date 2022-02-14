@@ -43,9 +43,8 @@ export class WeightLiftingSection4Component implements OnInit {
 		this.service.index().subscribe({
 			next: (data: any) => {
 				if (data !== null) {
-					this.data = data
+					this.data = data.reverse()
 				}
-				console.log(data)
 			},
 			error: () => {
 				this.isProcessing = false
@@ -55,5 +54,9 @@ export class WeightLiftingSection4Component implements OnInit {
 
 	isProcessing: boolean | 'complete' = false
 
-	save() {}
+	save() {
+		this.service
+			.create({ data: this.data })
+			.subscribe((data: any) => (this.data = data.reverse()))
+	}
 }
