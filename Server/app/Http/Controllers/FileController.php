@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class FileController extends Controller
 {
 
-    public static function deleteFile(String $url, String $target): void
+    public static function deleteFile($url, String $target): void
     {
         $file = explode($target, $url);
 

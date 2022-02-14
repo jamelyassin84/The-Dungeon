@@ -44,13 +44,13 @@ class RuleController extends Controller
 
         if (!empty($data)) {
 
-            if ($data['uri'] !== null) {
+            if ($url !== false) {
                 FileController::deleteFile($data['uri'], $this->target);
             }
 
             $data->fill($dto)->save();
 
-            if (!$request->file('file')) {
+            if (isset($dto['rules'])) {
                 $this->destroy();
             }
 
