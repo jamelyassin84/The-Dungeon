@@ -66,3 +66,98 @@ body {
 .fdc {
 	flex-direction: column;
 }
+.aic {
+	align-self: center;
+}
+
+.jcc {
+	justify-content: center;
+}
+.fdc {
+	flex-direction: column;
+}
+
+.bg-black {
+	background-color: black !important;
+	background: black !important;
+}
+
+.text-white {
+	color: white !important;
+}
+
+.file-input {
+	border: 3px solid rgba($color: #f1f5f9, $alpha: 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: -8px;
+	&:hover {
+		background: rgba($color: #f1f5f9, $alpha: 0.5);
+		border: none;
+	}
+	img {
+		width: 72px;
+		height: 49px;
+	}
+}
+
+body fuse-splash-screen .spinner > div {
+	background-color: #d10000;
+}
+body fuse-splash-screen {
+	background-color: black;
+}
+.custom .fuse-alert-container {
+	background: #f3f3f3 !important;
+	margin-top: -2px;
+}
+
+.px16-9 {
+	aspect-ratio: 16 / 9;
+}
+
+.square {
+	aspect-ratio: 1 / 1;
+	object-fit: cover !important;
+}
+.ap3-4 {
+	aspect-ratio: 3 / 4;
+	object-fit: cover !important;
+}
+.ap4-3 {
+	aspect-ratio: 4 / 3;
+	object-fit: cover !important;
+}
+.ap9-16 {
+	aspect-ratio: 9 / 16;
+	object-fit: cover !important;
+}
+.ap5-6 {
+	aspect-ratio: 5 / 6;
+	object-fit: cover !important;
+}
+
+carousel {
+	z-index: 1 !important;
+}
+
+.progress .mat-progress-bar-fill::after {
+	background-color: #c62222 !important;
+}
+.top-icon {
+	transform: translateY(5px);
+}
+
+.mat-focused {
+	.mat-form-field-flex {
+		border-color: #c62222 !important;
+	}
+}
+
+.unclickable {
+	pointer-events: none;
+}
+settings {
+	display: none !important;
+}

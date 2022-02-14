@@ -1,3 +1,10 @@
-<div class="wrapper">
-	<img src="../../../../assets/app/home/carousel.png" alt="" />
-</div>
+<carousel
+	[height]="477"
+	[cellsToShow]="innerWidth > 1139 ? 4 : 1"
+	[dots]="false"
+	[margin]="0"
+>
+	<div *ngFor="let image of data.images" class="carousel-cell ap4-3">
+		<img [src]="image.uri" alt="" class="ap4-3" />
+	</div>
+</carousel>

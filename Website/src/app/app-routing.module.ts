@@ -17,7 +17,7 @@ const routes: Routes = [
 		component: HomeMainComponent,
 	},
 	{
-		path: 'weight-lifting',
+		path: 'competition',
 		component: WeightLiftingMainComponent,
 	},
 	{

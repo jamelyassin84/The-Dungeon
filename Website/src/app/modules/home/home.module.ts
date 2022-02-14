@@ -6,6 +6,8 @@ import { HomeSection2Component } from './home-section2/home-section2.component'
 import { HomeSection3Component } from './home-section3/home-section3.component'
 import { HomeSection5Component } from './home-section5/home-section5.component'
 import { Common } from '../common/common.module'
+import { RouterModule } from '@angular/router'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [
@@ -15,7 +17,7 @@ import { Common } from '../common/common.module'
 		HomeSection3Component,
 		HomeSection5Component,
 	],
-	imports: [CommonModule, Common],
+	imports: [CommonModule, Common, RouterModule],
 	exports: [],
 })
 export class HomeModule {}

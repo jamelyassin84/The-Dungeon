@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { HomeSection3 } from 'src/app/models/types'
+import { HomeSection3Service } from 'src/app/services/api.service'
 
 @Component({
 	selector: 'homeSection3',
@@ -6,7 +8,15 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./home-section3.component.scss'],
 })
 export class HomeSection3Component implements OnInit {
-	constructor() {}
+	constructor(private service: HomeSection3Service) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.get()
+	}
+
+	data!: HomeSection3
+
+	get(): void {
+		this.service.index().subscribe((data) => (this.data = data))
+	}
 }

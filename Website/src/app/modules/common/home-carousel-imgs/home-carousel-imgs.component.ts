@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import { HomeSection3 } from 'src/app/models/types'
 
 @Component({
 	selector: 'ImagesCarousel',
@@ -8,5 +9,11 @@ import { Component, OnInit } from '@angular/core'
 export class HomeCarouselImgsComponent implements OnInit {
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.innerWidth = window.innerWidth
+	}
+
+	innerWidth!: number
+
+	@Input() data!: HomeSection3
 }

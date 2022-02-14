@@ -10,6 +10,7 @@ import { HomeCarouselImgsComponent } from './home-carousel-imgs/home-carousel-im
 import { PackageCardComponent } from './package-card/package-card.component'
 import { CommunityComponent } from './community/community.component'
 import { Title } from '@angular/platform-browser'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,7 @@ import { Title } from '@angular/platform-browser'
 		PackageCardComponent,
 		CommunityComponent,
 	],
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, RouterModule, IvyCarouselModule],
 	exports: [
 		NavbarComponent,
 		FooterComponent,

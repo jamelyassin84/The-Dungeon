@@ -1,55 +1,23 @@
-<div class="wrapper-container d-flex aic jcc fdc">
-	<img src="../../../../assets/app/home/bg2.png" alt="" />
-	<div class="title">START YOUR FREE TRIAL TODAY</div>
-	<div class="alert">Payments start after 30 days free trial.</div>
-	<div class="description">
-		Subscriptions auto-renew at the end of each billing period at the <br />
-		standard price, unless cancelled.
-	</div>
-	<div class="row p-0 m-0 w-100">
-		<div class="col-md-3">
-			<PackageCard
-				title="1 MONTH"
-				price="650"
-				billed="Billed Monthly"
-				priceAndInterval="650.00 AED Monthly"
-				freeTrial="30-Day Free Trial"
-				background="#828385"
-			>
-			</PackageCard>
+<div class="section">
+	<div class="wrapper-container d-flex aic jcc fdc" *ngIf="data">
+		<img [src]="data.uri" alt="" />
+		<div class="title">{{ data.title }}</div>
+		<div class="alert">{{ data.notice }}</div>
+		<div class="description">
+			{{ data.body }}
 		</div>
-		<div class="col-md-3">
-			<PackageCard
-				title="1 MONTH"
-				price="1550"
-				billed="Billed Monthly"
-				priceAndInterval="1550 AED Monthly"
-				freeTrial="30-Day Free Trial"
-				background="#575756"
-			>
-			</PackageCard>
-		</div>
-		<div class="col-md-3">
-			<PackageCard
-				title="1 MONTH"
-				price="2,880"
-				billed="Billed Monthly"
-				priceAndInterval="2,880 AED Monthly"
-				freeTrial="2,880-Day Free Trial"
-				background="#373737"
-			>
-			</PackageCard>
-		</div>
-		<div class="col-md-3">
-			<PackageCard
-				title="1 MONTH"
-				price="4,800"
-				billed="Billed Monthly"
-				priceAndInterval="4,800 AED Monthly"
-				freeTrial="30-Day Free Trial"
-				background="#373737"
-			>
-			</PackageCard>
+		<div class="row p-0 m-0 w-100">
+			<div class="col-md-3" *ngFor="let price of data.prices; let i = index">
+				<PackageCard
+					[title]="price.duration"
+					[price]="price.price"
+					[billed]="price.billInterval"
+					[priceAndInterval]="price.summary"
+					[freeTrial]="price.trialPeriod"
+					[background]="price.backgroundColor"
+				>
+				</PackageCard>
+			</div>
 		</div>
 	</div>
 </div>

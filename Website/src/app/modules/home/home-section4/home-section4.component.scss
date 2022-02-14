@@ -28,7 +28,11 @@ img {
 	font-family: Montserrat;
 	color: #ffffff;
 	font-weight: 500;
-	font-size: 1.15rem;
+	font-size: 1.05rem;
 	text-align: center;
 	margin-bottom: 4rem;
+	width: 655px;
+}
+.section {
+	scroll-snap-align: start;
 }

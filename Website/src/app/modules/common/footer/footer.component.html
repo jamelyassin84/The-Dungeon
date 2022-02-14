@@ -1,4 +1,4 @@
-<div class="footer d-flex aic">
+<div class="footer d-flex aic" *ngIf="data && data.isSectionEnabled">
 	<div class="d-flex aic w-100">
 		<img class="logo" src="../../../../assets/app/logo.svg" alt="" />
 		<div class="others d-flex aic">
@@ -14,12 +14,42 @@
 				</li>
 			</ul>
 		</div>
-		<div class="socials d-flex aic ml-auto">
-			<img class="icons" src="../../../../assets/app/footer/1.svg" alt="" />
-			<img class="icons" src="../../../../assets/app/footer/2.svg" alt="" />
-			<img class="icons" src="../../../../assets/app/footer/3.svg" alt="" />
-			<img class="icons" src="../../../../assets/app/footer/4.svg" alt="" />
-			<img class="icons" src="../../../../assets/app/footer/5.svg" alt="" />
+		<div class="socials d-flex aic ml-auto" *ngIf="user">
+			<a target="_blank" [href]="user.whatsApp">
+				<img
+					class="icons"
+					src="../../../../assets/app/footer/1.svg"
+					alt=""
+				/>
+			</a>
+			<a target="_blank" [href]="user.facebook">
+				<img
+					class="icons"
+					src="../../../../assets/app/footer/2.svg"
+					alt=""
+				/>
+			</a>
+			<a target="_blank" [href]="user.instagram">
+				<img
+					class="icons"
+					src="../../../../assets/app/footer/3.svg"
+					alt=""
+				/>
+			</a>
+			<a target="_blank" [href]="user.twitter">
+				<img
+					class="icons"
+					src="../../../../assets/app/footer/4.svg"
+					alt=""
+				/>
+			</a>
+			<a target="_blank" [href]="user.youtube">
+				<img
+					class="icons"
+					src="../../../../assets/app/footer/5.svg"
+					alt=""
+				/>
+			</a>
 		</div>
 	</div>
 </div>

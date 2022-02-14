@@ -13,6 +13,7 @@ import { WeightLiftingModule } from './modules/weight-lifting/weight-lifting.mod
 
 // Components
 import { AppComponent } from './app.component'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
 	declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { AppComponent } from './app.component'
 		LocationModule,
 		OurStoryModule,
 		WeightLiftingModule,
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
