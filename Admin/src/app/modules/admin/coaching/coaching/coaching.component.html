@@ -7,18 +7,24 @@
 				<h2
 					class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
 				>
-					Coaching
+					<mat-icon
+						svgIcon="feather:shield"
+						class="icon-size-10 text-warn top-icon mr-2"
+					></mat-icon>
+					COACHING
 				</h2>
 			</div>
 		</div>
 	</div>
-	<ul class="flex flex-wrap border-b border-gray-200 tab pl-5 bg-card">
+	<ul
+		class="flex flex-wrap border-b border-gray-200 tab pl-5 bg-card sticky top-15 z-50"
+	>
 		<li *ngFor="let tab of navigation">
 			<a
 				(click)="setActiveTab(tab)"
 				role="button"
 				[class.active]="activeTab === tab.id"
-				class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 hover:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+				class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 hover:bg-zinc-300 text-zinc-900"
 				>{{ tab.name }}</a
 			>
 		</li>

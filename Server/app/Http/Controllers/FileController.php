@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use finfo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 
 class FileController extends Controller
 {

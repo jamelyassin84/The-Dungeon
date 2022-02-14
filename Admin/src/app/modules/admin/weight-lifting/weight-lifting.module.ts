@@ -19,6 +19,9 @@ import { WeightLiftingSecondSectionComponent } from './pages/weight-lifting-seco
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { FormsModule } from '@angular/forms'
 
+import { MatSelectModule } from '@angular/material/select'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 @NgModule({
 	declarations: [
 		WeightLiftingComponent,
@@ -42,6 +45,9 @@ import { FormsModule } from '@angular/forms'
 		SharedModule,
 		RouterModule,
 		FormsModule,
+		MatSelectModule,
+		BrowserAnimationsModule,
+		MatSlideToggleModule,
 	],
 })
 export class WeightLiftingModule {}

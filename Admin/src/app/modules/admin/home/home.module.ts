@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FuseAlertModule } from './../../../../@fuse/components/alert/alert.module'
 import { FuseCardModule } from './../../../../@fuse/components/card/card.module'
 import { MatCheckboxModule } from '@angular/material/checkbox'
@@ -18,7 +19,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from 'app/shared/shared.module'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { FormsModule } from '@angular/forms'
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 @NgModule({
 	declarations: [
 		HomeComponent,
@@ -42,6 +43,8 @@ import { FormsModule } from '@angular/forms'
 		SharedModule,
 		RouterModule,
 		FormsModule,
+		BrowserAnimationsModule,
+		MatSlideToggleModule,
 	],
 })
 export class HomeModule {}

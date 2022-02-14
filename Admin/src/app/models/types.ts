@@ -36,7 +36,14 @@ export interface CompetitionSection2 extends DateInterface {
 }
 export interface CompetitionSection3 extends DateInterface {
 	isSectionEnabled: boolean
+	title: string
+	body: string
 	uri?: string
+	participants?: {
+		males: Participant[]
+		females: Participant[]
+		wildCards: Participant[]
+	}
 }
 export interface CompetitionSection4 extends DateInterface {
 	isSectionEnabled: boolean
@@ -87,10 +94,12 @@ export interface HomeSection3 extends DateInterface {
 }
 export interface HomeSection4 extends DateInterface {
 	isSectionEnabled: boolean
-	isParticipantsEnabled: boolean
+	isPricingEnabled: boolean
 	title: string
 	body: string
+	notice: string
 	uri?: string
+	prices?: HomePricing[]
 }
 export interface HomeSliderImage extends DateInterface {
 	uri?: string
@@ -119,8 +128,10 @@ export interface OurStory extends DateInterface {
 export interface Participant extends DateInterface {
 	name: string
 	age: string
-	sex: string
-	uri?: string
+	sex: 'males' | 'females' | 'wildCards'
+	uri?: any
+	src?: any
+	file?: any
 }
 export interface RegistrationField extends DateInterface {
 	fieldName: string

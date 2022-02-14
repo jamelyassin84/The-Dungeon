@@ -1,17 +1,38 @@
 <div class="p-10 w-full bg-card shadow sm:w-full sm:mx-0">
-	<div class="my-1 mb-5">
-		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
-			Registration Form
-		</div>
+	<div
+		class="w-ful aic flex text-2xl md:text-2xl font-extrabold sm: truncate"
+	>
+		REGISTRATION FORM
+
+		<button
+			(click)="save()"
+			class="fuse-mat-button-large rounded ml-auto"
+			mat-flat-button
+			[color]="'warn'"
+			[disabled]="isProcessing"
+		>
+			<span *ngIf="!isProcessing" class="mr-2 flex aic">
+				<mat-icon
+					svgIcon="mat_solid:published_with_changes"
+					class="m-0 mr-3"
+				></mat-icon>
+				<span class="m-auto"> Publish </span>
+			</span>
+			<mat-progress-spinner
+				*ngIf="isProcessing"
+				[diameter]="16"
+				[mode]="'indeterminate'"
+			></mat-progress-spinner>
+		</button>
 	</div>
 	<div class="inline-flex items-end justify-between w-full mb-5">
-		<mat-checkbox
+		<mat-slide-toggle
+			class="example-margin"
 			[(ngModel)]="data.isSectionEnabled"
 			[color]="'warn'"
-			class="text-secondary font-normal"
 		>
 			Enable Registration Form
-		</mat-checkbox>
+		</mat-slide-toggle>
 	</div>
 	<div
 		class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5"
@@ -59,7 +80,8 @@
 			mat-flat-button
 			[color]="'accent'"
 		>
-			<span class="mr-2"> Add Field</span>
+			<mat-icon svgIcon="feather:plus" class="mr-3"></mat-icon>
+			<span class="m-auto"> Add Field </span>
 		</button>
 	</div>
 
@@ -69,6 +91,7 @@
 		@expandCollapse
 	>
 		<mat-form-field
+			[@listAnimation]="data.prices"
 			[color]="'rose'"
 			class="w-full mb-2"
 			*ngFor="let field of data.fields; let i = index"
@@ -87,23 +110,11 @@
 				role="button"
 				class="ml-auto text-warn"
 			>
-				Remove
+				<mat-icon
+					svgIcon="feather:minus-circle"
+					class="icon-size-7 text-warn"
+				></mat-icon>
 			</span>
 		</mat-form-field>
 	</div>
-
-	<button
-		(click)="save()"
-		class="fuse-mat-button-large mt-6 rounded"
-		mat-flat-button
-		[color]="'warn'"
-		[disabled]="isProcessing"
-	>
-		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
-		<mat-progress-spinner
-			*ngIf="isProcessing"
-			[diameter]="16"
-			[mode]="'indeterminate'"
-		></mat-progress-spinner>
-	</button>
 </div>

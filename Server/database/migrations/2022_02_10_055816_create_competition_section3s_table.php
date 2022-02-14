@@ -14,7 +14,9 @@ return new class extends Migration
 
             $table->boolean('isSectionEnabled');
 
-            $table->string('uri');
+            $table->string('uri')->nullable();
+            $table->string('title')->nullable();
+            $table->string('body')->nullable();
         });
     }
 

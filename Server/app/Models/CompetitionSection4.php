@@ -17,4 +17,9 @@ class CompetitionSection4 extends Model
         'body',
         'uri',
     ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
+        'isParticipantsEnabled' => 'boolean',
+    ];
 }

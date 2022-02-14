@@ -11,7 +11,12 @@ class CompetitionSection3 extends Model
 
     protected $fillable = [
         'isSectionEnabled',
-
+        'title',
+        'body',
         'uri',
+    ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
     ];
 }

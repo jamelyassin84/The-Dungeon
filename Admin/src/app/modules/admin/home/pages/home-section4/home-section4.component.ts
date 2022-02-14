@@ -1,15 +1,23 @@
 import { AlertMessage } from 'app/constants/Alert'
 import { Component, OnInit } from '@angular/core'
 import { HomeSection4 } from 'app/models/types'
-import { HomeSection4Service } from 'app/services/api.service'
+import {
+	HomePricingService,
+	HomeSection4Service,
+} from 'app/services/api.service'
+import { listAnimation } from 'app/animations/list.animation'
 
 @Component({
 	selector: 'app-home-section4',
 	templateUrl: './home-section4.component.html',
 	styleUrls: ['./home-section4.component.scss'],
+	animations: [listAnimation],
 })
 export class HomeSection4Component implements OnInit {
-	constructor(private service: HomeSection4Service) {}
+	constructor(
+		private service: HomeSection4Service,
+		private pricing: HomePricingService,
+	) {}
 
 	ngOnInit(): void {
 		this.getHomeData()
@@ -25,10 +33,12 @@ export class HomeSection4Component implements OnInit {
 
 	data: HomeSection4 = {
 		isSectionEnabled: true,
-		isParticipantsEnabled: true,
+		isPricingEnabled: true,
 		title: '',
+		notice: '',
 		body: '',
-		uri: undefined,
+		uri: ' ',
+		prices: [],
 	}
 
 	getHomeData() {
@@ -43,6 +53,21 @@ export class HomeSection4Component implements OnInit {
 				this.isProcessing = false
 			},
 		})
+	}
+
+	addField() {
+		this.data.prices.push({
+			duration: '',
+			price: '',
+			billInterval: '',
+			summary: '',
+			trialPeriod: '',
+			backgroundColor: '',
+		})
+	}
+
+	removeField(index: number) {
+		this.data.prices.splice(index, 1)
 	}
 
 	readFile(event: any): void {
@@ -63,6 +88,7 @@ export class HomeSection4Component implements OnInit {
 
 	save() {
 		this.isProcessing = true
+
 		const form = new FormData()
 
 		for (let key in this.data) {
@@ -80,14 +106,25 @@ export class HomeSection4Component implements OnInit {
 		}
 
 		this.service.create(form).subscribe({
-			next: (data) => {
-				this.data = data
+			next: () => {
+				this.savePricing()
+			},
+			error: () => {
 				this.isProcessing = false
+			},
+		})
+	}
+
+	savePricing() {
+		this.pricing.create({ prices: this.data.prices }).subscribe({
+			next: () => {
+				this.ngOnInit()
 				AlertMessage(
 					'Home Pricing Section Updated!',
 					'Refresh the Dungeon website to see the changes.',
 					'success',
 				)
+				this.isProcessing = false
 			},
 			error: () => {
 				this.isProcessing = false

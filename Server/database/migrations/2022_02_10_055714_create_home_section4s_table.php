@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('notice')->nullable();
             $table->string('body')->nullable();
 
-            $table->string('url');
+            $table->string('uri')->nullable();
         });
     }
 

@@ -12,7 +12,7 @@ export const adminNavigation: FuseNavigationItem[] = [
 		id: 'competition',
 		title: 'Competition',
 		type: 'basic',
-		icon: 'feather:award',
+		icon: 'mat_outline:directions_run',
 		link: '/competition',
 	},
 
@@ -27,14 +27,14 @@ export const adminNavigation: FuseNavigationItem[] = [
 		id: 'example',
 		title: 'Coaching',
 		type: 'basic',
-		icon: 'heroicons_outline:chart-pie',
+		icon: 'feather:shield',
 		link: '/coaching',
 	},
 	{
 		id: 'example',
 		title: 'Our Story',
 		type: 'basic',
-		icon: 'feather:clock',
+		icon: 'feather:heart',
 		link: '/our-story',
 	},
 	{
