@@ -89,9 +89,25 @@
 		class="grid grid-cols-1 lg:grid-cols-6 gap-6 mt-10"
 		*ngIf="data.isSectionEnabled"
 		@expandCollapse
+		[@listAnimation]="data.fields.length + 2"
 	>
+		<mat-form-field [color]="'rose'" class="w-full mb-2">
+			<mat-label class="text-secondary font-normal flex aic"
+				>Field Name
+			</mat-label>
+
+			<input value="Email" matInput placeholder="Full name" disabled />
+		</mat-form-field>
+
+		<mat-form-field [color]="'rose'" class="w-full mb-2">
+			<mat-label class="text-secondary font-normal flex aic"
+				>Field Name
+			</mat-label>
+
+			<input value="Contact" matInput placeholder="Full name" disabled />
+		</mat-form-field>
+
 		<mat-form-field
-			[@listAnimation]="data.prices"
 			[color]="'rose'"
 			class="w-full mb-2"
 			*ngFor="let field of data.fields; let i = index"
