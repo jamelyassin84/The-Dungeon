@@ -1,0 +1,54 @@
+.wrapper-container {
+	padding: 10vmin;
+	padding-top: 20vmin;
+}
+
+.coaching {
+	letter-spacing: 1.75px;
+	color: #1d1d1b;
+	text-transform: uppercase;
+	font-size: 2.1rem;
+	margin-bottom: 2.3rem;
+}
+
+th {
+	background-color: #e2e2e2;
+}
+
+tr,
+td {
+	padding: 1.2rem !important;
+	cursor: pointer;
+}
+
+tr:hover {
+	background-color: #f2f2f2b9;
+}
+
+img {
+	height: 232px;
+	width: 189px;
+	border-radius: 15px;
+	object-fit: cover;
+}
+
+.coaches-text {
+	letter-spacing: 0.75px;
+	color: #1d1d1b;
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+.coach-card {
+	margin-left: -1rem;
+	cursor: pointer;
+	background: white;
+	border-radius: 5px;
+	padding: 1rem;
+	transition: 0.4s ease;
+	margin-bottom: 20px;
+	&:hover {
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	}
+}
