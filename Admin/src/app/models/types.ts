@@ -2,8 +2,8 @@ export interface ID {
 	id?: number
 }
 export interface DateInterface extends ID {
-	createdAt?: Date
-	updatedAt?: Date
+	created_at?: Date
+	updated_at?: Date
 }
 export interface Coaches extends DateInterface {
 	name: string
@@ -134,11 +134,17 @@ export interface Review extends DateInterface {
 	uri?: string
 }
 export interface Rule extends DateInterface {
+	isSectionEnabled: boolean
 	name: string
+	uri?: string
+	rules?: RuleValue[]
 }
 export interface RuleValue extends DateInterface {
-	rule_id?: number
+	isSectionEnabled: boolean
 	name: string
+	data?: {
+		name?: string
+	}[]
 }
 export interface StoryImages extends DateInterface {
 	uri?: string

@@ -3,113 +3,124 @@
 		<div class="mb-5 text-2xl md:text-2xl font-extrabold sm: truncate">
 			RULES
 		</div>
-		<fuse-alert class="mb-15" [type]="'info'">
-			<span fuseAlertTitle>Image Format</span>
-			<div><span class="text-secondary">Aspect Ratio</span> square</div>
-			<div>
-				<span class="text-secondary"> Image extensions:</span> .jpg,
-				.png, .gif
-			</div>
-			<div><span class="text-secondary">Max Images:</span> 1</div>
-		</fuse-alert>
 	</div>
 	<div class="items-end justify-between w-full mb-5">
-		<mat-checkbox [color]="'warn'" class="text-secondary font-normal">
+		<mat-checkbox
+			[color]="'warn'"
+			[(ngModel)]="data.isSectionEnabled"
+			class="text-secondary font-normal"
+		>
 			Show Rules Section
 		</mat-checkbox>
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5">
+	<div
+		class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5"
+		@expandCollapse
+		*ngIf="data.isSectionEnabled === true"
+	>
 		<div class="">
 			<div
+				*ngIf="src === undefined && data.uri === undefined"
 				(click)="trigger('file')"
 				role="button"
-				class="file-input w-full"
+				class="file-input square"
 			>
 				<img src="/assets/app/cloud.svg" />
 			</div>
-			<input accept="image/*" type="file" class="hidden" id="file" />
-			<div class="text-secondary text-center w-full">
-				Background Image
-			</div>
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="src !== undefined && data.uri === undefined"
+				[src]="src"
+				alt=""
+				class="square"
+			/>
+
+			<img
+				(click)="trigger('file')"
+				*ngIf="data.uri !== undefined"
+				[src]="data.uri"
+				alt=""
+				class="square"
+			/>
+
+			<input
+				(change)="readFile($event)"
+				accept="image/*"
+				type="file"
+				class="hidden"
+				id="file"
+			/>
+			<fuse-alert class="mb-15" [type]="'accent'">
+				<span fuseAlertTitle>Image Format</span>
+				<div>
+					<span class="text-secondary">Aspect Ratio</span> square
+				</div>
+				<div>
+					<span class="text-secondary"> Image extensions</span> .jpg,
+					.png, .gif
+				</div>
+				<div><span class="text-secondary">Max Images</span> 1</div>
+			</fuse-alert>
 		</div>
 
-		<div class="shadow p-5">
+		<div
+			class="shadow p-5"
+			*ngFor="let rule of data.rules; let ruleIndex = index"
+		>
 			<div class="items-end justify-between w-full mb-5 flex w-full">
 				<mat-checkbox
+					[(ngModel)]="rule.isSectionEnabled"
 					[color]="'warn'"
 					class="text-secondary font-normal flex"
 				>
-					Show General Rules
+					Show {{ rule.name }} Rules
 				</mat-checkbox>
-				<span role="button" class="ml-auto text-red-500">Add Rule</span>
-			</div>
-
-			<mat-form-field
-				[color]="'rose'"
-				class="w-full mb-2"
-				*ngFor="let item of [1, 2, 3, 4, 5, 6]"
-			>
-				<mat-label class="text-secondary font-normal flex"
-					>Rule
-					<span role="button" class="ml-auto text-warn">Remove</span>
-				</mat-label>
-				<input matInput placeholder="Only For Uae Nationals only " />
-			</mat-form-field>
-		</div>
-
-		<div class="shadow p-5">
-			<div class="items-end justify-between w-full mb-5 flex w-full">
-				<mat-checkbox
-					[color]="'warn'"
-					class="text-secondary font-normal flex"
+				<span
+					(click)="addRule(ruleIndex)"
+					role="button"
+					class="ml-auto text-red-500"
+					>Add Rule</span
 				>
-					Show Male Rules
-				</mat-checkbox>
-				<span role="button" class="ml-auto text-red-500">Add Rule</span>
 			</div>
-			<mat-form-field
-				[color]="'rose'"
-				class="w-full mb-2"
-				*ngFor="let item of [1, 2, 3, 4, 5, 6]"
-			>
-				<mat-label class="text-secondary font-normal flex"
-					>Rule
-					<span role="button" class="ml-auto text-warn">Remove</span>
-				</mat-label>
-				<input matInput placeholder="Only For Uae Nationals only " />
-			</mat-form-field>
-		</div>
 
-		<div class="shadow p-5">
-			<div class="items-end justify-between w-full mb-5 flex w-full">
-				<mat-checkbox
-					[color]="'warn'"
-					class="text-secondary font-normal flex"
+			<div @expandCollapse *ngIf="rule.isSectionEnabled === true">
+				<mat-form-field
+					[color]="'rose'"
+					class="w-full mb-2"
+					*ngFor="
+						let specificRule of rule.data;
+						let dataIndex = index
+					"
 				>
-					Show Female Rules
-				</mat-checkbox>
-				<span role="button" class="ml-auto text-red-500">Add Rule</span>
+					<mat-label class="text-secondary font-normal"
+						>Rule
+					</mat-label>
+					<input
+						matInput
+						[(ngModel)]="specificRule.name"
+						placeholder="Only For Uae Nationals only "
+					/>
+					<span
+						(click)="removeRule(ruleIndex, dataIndex)"
+						role="button"
+						class="ml-auto text-warn"
+						>Remove</span
+					>
+				</mat-form-field>
 			</div>
-			<mat-form-field
-				[color]="'rose'"
-				class="w-full mb-2"
-				*ngFor="let item of [1, 2, 3, 4, 5, 6]"
-			>
-				<mat-label class="text-secondary font-normal flex"
-					>Rule
-					<span role="button" class="ml-auto text-warn">Remove</span>
-				</mat-label>
-				<input matInput placeholder="Only For Uae Nationals only " />
-			</mat-form-field>
 		</div>
 	</div>
 	<button
+		(click)="save()"
 		class="fuse-mat-button-large mt-6 rounded"
 		mat-flat-button
 		[color]="'warn'"
+		[disabled]="isProcessing"
 	>
-		<span class="mr-2"> Publish</span>
+		<span *ngIf="!isProcessing" class="mr-2"> Publish</span>
 		<mat-progress-spinner
+			*ngIf="isProcessing"
 			[diameter]="16"
 			[mode]="'indeterminate'"
 		></mat-progress-spinner>
