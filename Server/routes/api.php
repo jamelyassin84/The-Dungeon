@@ -22,6 +22,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\OurStoryController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\RegistrationFieldController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\RuleValueController;
 use App\Http\Controllers\StoryImagesController;
