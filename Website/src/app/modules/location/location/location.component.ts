@@ -1,5 +1,7 @@
 import { Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
+import { LocationService } from 'src/app/services/api.service'
+import { Location } from 'src/app/models/types'
 
 @Component({
 	selector: 'app-location',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./location.component.scss'],
 })
 export class LocationComponent implements OnInit {
-	constructor(private title: Title) {}
+	constructor(private service: LocationService, private title: Title) {}
 
 	ngOnInit(): void {
 		this.title.setTitle('The Dungeon | Location')
+		this.get()
+	}
+
+	data!: Location
+
+	get(): void {
+		this.service.index().subscribe((data) => (this.data = data))
 	}
 }

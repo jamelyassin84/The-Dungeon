@@ -1,5 +1,7 @@
 import { Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
+import { OurStoryService } from 'src/app/services/api.service'
+import { OurStory, StoryImages } from 'src/app/models/types'
 
 @Component({
 	selector: 'app-our-story',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./our-story.component.scss'],
 })
 export class OurStoryComponent implements OnInit {
-	constructor(private title: Title) {}
+	constructor(private service: OurStoryService, private title: Title) {}
 
 	ngOnInit(): void {
-		this.title.setTitle('The Dungeon | Home')
+		this.title.setTitle('The Dungeon | Our Story')
+		this.get()
+	}
+
+	data!: OurStory
+
+	get(): void {
+		this.service.index().subscribe((data) => (this.data = data))
 	}
 }

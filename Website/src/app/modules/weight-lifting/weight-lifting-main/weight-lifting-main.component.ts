@@ -10,6 +10,6 @@ export class WeightLiftingMainComponent implements OnInit {
 	constructor(private title: Title) {}
 
 	ngOnInit(): void {
-		this.title.setTitle('The Dungeon | Weight Lifting')
+		this.title.setTitle('The Dungeon | Competition')
 	}
 }

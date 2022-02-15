@@ -148,7 +148,7 @@ export interface RegistrationField extends DateInterface {
 export interface Review extends DateInterface {
 	name: string
 	comment: string
-	rating: string
+	rating: number
 	uri?: string
 }
 export interface Rule extends DateInterface {

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core'
+import { CompetitionSection3, Review } from 'src/app/models/types'
+import {
+	CompetitionSection3Service,
+	ReviewService,
+} from 'src/app/services/api.service'
 
 @Component({
 	selector: 'WeightLiftingSection3',
@@ -6,7 +11,15 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./weight-lifting-section3.component.scss'],
 })
 export class WeightLiftingSection3Component implements OnInit {
-	constructor() {}
+	constructor(private service: ReviewService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.get()
+	}
+
+	data!: Review[]
+
+	get(): void {
+		this.service.index().subscribe((data: any) => (this.data = data))
+	}
 }
