@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core'
 export class WeightLiftingMainComponent implements OnInit {
 	constructor(private title: Title) {}
 
+	timer: any
+
 	ngOnInit(): void {
 		this.title.setTitle('The Dungeon | Competition')
 	}

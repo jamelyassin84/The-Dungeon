@@ -4,6 +4,7 @@ import { WeightLiftingMainComponent } from './weight-lifting-main/weight-lifting
 import { WeightLiftingSection1Component } from './weight-lifting-section1/weight-lifting-section1.component'
 import { WeightLiftingSection2Component } from './weight-lifting-section2/weight-lifting-section2.component'
 import { Common } from '../common/common.module'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -11,6 +12,6 @@ import { Common } from '../common/common.module'
 		WeightLiftingSection1Component,
 		WeightLiftingSection2Component,
 	],
-	imports: [CommonModule, Common],
+	imports: [CommonModule, Common, FormsModule],
 })
 export class WeightLiftingModule {}
