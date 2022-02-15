@@ -45,7 +45,7 @@ export interface CompetitionSection3 extends DateInterface {
 	title: string
 	body: string
 	uri?: string
-	participants?: {
+	participants: {
 		males: Participant[]
 		females: Participant[]
 		wildCards: Participant[]

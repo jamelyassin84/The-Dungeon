@@ -1,4 +1,6 @@
+import { Rule } from './../../../models/types'
 import { Component, OnInit } from '@angular/core'
+import { RuleService } from 'src/app/services/api.service'
 
 @Component({
 	selector: 'WeightLiftingSection2',
@@ -6,7 +8,16 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./weight-lifting-section2.component.scss'],
 })
 export class WeightLiftingSection2Component implements OnInit {
-	constructor() {}
+	constructor(private service: RuleService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.get()
+	}
+
+	data!: Rule | any
+	get(): void {
+		this.service.index().subscribe((data) => {
+			this.data = data
+		})
+	}
 }

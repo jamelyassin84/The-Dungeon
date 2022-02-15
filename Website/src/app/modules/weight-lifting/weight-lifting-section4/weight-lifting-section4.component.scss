@@ -1,0 +1,32 @@
+.section {
+	position: relative !important;
+	min-height: 100vh !important;
+	padding: 20vmin 0;
+}
+
+.title {
+	text-align: center;
+	letter-spacing: 2.5px;
+	color: #ffffff;
+	font-size: 50px;
+}
+.body1 {
+	color: #d10000;
+	text-shadow: 0px 3px 6px #00000087;
+	font-size: 70px;
+	letter-spacing: 2.5px;
+	margin-top: 10vmin;
+	color: #ffffff;
+	text-align: center;
+}
+.body {
+	text-align: center;
+	font-size: 30px;
+	font-family: Montserrat;
+	font-weight: 500;
+	color: #d10000;
+}
+.row {
+	padding-left: 7vw !important;
+	padding-right: 7vw !important;
+}

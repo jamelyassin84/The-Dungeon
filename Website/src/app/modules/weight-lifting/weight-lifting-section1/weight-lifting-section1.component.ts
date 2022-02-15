@@ -36,12 +36,16 @@ export class WeightLiftingSection1Component implements OnInit {
 
 	countDownSinceNow(date: any, time: any) {
 		const timeArray = time.split(':')
+		const min = timeArray[1].split(' ')
 		setInterval(() => {
 			const endTime: any = new Date(date).getTime() / 1000
 			const elapsed: any = Date.now() / 1000
 			const totalSec: number = parseInt(endTime) - parseInt(elapsed)
-			const h = (totalSec / 3600).toFixed()
-			const m = ((totalSec / 60) % 60).toFixed()
+			const h = (totalSec / 3600 + parseInt(timeArray[0])).toFixed()
+			const m = (
+				((totalSec / 60) % 60) +
+				parseInt(min[1].includes('PM') ? min[0] / 2 : min[0])
+			).toFixed()
 			const s = (totalSec % 60).toFixed()
 			this.time =
 				this.minTwoDigits(parseInt(h)) +

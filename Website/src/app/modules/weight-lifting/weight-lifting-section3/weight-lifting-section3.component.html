@@ -1,12 +1,22 @@
 <div class="wrapper-container" *ngIf="data && data.length">
 	<div class="title">JOIN OUR COMMUNITY</div>
 	<div class="community-container w-100">
-		<div *ngFor="let reviewer of data; let i = index">
-			<Community
-				[rating]="reviewer.rating"
-				[description]="reviewer.comment"
-				[name]="reviewer.name"
-			></Community>
-		</div>
+		<carousel
+			[height]="540"
+			[cellsToShow]="innerWidth > 1139 ? 4 : 1"
+			[dots]="false"
+			[margin]="0"
+		>
+			<div
+				*ngFor="let reviewer of data; let i = index"
+				class="carousel-cell ap4-3"
+			>
+				<Community
+					[rating]="reviewer.rating"
+					[description]="reviewer.comment"
+					[name]="reviewer.name"
+				></Community>
+			</div>
+		</carousel>
 	</div>
 </div>

@@ -15,8 +15,9 @@ export class WeightLiftingSection3Component implements OnInit {
 
 	ngOnInit(): void {
 		this.get()
+		this.innerWidth = window.innerWidth
 	}
-
+	innerWidth: number = 0
 	data!: Review[]
 
 	get(): void {

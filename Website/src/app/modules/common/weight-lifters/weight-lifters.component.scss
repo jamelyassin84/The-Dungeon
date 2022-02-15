@@ -1,0 +1,37 @@
+.participants-card {
+	width: 300px;
+	img {
+		aspect-ratio: 9 / 16;
+		object-fit: cover;
+		background: #ffffff 0% 0% no-repeat padding-box;
+		border: 3px solid #000000;
+		box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+			rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+		border-radius: 15px;
+		width: 300px;
+		height: 540px;
+		margin-bottom: 24px;
+	}
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.name {
+	width: 300px;
+
+	text-align: center;
+	letter-spacing: 1.7px;
+	color: #d10000;
+	text-shadow: 0px 3px 6px #00000087;
+	font-size: 2rem;
+}
+.age {
+	font-size: 20px;
+	text-align: center;
+	letter-spacing: 1px;
+	width: 300px;
+
+	color: #ffffff;
+}

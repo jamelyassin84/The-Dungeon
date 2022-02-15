@@ -1,0 +1,41 @@
+.section {
+	position: relative !important;
+	height: 100vh !important;
+	padding-top: 20vmin;
+}
+
+.competition {
+	letter-spacing: 0px;
+	color: #d10000;
+	font-size: 48px;
+	margin-bottom: -1rem;
+}
+.rules {
+	letter-spacing: 0px;
+	color: #373737;
+	font-size: 39px;
+	margin-bottom: 0.2rem;
+}
+ul {
+	margin: 0;
+}
+ul.dashed {
+	list-style-type: none;
+}
+ul.dashed > li {
+	text-indent: -5px;
+	font-size: 1rem;
+}
+ul.dashed > li:before {
+	content: '- ';
+	text-indent: -5px;
+}
+
+.title {
+	font-size: 1rem;
+}
+img {
+	// transform: scale(1.4);
+	// transform-origin: left;
+	width: 120%;
+}

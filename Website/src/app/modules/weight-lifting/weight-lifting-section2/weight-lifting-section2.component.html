@@ -1,1 +1,24 @@
-<p>weight-lifting-section2 works!</p>
+<div class="section container d-flex jcc fdc" *ngIf="data">
+	<div class="row mt-5">
+		<div class="col-md-6">
+			<div class="competition">COMPETITION</div>
+			<div class="rules">RULES</div>
+			<ul class="dashed mb-3">
+				<li *ngFor="let rule of data.rules[2].data">{{ rule.name }}</li>
+			</ul>
+
+			<div class="title">{{ data.rules[1].name }}S</div>
+			<ul class="dashed mb-3">
+				<li *ngFor="let rule of data.rules[1].data">{{ rule.name }}</li>
+			</ul>
+
+			<div class="title">{{ data.rules[0].name }}S</div>
+			<ul class="dashed mb-3">
+				<li *ngFor="let rule of data.rules[0].data">{{ rule.name }}</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<img class="square" [src]="data.uri" alt="" />
+		</div>
+	</div>
+</div>

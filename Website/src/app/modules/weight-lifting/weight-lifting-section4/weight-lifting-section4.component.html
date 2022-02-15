@@ -1,0 +1,69 @@
+<div
+	class="section d-flex fdc"
+	[style.background]="'url(' + data.uri + ')'"
+	*ngIf="data && data.isSectionEnabled"
+>
+	<div class="title">{{ data.title }}</div>
+	<div class="body">{{ data.body }}</div>
+
+	<div class="row jcc w-100" *ngIf="data.participants.males.length !== 0">
+		<div class="body1">Male Contenders!</div>
+		<carousel
+			[height]="540 + 180"
+			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
+			[dots]="false"
+			[margin]="37"
+			[loop]="true"
+			[autoplay]="true"
+			[autoplayInterval]="2000"
+			[autoplay]="data.participants.males.length > 5"
+		>
+			<div
+				*ngFor="let participant of data.participants.males"
+				class="carousel-cell ap4-3"
+			>
+				<WeightLifter [participant]="participant"></WeightLifter>
+			</div>
+		</carousel>
+	</div>
+
+	<div class="row jcc w-100" *ngIf="data.participants.females.length !== 0">
+		<div class="body1">Female Contenders!</div>
+		<carousel
+			[height]="540 + 180"
+			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
+			[dots]="false"
+			[margin]="37"
+			[loop]="true"
+			[autoplay]="data.participants.females.length > 5"
+			[autoplayInterval]="2000"
+		>
+			<div
+				*ngFor="let participant of data.participants.females"
+				class="carousel-cell ap4-3"
+			>
+				<WeightLifter [participant]="participant"></WeightLifter>
+			</div>
+		</carousel>
+	</div>
+
+	<div class="row jcc w-100" *ngIf="data.participants.wildCards.length !== 0">
+		<div class="body1">Wildcard Contenders!</div>
+		<carousel
+			[height]="540 + 180"
+			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
+			[dots]="false"
+			[margin]="37"
+			[loop]="true"
+			[autoplay]="data.participants.wildCards.length > 5"
+			[autoplayInterval]="2000"
+		>
+			<div
+				*ngFor="let participant of data.participants.wildCards"
+				class="carousel-cell ap4-3"
+			>
+				<WeightLifter [participant]="participant"></WeightLifter>
+			</div>
+		</carousel>
+	</div>
+</div>
