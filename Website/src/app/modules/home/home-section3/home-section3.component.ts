@@ -14,7 +14,7 @@ export class HomeSection3Component implements OnInit {
 		this.get()
 	}
 
-	data!: HomeSection3
+	data!: HomeSection3 | any
 
 	get(): void {
 		this.service.index().subscribe((data) => (this.data = data))

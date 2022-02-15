@@ -1,13 +1,13 @@
 <div class="section">
 	<div class="bg" *ngIf="data">
-		<img [src]="data.uri" alt="" />
+		<img [src]="data.uri" alt="" class="px16-9" />
 	</div>
 	<div class="wrapper" *ngIf="data">
 		<button
 			*ngIf="data.isButtonEnabled"
 			routerLink="/weight-lifting"
 			class="btn btn-app-primary"
-			[style.background]="data.buttonColor"
+			[style.background]="data.buttonColor + ' !important'"
 		>
 			{{ data.buttonText }} <i class="bi bi-arrow-right"></i>
 		</button>

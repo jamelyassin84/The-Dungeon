@@ -7,7 +7,9 @@
 img {
 	position: absolute;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
+	z-index: -1;
+	height: 100%;
 	z-index: -1;
 }
 
@@ -15,12 +17,13 @@ img {
 	font: normal normal normal 61px/67px bold;
 	letter-spacing: 3.05px;
 	color: #ffffff;
+	text-shadow: 0px 3px 6px #00000087;
 }
 
 .alert {
-	font: normal normal bold 20px/40px Montserrat;
 	letter-spacing: 1px;
 	color: #d10000;
+	text-shadow: 0px 0px 6px #00000087;
 }
 
 .description {
@@ -32,6 +35,7 @@ img {
 	text-align: center;
 	margin-bottom: 4rem;
 	width: 655px;
+	text-shadow: 0px 3px 6px #00000087;
 }
 .section {
 	scroll-snap-align: start;

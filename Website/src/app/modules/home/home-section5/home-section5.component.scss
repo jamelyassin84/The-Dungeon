@@ -2,15 +2,14 @@
 	height: 100vh;
 	position: relative;
 	padding: 10vw;
-	margin-top: -10vh;
-	margin-bottom: -8vh;
 }
 
 img {
 	position: absolute;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	z-index: -1;
+	height: 100%;
 }
 
 .title {

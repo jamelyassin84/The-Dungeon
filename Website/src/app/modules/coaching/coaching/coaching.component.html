@@ -19,7 +19,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-md-6 p-0">
+		<div class="col-md-6 p-0" *ngIf="coaches.length !== 0">
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -36,7 +36,7 @@
 						<img [src]="coach.uri" class="coaches ap5-6" alt="" />
 						<div class="coaches-text">{{ coach.name }}</div>
 						<div class="coaches-text1 text-muted">
-							{{ coach.experience }} Yrs of Expericne
+							Experience: {{ coach.experience }} Yrs
 						</div>
 					</div>
 				</div>

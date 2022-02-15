@@ -1,9 +1,12 @@
 <div class="section d-flex jcc fdc" *ngIf="data && data.isSectionEnabled">
 	<div class="bg">
-		<img [src]="data.uri" alt="" class="px16-9" />
+		<img *ngIf="data.uri" [src]="data.uri" alt="" class="px16-9" />
 	</div>
 	<div class="row mt-5">
-		<div class="col-md-6 d-flex w-100 aic jcc mt-5">
+		<div
+			class="col-md-6 d-flex w-100 aic jcc mt-5"
+			*ngIf="data2 && data2.isSectionEnabled"
+		>
 			<div class="registration-container" *ngIf="data2">
 				<div class="smallTitle">{{ data2.smallTitle }}</div>
 				<div class="largeTitle">{{ data2.largeTitle }}</div>
@@ -44,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 text-center mt-5 pt-5">
+		<div class="col-md-6 text-center mt-5 pt-5" [class.col-md-12]="!data2">
 			<div class="competitionDate">{{ data.competitionDate }}</div>
 			<div class="categoryType">{{ data.categoryType }}</div>
 			<div class="category">{{ data.category }}</div>
