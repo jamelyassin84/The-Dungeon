@@ -19,6 +19,8 @@ tr,
 td {
 	padding: 1.2rem !important;
 	cursor: pointer;
+	font-family: Montserrat;
+	font-weight: 500;
 }
 
 tr:hover {
@@ -27,9 +29,7 @@ tr:hover {
 
 img {
 	height: 232px;
-	width: 189px;
-	border-radius: 15px;
-	object-fit: cover;
+	border-radius: 5px;
 }
 
 .coaches-text {
@@ -39,6 +39,14 @@ img {
 	text-align: center;
 	margin-top: 0.5rem;
 }
+.coaches-text1 {
+	letter-spacing: 0.75px;
+	font-size: 0.9rem;
+	text-align: center;
+	font-family: Montserrat;
+	font-weight: 500;
+}
+
 .coach-card {
 	margin-left: -1rem;
 	cursor: pointer;
@@ -47,8 +55,6 @@ img {
 	padding: 1rem;
 	transition: 0.4s ease;
 	margin-bottom: 20px;
-	&:hover {
-		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-	}
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }

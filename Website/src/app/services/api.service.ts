@@ -33,7 +33,7 @@ import { BaseService } from './base.service'
 @Injectable({
 	providedIn: 'root',
 })
-export class CoachesService extends BaseService<Coaches> {
+export class CoachesService extends BaseService<Coaches[]> {
 	constructor(public _http: HttpClient) {
 		super(_http, API.COACHES)
 	}

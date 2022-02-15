@@ -1,5 +1,7 @@
 import { Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
+import { CoachesService, CoachingService } from 'src/app/services/api.service'
+import { Coach, Coaches, Coaching } from 'src/app/models/types'
 
 @Component({
 	selector: 'app-coaching',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./coaching.component.scss'],
 })
 export class CoachingComponent implements OnInit {
-	constructor(private title: Title) {}
+	constructor(
+		private service: CoachingService,
+		private coachService: CoachesService,
+		private title: Title,
+	) {}
 
 	ngOnInit(): void {
-		this.title.setTitle('The Dungeon | Home')
+		this.title.setTitle('The Dungeon | Coaching')
+		this.get()
+	}
+
+	data!: Coaching[]
+	coaches!: any[]
+
+	get(): void {
+		this.service.index().subscribe((data: any) => (this.data = data))
+		this.coachService
+			.index()
+			.subscribe(
+				(data: any) => (this.coaches = [...data.females, ...data.males]),
+			)
 	}
 }

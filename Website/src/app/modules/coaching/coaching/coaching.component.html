@@ -1,4 +1,4 @@
-<div class="wrapper-container">
+<div class="wrapper-container" *ngIf="data.length">
 	<div class="row w-100 h-100">
 		<div class="col-md-12 p-0">
 			<div class="coaching">COACHING</div>
@@ -12,9 +12,9 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let item of [1, 2, 3, 5, 3, 5]">
-						<td>5 CLASSES</td>
-						<td>1,000 AED</td>
+					<tr *ngFor="let item of data">
+						<td>{{ item.classes | titlecase }}</td>
+						<td>{{ item.price }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -28,34 +28,16 @@
 				</thead>
 			</table>
 			<div class="row pl-5">
-				<div class="col-md-4 p-0 d-flex fdc aic">
+				<div
+					class="col-md-4 p-0 d-flex fdc aic"
+					*ngFor="let coach of coaches"
+				>
 					<div class="coach-card">
-						<img src="../../../../assets/app/coaches/1.jpg" class="coaches" alt="" />
-						<div class="coaches-text">COACH AHMED</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 d-flex fdc aic">
-					<div class="coach-card">
-						<img src="../../../../assets/app/coaches/2.jpg" class="coaches" alt="" />
-						<div class="coaches-text">COACH MINA</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 d-flex fdc aic">
-					<div class="coach-card">
-						<img src="../../../../assets/app/coaches/3.jpg" class="coaches" alt="" />
-						<div class="coaches-text">COACH MOAHMMED</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 d-flex fdc aic">
-					<div class="coach-card">
-						<img src="../../../../assets/app/coaches/4.jpg" class="coaches" alt="" />
-						<div class="coaches-text">COACH ALAA</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 d-flex fdc aic">
-					<div class="coach-card">
-						<img src="../../../../assets/app/coaches/5.jpg" class="coaches" alt="" />
-						<div class="coaches-text">COACH MIKE</div>
+						<img [src]="coach.uri" class="coaches ap5-6" alt="" />
+						<div class="coaches-text">{{ coach.name }}</div>
+						<div class="coaches-text1 text-muted">
+							{{ coach.experience }} Yrs of Expericne
+						</div>
 					</div>
 				</div>
 			</div>
