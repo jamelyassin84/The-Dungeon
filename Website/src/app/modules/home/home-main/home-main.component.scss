@@ -1,6 +1,4 @@
-.content {
-	scroll-snap-points-y: repeat(300px);
-	scroll-snap-type: y mandatory;
-	scroll-snap-type: mandatory;
-	overflow: hidden;
+section {
+	height: 100vh;
+	scroll-snap-align: start;
 }

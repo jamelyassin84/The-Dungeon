@@ -1,8 +1,7 @@
-<div
-	class="section d-flex fdc"
-	[style.background]="'url(' + data.uri + ')'"
-	*ngIf="data && data.isSectionEnabled"
->
+<div class="section d-flex fdc w-100" *ngIf="data && data.isSectionEnabled">
+	<div class="bg">
+		<img *ngIf="data.uri" [src]="data.uri" alt="" class="px16-9" />
+	</div>
 	<div class="title">{{ data.title }}</div>
 	<div class="body">{{ data.body }}</div>
 
@@ -11,10 +10,9 @@
 		<carousel
 			[height]="540 + 180"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
-			[dots]="false"
+			[dots]="data.participants.males.length > 5"
 			[margin]="37"
-			[loop]="true"
-			[autoplay]="true"
+			[loop]="data.participants.males.length > 5"
 			[autoplayInterval]="2000"
 			[autoplay]="data.participants.males.length > 5"
 		>
@@ -32,9 +30,9 @@
 		<carousel
 			[height]="540 + 180"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
-			[dots]="false"
+			[dots]="data.participants.females.length > 5"
 			[margin]="37"
-			[loop]="true"
+			[loop]="data.participants.females.length > 5"
 			[autoplay]="data.participants.females.length > 5"
 			[autoplayInterval]="2000"
 		>
@@ -52,9 +50,9 @@
 		<carousel
 			[height]="540 + 180"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
-			[dots]="false"
+			[dots]="data.participants.wildCards.length > 5"
 			[margin]="37"
-			[loop]="true"
+			[loop]="data.participants.wildCards.length > 5"
 			[autoplay]="data.participants.wildCards.length > 5"
 			[autoplayInterval]="2000"
 		>

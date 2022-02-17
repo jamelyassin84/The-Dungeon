@@ -1,15 +1,25 @@
-<div class="section">
-	<div class="bg" *ngIf="data">
-		<img [src]="data.uri" alt="" class="px16-9" />
+<div class="bg" *ngIf="data">
+	<img [src]="data.uri" alt="" class="px16-9" />
+</div>
+<div class="wrapper aic jcc fdc" *ngIf="data">
+	<div
+		class="title animate__animated animate__fast animate__slideInDown"
+		*ngIf="data.isTextsEnabled"
+	>
+		{{ data.title }}
 	</div>
-	<div class="wrapper" *ngIf="data">
-		<button
-			*ngIf="data.isButtonEnabled"
-			routerLink="/weight-lifting"
-			class="btn btn-app-primary"
-			[style.background]="data.buttonColor + ' !important'"
-		>
-			{{ data.buttonText }} <i class="bi bi-arrow-right"></i>
-		</button>
+	<div
+		class="body animate__animated animate__fadeInDown animate__fast"
+		*ngIf="data.isTextsEnabled"
+	>
+		{{ data.body }}
 	</div>
+	<button
+		*ngIf="data.isButtonEnabled"
+		routerLink="/competition"
+		class="btn btn-app-primary"
+		[style.background]="data.buttonColor + ' !important'"
+	>
+		{{ data.buttonText }} <i class="bi bi-arrow-right"></i>
+	</button>
 </div>

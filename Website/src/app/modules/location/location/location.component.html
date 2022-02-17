@@ -3,11 +3,13 @@
 	<div class="row m-0 p-0 mt-5 pt-5 d-flex aic jcc w-100">
 		<div class="col-md-6 p-0">
 			<img
-				class="logo"
+				class="logo animate__animated animate__fast animate__slideInDown"
 				src="../../../../assets/app/location/logo.png"
 				alt=""
 			/>
-			<div class="address">
+			<div
+				class="address animate__animated animate__fast animate__slideInDown"
+			>
 				{{ data.address }} <br />
 				{{ data.state }}
 			</div>
@@ -21,7 +23,11 @@
 			<div class="phone">{{ data.contact }}</div>
 		</div>
 		<div class="col-md-6 p-0">
-			<img class="map square" [src]="data.uri" alt="" />
+			<img
+				class="map square animate__animated animate__fast animate__zoomIn"
+				[src]="data.uri"
+				alt=""
+			/>
 		</div>
 	</div>
 </div>

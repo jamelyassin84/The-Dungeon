@@ -1,11 +1,11 @@
 <div class="wrapper text-center">
 	<div class="rating">
-		<i class="bi bi-star-fill"></i>
-		<i class="bi bi-star-fill"></i>
-		<i class="bi bi-star-fill"></i>
-		<i class="bi bi-star-fill"></i>
-		<i class="bi bi-star-fill"></i>
+		<i [class.active]="rating > 1" class="bi bi-star-fill"></i>
+		<i [class.active]="rating > 2" class="bi bi-star-fill"></i>
+		<i [class.active]="rating > 3" class="bi bi-star-fill"></i>
+		<i [class.active]="rating > 4" class="bi bi-star-fill"></i>
+		<i [class.active]="rating > 5" class="bi bi-star-fill"></i>
 	</div>
-	<div class="description">"{{ description }}"</div>
+	<div class="description">{{ description }}</div>
 	<div class="name">{{ name }}</div>
 </div>

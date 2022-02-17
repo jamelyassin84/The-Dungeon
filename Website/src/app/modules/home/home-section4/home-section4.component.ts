@@ -17,6 +17,10 @@ export class HomeSection4Component implements OnInit {
 	data!: HomeSection4
 
 	get(): void {
-		this.service.index().subscribe((data) => (this.data = data))
+		this.service
+			.index()
+			.subscribe((data) =>
+				data.id !== undefined ? (this.data = data) : void 0,
+			)
 	}
 }

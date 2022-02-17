@@ -8,6 +8,8 @@ import { HomeSection5Component } from './home-section5/home-section5.component'
 import { Common } from '../common/common.module'
 import { RouterModule } from '@angular/router'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { ParallaxModule, ParallaxConfig } from 'ngx-parallax'
+import { NgxParallaxScrollModule } from 'ngx-parallax-scroll'
 
 @NgModule({
 	declarations: [
@@ -17,7 +19,13 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		HomeSection3Component,
 		HomeSection5Component,
 	],
-	imports: [CommonModule, Common, RouterModule],
+	imports: [
+		ParallaxModule,
+		CommonModule,
+		Common,
+		RouterModule,
+		NgxParallaxScrollModule,
+	],
 	exports: [],
 })
 export class HomeModule {}

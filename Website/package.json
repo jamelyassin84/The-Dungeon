@@ -21,6 +21,8 @@
     "angular-responsive-carousel": "^2.1.2",
     "bootstrap": "^4.6.1",
     "jquery": "^3.6.0",
+    "ngx-parallax": "^4.0.0",
+    "ngx-parallax-scroll": "^1.0.2",
     "popper.js": "^1.16.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

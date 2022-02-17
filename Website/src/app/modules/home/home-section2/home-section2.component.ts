@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { IParallaxScrollConfig } from 'ngx-parallax-scroll'
 import { HomeSection2 } from 'src/app/models/types'
 import { HomeSection2Service } from 'src/app/services/api.service'
 
@@ -18,5 +19,12 @@ export class HomeSection2Component implements OnInit {
 
 	get(): void {
 		this.service.index().subscribe((data) => (this.data = data))
+	}
+	ngParallaxConf: IParallaxScrollConfig = {
+		parallaxSpeed: 1,
+		parallaxSmoothness: 1,
+		parallaxDirection: 'reverse',
+		parallaxTimingFunction: 'ease-in',
+		parallaxThrottleTime: 80,
 	}
 }

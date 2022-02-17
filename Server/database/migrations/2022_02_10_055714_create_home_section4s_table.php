@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->boolean('isSectionEnabled')->nullable();
-            $table->boolean('isPricingEnabled')->nullable();
+            $table->string('isSectionEnabled')->nullable();
+            $table->string('isPricingEnabled')->nullable();
 
             $table->string('title')->nullable();
             $table->string('notice')->nullable();

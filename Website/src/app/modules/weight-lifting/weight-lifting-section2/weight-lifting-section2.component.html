@@ -1,8 +1,14 @@
-<div class="section container d-flex jcc fdc" *ngIf="data.uri">
+<div class="section container d-flex jcc fdc" *ngIf="data">
 	<div class="row mt-5">
 		<div class="col-md-6">
-			<div class="competition">COMPETITION</div>
-			<div class="rules">RULES</div>
+			<div
+				class="competition animate__animated animate__fast animate__slideInDown"
+			>
+				COMPETITION
+			</div>
+			<div class="rules animate__animated animate__fast animate__slideInDown">
+				RULES
+			</div>
 			<ul class="dashed mb-3">
 				<li *ngFor="let rule of data.rules[2].data">{{ rule.name }}</li>
 			</ul>

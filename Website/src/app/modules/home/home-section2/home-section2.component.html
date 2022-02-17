@@ -1,26 +1,32 @@
-<div class="section">
-	<div class="wrapper-container jcc" *ngIf="data">
-		<div class="row h-100">
-			<div class="col-md-8">
-				<div class="wrapper d-flex aic jcc h-100">
-					<img
-						class="current"
-						src="../../../../assets/app/home/1.png"
-						alt=""
-					/>
-					<img class="next" [src]="data.uri" alt="" />
-				</div>
+<div class="h-100" *ngIf="data">
+	<div class="row h-100">
+		<div class="col-md-8 pt-5">
+			<div class="wrapper d-flex aic jcc h-100 pt-5">
+				<img
+					class="current square animate__animated animate__fast animate__zoomIn"
+					[src]="data.uri"
+					alt=""
+				/>
+				<img
+					class="next square animate__animated animate__fast animate__zoomIn"
+					src="../../../../assets/app/home/2.png"
+					alt=""
+				/>
 			</div>
-			<div class="col-md-3 d-flex jcc fdc h-100 p-0">
-				<div class="title">{{ data.title }}</div>
-				<div class="description">
-					{{ data.body }}
-				</div>
+		</div>
+		<div class="col-md-3 d-flex jcc fdc h-100 p-0">
+			<div class="title animate__animated animate__fast animate__slideInDown">
+				{{ data.title }}
+			</div>
+			<div
+				class="description animate__animated animate__fast animate__slideInDown"
+			>
+				{{ data.body }}
+			</div>
 
-				<a routerLink="/our-story" class="button">
-					FIND OUT MORE <i class="bi bi-arrow-right"></i>
-				</a>
-			</div>
+			<a routerLink="/our-story" class="button">
+				FIND OUT MORE <i class="bi bi-arrow-right"></i>
+			</a>
 		</div>
 	</div>
 </div>
