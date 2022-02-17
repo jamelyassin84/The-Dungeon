@@ -1,27 +1,26 @@
 <div class="h-auto" *ngIf="data">
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10">
-		<div class="p-5 sm:p-5 md:p-16 lg:p-24 xl:p-32">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 md:h-screen">
+		<div class="p-5 p-5 md:p-16 lg:p-24 xl:p-32">
 			<div class="relative">
 				<img
-					class="absolute"
+					class="relative hidden md:absolute block"
 					src="../../../../assets/app/home/2.png"
 					alt=""
 				/>
-				<img class="absolute" [src]="data.uri" alt="" />
+				<img class="relative md:absolute" [src]="data.uri" alt="" />
 			</div>
 		</div>
-		<div class="text-left p-5 sm:p-5 text-left md:p-16 lg:p-24 xl:p-3">
-			<div class="">
+		<div
+			class="text-left flex fdc p-5 :p-5 text-left md:p-16 lg:p-24 xl:p-3 md:item-center jcc"
+		>
+			<div class="title text-3xl">
 				{{ data.title }}
 			</div>
-			<div class="mt-5">
+			<div class="description mt-5 text-xl">
 				{{ data.body }}
 			</div>
 
-			<a
-				routerLink="/our-story"
-				class="button pr-5 pl-2 mt-20 md:mt-40 ml-0"
-			>
+			<a routerLink="/our-story" class="button pr-5 mt-5 md:mt-5 ml-0">
 				FIND OUT MORE <i class="bi bi-arrow-right"></i>
 			</a>
 		</div>

@@ -1,20 +1,24 @@
 <div class="h-auto relative">
-	<div class="bg relative" *ngIf="data">
-		<div class="overlay sm:h-screen"></div>
-		<img [src]="data.uri" alt="" class="px16-9 sm:h-screen" />
+	<div class="bg relative h-screen" *ngIf="data">
+		<img
+			[src]="data.uri"
+			alt=""
+			class="px16-9 absolute h-screen object-cover w-ful"
+		/>
+		<div class="overlay h-screen absolute w-ful"></div>
 	</div>
 	<div
-		class="wrapper text-center justify-center fdc md:justify-center sm:mt-19 h-screen w-max"
+		class="wrapper text-center flex items-center justify-center fdc md:mt-19 h-screen w-full"
 		*ngIf="data"
 	>
 		<div
-			class="title animate__animated animate__fast animate__slideInDown p-0 text-6xl md:text-9xl pl-5 pr-5"
+			class="title w-full animate__animated animate__fast animate__slideInDown p-0 text-6xl md:text-9xl pl-5 pr-5"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.title }}
 		</div>
 		<div
-			class="body animate__animated animate__fadeInDown animate__fast p-0 text-2xl md:text-4xl pl-5 pr-5 mt-3"
+			class="body w-full animate__animated animate__fadeInDown animate__fast p-0 text-2xl md:text-4xl pl-5 pr-5 mt-3"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.body }}
@@ -23,7 +27,7 @@
 			<button
 				*ngIf="data.isButtonEnabled"
 				routerLink="/competition"
-				class="btn btn-app-primary mt-20 sm:mx-0 md:mx-auto lg:mx-auto xl:mx-auto"
+				class="btn btn-app-primary text-1xl py-5 mx-0 md:mx-auto mt-32 lg:mx-auto xl:mx-auto"
 				[style.background]="data.buttonColor + ' !important'"
 			>
 				{{ data.buttonText }} <i class="bi bi-arrow-right"></i>
