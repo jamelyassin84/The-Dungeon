@@ -1,11 +1,19 @@
 <div class="w-100 h-100">
+	<div class="wrapper-container block md:hidden p-0" *ngIf="data">
+		<div class="text w-100 d-flex aic jcc fdc p-5 px-24">
+			<div class="title text-left">{{ data.title }}</div>
+			<div class="description text-left">
+				{{ data.body }}
+			</div>
+		</div>
+	</div>
 	<ImagesCarousel
 		[data]="data"
 		*ngIf="data && data.images.length !== 0"
 	></ImagesCarousel>
-	<div class="wrapper-container" *ngIf="data">
+	<div class="wrapper-container hidden md:block" *ngIf="data">
 		<div class="text w-100 d-flex aic jcc fdc">
-			<div class="title">{{ data.title }}</div>
+			<div class="title" style="margin-top: 100px">{{ data.title }}</div>
 			<div class="description">
 				{{ data.body }}
 			</div>

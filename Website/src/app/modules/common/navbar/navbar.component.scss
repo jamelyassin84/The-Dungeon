@@ -3,6 +3,7 @@
 	background-color: rgba(0, 0, 0, 1);
 	padding: 1.5rem 20vmin;
 	position: fixed;
+	border-radius: 0;
 	z-index: 9;
 	.logo {
 		height: 40.26px;
@@ -12,7 +13,6 @@
 li {
 	list-style: none;
 	margin-right: 2.3rem;
-	transform: translateY(0.8rem);
 	a {
 		color: white;
 		cursor: pointer;

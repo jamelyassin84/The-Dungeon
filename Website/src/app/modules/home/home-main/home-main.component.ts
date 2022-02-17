@@ -18,7 +18,10 @@ export class HomeMainComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.title.setTitle('The Dungeon | Home')
+		this.innerWidth = window.innerWidth
 	}
+
+	innerWidth!: number
 
 	@ViewChild('section1') section1!: ElementRef
 	@ViewChild('section2') section2!: ElementRef
