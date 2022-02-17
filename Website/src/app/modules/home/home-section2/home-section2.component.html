@@ -1,48 +1,34 @@
-<div class="h-100" *ngIf="data">
-	<div class="row h-100">
-		<div class="col-md-8 h-100 hidden md:block">
-			<div class="wrapper d-flex aic jcc h-100 pt-5">
+<div class="h-auto mt-5 md:h-auto mt-0" *ngIf="data">
+	<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-2 md:h-screen">
+		<div class="relative h-auto p-5 md:p-32 lg:p-32 xl:p-32">
+			<div class="relative">
 				<img
-					class="current square animate__animated animate__fast animate__zoomIn h-full"
-					[src]="data.uri"
+					class="absolute square animate__animated animate__fast animate__zoomIn h-auto object-contain scaleX-75 scaleY-125"
+					src="../../../../assets/app/home/2.png"
 					alt=""
 				/>
 				<img
-					class="next square animate__animated animate__fast animate__zoomIn h-full hidden md:block"
-					src="../../../../assets/app/home/2.png"
+					class="next square animate__animated animate__fast animate__zoomIn h-auto object-contain"
+					[src]="data.uri"
 					alt=""
 				/>
 			</div>
 		</div>
-		<div
-			class="col-md-3 d-flex jcc fdc pl-5 md:pl-0 pt-0 h-full mt-24 md:mt-24 h-full pt-24"
-		>
-			<div class="title animate__animated animate__fast animate__slideInDown">
+		<div class="flex-column pt-0 h-auto md:pt-64 pl-5 pl-0 h-screen pt-24">
+			<div
+				class="animate__animated animate__fast animate__slideInDown p-0 text-3xl md:text-5xl pl-1 pr-"
+			>
 				{{ data.title }}
 			</div>
 			<div
-				class="description animate__animated animate__fast animate__slideInDown"
+				class="description mb-3 animate__animated animate__fadeInDown animate__fast p-0 text-2xl md:text-3xl pl-1 pr-5 mt-3"
 			>
 				{{ data.body }}
 			</div>
 
-			<a routerLink="/our-story" class="button">
+			<a routerLink="/our-story" class="button pr-5 pl-2 mt-20 md:mt-40 ml-0">
 				FIND OUT MORE <i class="bi bi-arrow-right"></i>
 			</a>
-		</div>
-		<div class="col-md-8 h-100 block md:hidden">
-			<div class="wrapper d-flex aic jcc h-100 pt-5">
-				<img
-					class="current square animate__animated animate__fast animate__zoomIn h-1/2"
-					[src]="data.uri"
-					alt=""
-				/>
-				<img
-					class="next square animate__animated animate__fast animate__zoomIn h-1/2 hidden md:block"
-					src="../../../../assets/app/home/2.png"
-					alt=""
-				/>
-			</div>
 		</div>
 	</div>
 </div>

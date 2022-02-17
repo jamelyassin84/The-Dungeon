@@ -5,14 +5,12 @@
 	color: #1d1d1b;
 	text-transform: uppercase;
 	margin-bottom: 1.9rem;
-	font-size: 2.3rem;
 }
 
 .description {
 	font-family: Montserrat;
 	letter-spacing: 1.25px;
 	color: #1d1d1b;
-	font-size: 1.5em;
 	font-weight: 500;
 }
 
@@ -42,19 +40,11 @@
 		position: absolute;
 		cursor: pointer;
 	}
-
-	.current {
-		z-index: 1;
-		height: calc(890px / 1.15);
-		width: calc(890px / 1.15);
-	}
-	.next {
-		height: calc(648px / 1.15);
-		width: calc(973px / 1.15);
-
-		z-index: -1;
-	}
 }
 .section {
 	scroll-snap-align: start;
+}
+
+.current {
+	transform: scaleX(1.1) scaleY(0.9);
 }
