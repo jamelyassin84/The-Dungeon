@@ -12,7 +12,10 @@ export class HomeSection4Component implements OnInit {
 
 	ngOnInit(): void {
 		this.get()
+		this.innerWidth = window.innerWidth
 	}
+
+	innerWidth!: number
 
 	data!: HomeSection4
 

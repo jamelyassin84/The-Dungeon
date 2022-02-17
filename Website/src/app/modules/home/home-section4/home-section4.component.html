@@ -1,13 +1,32 @@
-<div class="section">
-	<div class="wrapper-container d-flex aic jcc fdc" *ngIf="data">
-		<img [src]="data.uri" alt="" />
-		<div class="title">{{ data.title }}</div>
-		<div class="alert">{{ data.notice }}</div>
-		<div class="description">
-			{{ data.body }}
-		</div>
-		<div class="row p-0 m-0 w-100">
-			<div class="col-md-3" *ngFor="let price of data.prices; let i = index">
+<div class="wrapper-container flex aic jcc fdc w-full text-center" *ngIf="data">
+	<img [src]="data.uri" alt="" />
+	<div class="px-5 title w-full text-center text-7xl">{{ data.title }}</div>
+	<div class="px-5 alert w-full text-center mt-3.5 text-xl">
+		{{ data.notice }}
+	</div>
+	<div class="px-5 description mt-3.5 text-center text-xl md:px-64">
+		<span
+			style="
+				width: 655px;
+				font-weight: 300;
+				text-align: center;
+				font-family: Montserrat;
+			"
+			>{{ data.body }}</span
+		>
+	</div>
+	<div class="p-0 m-0 w-full md:px-28">
+		<carousel
+			[height]="540"
+			[cellsToShow]="innerWidth > 1139 ? 5 : 2"
+			[margin]="innerWidth > 1139 ? 40 : 12"
+			[dots]="false"
+			[margin]="0"
+		>
+			<div
+				*ngFor="let price of data.prices; let i = index"
+				class="carousel-cell ap4-3"
+			>
 				<PackageCard
 					[title]="price.duration"
 					[price]="price.price"
@@ -18,6 +37,6 @@
 				>
 				</PackageCard>
 			</div>
-		</div>
+		</carousel>
 	</div>
 </div>
