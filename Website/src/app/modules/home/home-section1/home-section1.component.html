@@ -27,10 +27,11 @@
 			<button
 				*ngIf="data.isButtonEnabled"
 				routerLink="/competition"
-				class="btn btn-app-primary text-1xl py-5 mx-0 md:mx-auto mt-32 lg:mx-auto xl:mx-auto"
+				class="btn btn-app-primary flex text-1xl py-5 mx-0 md:mx-auto mt-32 lg:mx-auto xl:mx-auto"
 				[style.background]="data.buttonColor + ' !important'"
 			>
 				{{ data.buttonText }}
+				<i class="bi bi-arrow-right ml-4 hidden md:block"></i>
 			</button>
 		</div>
 	</div>
