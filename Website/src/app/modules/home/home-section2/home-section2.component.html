@@ -1,32 +1,27 @@
-<div class="h-auto mt-5 md:h-auto mt-0" *ngIf="data">
-	<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-2 md:h-screen">
-		<div class="relative h-auto p-5 md:p-32 lg:p-32 xl:p-32">
+<div class="h-auto" *ngIf="data">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10">
+		<div class="p-5 sm:p-5 md:p-16 lg:p-24 xl:p-32">
 			<div class="relative">
 				<img
-					class="absolute square animate__animated animate__fast animate__zoomIn h-auto object-contain scaleX-75 scaleY-125"
+					class="absolute"
 					src="../../../../assets/app/home/2.png"
 					alt=""
 				/>
-				<img
-					class="next square animate__animated animate__fast animate__zoomIn h-auto object-contain"
-					[src]="data.uri"
-					alt=""
-				/>
+				<img class="absolute" [src]="data.uri" alt="" />
 			</div>
 		</div>
-		<div class="flex-column pt-0 h-auto md:pt-64 pl-5 pl-0 h-screen pt-24">
-			<div
-				class="animate__animated animate__fast animate__slideInDown p-0 text-3xl md:text-5xl pl-1 pr-"
-			>
+		<div class="text-left p-5 sm:p-5 text-left md:p-16 lg:p-24 xl:p-3">
+			<div class="">
 				{{ data.title }}
 			</div>
-			<div
-				class="description mb-3 animate__animated animate__fadeInDown animate__fast p-0 text-2xl md:text-3xl pl-1 pr-5 mt-3"
-			>
+			<div class="mt-5">
 				{{ data.body }}
 			</div>
 
-			<a routerLink="/our-story" class="button pr-5 pl-2 mt-20 md:mt-40 ml-0">
+			<a
+				routerLink="/our-story"
+				class="button pr-5 pl-2 mt-20 md:mt-40 ml-0"
+			>
 				FIND OUT MORE <i class="bi bi-arrow-right"></i>
 			</a>
 		</div>
