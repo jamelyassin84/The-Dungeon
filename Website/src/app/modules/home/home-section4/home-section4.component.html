@@ -1,6 +1,8 @@
 <div class="wrapper-container flex aic jcc fdc w-full text-center" *ngIf="data">
 	<img [src]="data.uri" alt="" />
-	<div class="px-5 title w-full text-center text-7xl">{{ data.title }}</div>
+	<div class="px-5 title w-full text-center text-2xl md:text-7xl">
+		{{ data.title }}
+	</div>
 	<div class="px-5 alert w-full text-center mt-3.5 text-xl">
 		{{ data.notice }}
 	</div>
