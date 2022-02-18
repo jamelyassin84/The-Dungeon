@@ -1,5 +1,9 @@
 <div class="participants-card">
 	<img [src]="participant.uri" alt="" />
-	<div class="name">{{ participant.name }}</div>
-	<div class="age">Age : {{ participant.age }} Yrs</div>
+	<div class="name text-2xl font-weight-bold text-left md:text-center">
+		{{ participant.name }}
+	</div>
+	<div class="age text-1xl text-left md:text-center">
+		Age : {{ participant.age }} Yrs
+	</div>
 </div>

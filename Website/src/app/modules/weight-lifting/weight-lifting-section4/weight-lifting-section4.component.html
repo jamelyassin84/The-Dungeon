@@ -1,17 +1,27 @@
-<div class="section d-flex fdc w-100" *ngIf="data && data.isSectionEnabled">
-	<div class="bg">
+<div
+	class="py-16 fdc h:auto bg-zinc-900 mt-10 md:mt-5 relative"
+	*ngIf="data && data.isSectionEnabled"
+>
+	<div class="bg hidden md:block">
 		<img *ngIf="data.uri" [src]="data.uri" alt="" class="px16-9" />
 	</div>
-	<div class="title">{{ data.title }}</div>
-	<div class="body">{{ data.body }}</div>
+	<div class="title text-3xl md:text-6xl font-weight-bold px-8">
+		{{ data.title }}
+	</div>
+	<div class="body px-16 mt-2 text-xl md:text-2xl mt-3">{{ data.body }}</div>
 
-	<div class="row jcc w-100" *ngIf="data.participants.males.length !== 0">
-		<div class="body1">Male Contenders!</div>
+	<div
+		class="row jcc w-full h-auto"
+		*ngIf="data.participants.males.length !== 0"
+	>
+		<div class="body1 text-2xl md:text-3xl font-weight-bold mb-3">
+			Male Contenders
+		</div>
 		<carousel
-			[height]="540 + 180"
+			[height]="540 + 100"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
 			[dots]="data.participants.males.length > 5"
-			[margin]="37"
+			[margin]="47"
 			[loop]="data.participants.males.length > 5"
 			[autoplayInterval]="2000"
 			[autoplay]="data.participants.males.length > 5"
@@ -25,16 +35,21 @@
 		</carousel>
 	</div>
 
-	<div class="row jcc w-100" *ngIf="data.participants.females.length !== 0">
-		<div class="body1">Female Contenders!</div>
+	<div
+		class="row jcc w-full h-auto"
+		*ngIf="data.participants.females.length !== 0"
+	>
+		<div class="body1 text-2xl md:text-3xl font-weight-bold mb-3">
+			Female Contenders
+		</div>
 		<carousel
-			[height]="540 + 180"
+			[height]="540 + 100"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
 			[dots]="data.participants.females.length > 5"
-			[margin]="37"
+			[margin]="47"
 			[loop]="data.participants.females.length > 5"
-			[autoplay]="data.participants.females.length > 5"
 			[autoplayInterval]="2000"
+			[autoplay]="data.participants.females.length > 5"
 		>
 			<div
 				*ngFor="let participant of data.participants.females"
@@ -45,16 +60,21 @@
 		</carousel>
 	</div>
 
-	<div class="row jcc w-100" *ngIf="data.participants.wildCards.length !== 0">
-		<div class="body1">Wildcard Contenders!</div>
+	<div
+		class="row jcc w-full h-auto"
+		*ngIf="data.participants.wildCards.length !== 0"
+	>
+		<div class="body1 text-2xl md:text-3xl font-weight-bold mb-3">
+			Wildcard Contenders
+		</div>
 		<carousel
-			[height]="540 + 180"
+			[height]="540 + 100"
 			[cellsToShow]="innerWidth > 1139 ? 5 : 1"
 			[dots]="data.participants.wildCards.length > 5"
-			[margin]="37"
+			[margin]="47"
 			[loop]="data.participants.wildCards.length > 5"
-			[autoplay]="data.participants.wildCards.length > 5"
 			[autoplayInterval]="2000"
+			[autoplay]="data.participants.wildCards.length > 5"
 		>
 			<div
 				*ngFor="let participant of data.participants.wildCards"

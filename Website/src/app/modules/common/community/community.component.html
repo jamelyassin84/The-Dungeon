@@ -1,4 +1,4 @@
-<div class="wrapper text-center">
+<div class="wrapper text-center w-full mb-5 md:ml-0 md:mb-24 w-96">
 	<div class="rating">
 		<i [class.active]="rating > 1" class="bi bi-star-fill"></i>
 		<i [class.active]="rating > 2" class="bi bi-star-fill"></i>
@@ -6,6 +6,6 @@
 		<i [class.active]="rating > 4" class="bi bi-star-fill"></i>
 		<i [class.active]="rating > 5" class="bi bi-star-fill"></i>
 	</div>
-	<div class="description">{{ description }}</div>
-	<div class="name">{{ name }}</div>
+	<div class="name mt-10">{{ name }}</div>
+	<div class="description break-words">{{ description }}</div>
 </div>

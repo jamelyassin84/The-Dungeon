@@ -1,22 +1,12 @@
-<div class="d-flex fdc aic" *ngIf="data && data.length">
-	<div class="title mb-5 mt-5">JOIN OUR COMMUNITY</div>
-	<div class="community-container w-100">
-		<carousel
-			[height]="540"
-			[cellsToShow]="innerWidth > 1139 ? 4 : 1"
-			[dots]="false"
-			[margin]="0"
-		>
-			<div
-				*ngFor="let reviewer of data; let i = index"
-				class="carousel-cell ap4-3"
-			>
-				<Community
-					[rating]="reviewer.rating"
-					[description]="reviewer.comment"
-					[name]="reviewer.name"
-				></Community>
-			</div>
-		</carousel>
+<div class="w-full h-auto md:h-screen p:8 md:p-24" *ngIf="data && data.length">
+	<div class="title mt-10 mb-10">JOIN OUR COMMUNITY</div>
+	<div class="p-0 m-0 w-full flex flex-wrap jcc">
+		<Community
+			class="mr-0 md:mr-5"
+			*ngFor="let reviewer of data; let i = index"
+			[rating]="reviewer.rating"
+			[description]="reviewer.comment"
+			[name]="reviewer.name"
+		></Community>
 	</div>
 </div>
