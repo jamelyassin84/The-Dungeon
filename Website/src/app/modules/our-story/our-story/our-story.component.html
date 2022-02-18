@@ -1,11 +1,22 @@
 <div class="wrapper-container d-flex aic jcc fdc" *ngIf="data">
-	<div class="row m-0 p-0">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 m-0 p-0">
+		<div class="block md:hidden">
+			<div class="wrapper">
+				<div class="story relative md:fixed px-5 pb-24">
+					<div class="tilte">{{ data.title }}</div>
+					<div class="description">
+						<span class="qoute">"</span> {{ data.body }}
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="col-md-6 p-0 m-0" *ngIf="data.images">
 			<img *ngFor="let item of data.images" [src]="item.uri" alt="" />
 		</div>
-		<div class="col-md-6">
+		<div class="hidden md:block">
 			<div class="wrapper">
-				<div class="story">
+				<div class="story relative md:fixed px-5 pb-8">
 					<div class="tilte">{{ data.title }}</div>
 					<div class="description">
 						<span class="qoute">"</span> {{ data.body }}

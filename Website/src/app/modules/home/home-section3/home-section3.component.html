@@ -1,14 +1,17 @@
-<div class="w-screen h-auto md:h-screen pb-24">
+<div class="w-screen h-auto md:h-screen">
 	<ImagesCarousel
 		[data]="data"
 		*ngIf="data && data.images.length !== 0"
 	></ImagesCarousel>
 	<div class="wrapper-container" *ngIf="data">
-		<div class="text w-full flex aic jcc fdc px-16">
-			<div class="title text-3xl" style="margin-top: 100px">
+		<div class="text w-full flex aic jcc fdc px-5 md:px-16">
+			<div
+				class="title text-3xl text-left md:text-center"
+				style="margin-top: 100px"
+			>
 				{{ data.title }}
 			</div>
-			<div class="description mt-5 text-xl">
+			<div class="description mt-5 text-xl text-left md:text-center">
 				{{ data.body }}
 			</div>
 		</div>
