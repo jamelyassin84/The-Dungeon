@@ -1,30 +1,37 @@
-<div class="section container d-flex jcc fdc" *ngIf="data">
-	<div class="row mt-5">
-		<div class="col-md-6">
-			<div
-				class="competition animate__animated animate__fast animate__slideInDown"
-			>
-				COMPETITION
-			</div>
-			<div class="rules animate__animated animate__fast animate__slideInDown">
-				RULES
-			</div>
+<div class="section flex jcc aic fdc pb-8 h-auto" *ngIf="data">
+	<div class="grid container grid-cols-1 lg:grid-cols-2 gap-2">
+		<div class="p-5 md:p-16">
+			<div class="competition">COMPETITION</div>
+			<div class="rules">RULES</div>
 			<ul class="dashed mb-3">
-				<li *ngFor="let rule of data.rules[2].data">{{ rule.name }}</li>
+				<li
+					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					*ngFor="let rule of data.rules[2].data"
+				>
+					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+				</li>
 			</ul>
 
-			<div class="title">{{ data.rules[1].name }}S</div>
+			<div class="title mt-10 text-2xl">{{ data.rules[1].name }}S</div>
 			<ul class="dashed mb-3">
-				<li *ngFor="let rule of data.rules[1].data">{{ rule.name }}</li>
+				<li
+					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					*ngFor="let rule of data.rules[1].data"
+				>
+					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+				</li>
 			</ul>
 
-			<div class="title">{{ data.rules[0].name }}S</div>
+			<div class="title mt-10 text-2xl">{{ data.rules[0].name }}S</div>
 			<ul class="dashed mb-3">
-				<li *ngFor="let rule of data.rules[0].data">{{ rule.name }}</li>
+				<li
+					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					*ngFor="let rule of data.rules[0].data"
+				>
+					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+				</li>
 			</ul>
 		</div>
-		<div class="col-md-6">
-			<img class="square" [src]="data.uri" alt="" />
-		</div>
+		<img class="square w-full" [src]="data.uri" alt="" />
 	</div>
 </div>

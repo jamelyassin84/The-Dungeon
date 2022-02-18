@@ -1,5 +1,5 @@
 <div
-	class="flex jcc fdc h:auto bg-zinc-900 md:h-screen md:mt-5 md:bg-transparent"
+	class="flex jcc fdc h:auto bg-zinc-900 mt-10 md:h-screen md:mt-5 md:bg-transparent"
 	*ngIf="data && data.isSectionEnabled"
 >
 	<div class="bg hidden md:block">
@@ -7,16 +7,16 @@
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
 		<div
-			class="flex w-100 aic justify-center jcc mt-5"
+			class="flex w-full aic justify-end mt-5"
 			*ngIf="data2 && data2.isSectionEnabled"
 		>
 			<registration-form
-				class="justify-center"
+				class="justify-end w-full ml-auto"
 				[data2]="data2"
 			></registration-form>
 		</div>
 		<div
-			class="text-center mt-5 pt-5 flex aic jcc fdc p-5 md:p-0"
+			class="text-center pt-5 flex aic jcc fdc p-5 md:p-0"
 			[class.col-md-12]="!data2"
 		>
 			<div class="competitionDate mb-2 text-xl md:text-2xl">

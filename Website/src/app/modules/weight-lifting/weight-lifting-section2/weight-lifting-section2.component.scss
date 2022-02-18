@@ -1,7 +1,5 @@
 .section {
 	position: relative !important;
-	height: 100vh !important;
-	padding-top: 20vmin;
 }
 
 .competition {
@@ -16,6 +14,12 @@
 	font-size: 39px;
 	margin-bottom: 0.2rem;
 }
+
+.rule {
+	font-family: Montserrat;
+	font-weight: 500;
+	max-width: 600px;
+}
 ul {
 	margin: 0;
 }
@@ -23,19 +27,4 @@ ul.dashed {
 	list-style-type: none;
 }
 ul.dashed > li {
-	text-indent: -5px;
-	font-size: 1rem;
-}
-ul.dashed > li:before {
-	content: '- ';
-	text-indent: -5px;
-}
-
-.title {
-	font-size: 1rem;
-}
-img {
-	// transform: scale(1.4);
-	// transform-origin: left;
-	width: 120%;
 }
