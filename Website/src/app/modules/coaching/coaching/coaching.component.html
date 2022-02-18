@@ -1,51 +1,44 @@
-<div class="wrapper-container" *ngIf="data.length">
-	<div class="row w-100 h-100">
-		<div class="col-md-12 p-0">
-			<div
-				class="coaching animate__animated animate__fast animate__slideInDown"
-			>
-				COACHING
-			</div>
-		</div>
-		<div class="col-md-6 p-0">
-			<table
-				class="table animate__animated animate__fast animate__slideInRight"
-			>
-				<thead>
-					<tr>
-						<th>Classes</th>
-						<th>PRICE</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let item of data">
-						<td>{{ item.classes | titlecase }}</td>
-						<td>{{ item.price }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-6 p-0" *ngIf="coaches.length !== 0">
-			<table
-				class="table table-striped animate__animated animate__fast animate__slideInLeft"
-			>
-				<thead>
-					<tr>
-						<th class="pl-5">SELECT YOUR COACH</th>
-					</tr>
-				</thead>
-			</table>
-			<div class="row pl-5">
-				<div
-					class="col-md-4 p-0 d-flex fdc aic"
-					*ngFor="let coach of coaches"
+<div class="flex aic w-full flex fdc h:auto h:auto mt-24" *ngIf="data.length">
+	<div
+		class="grid container grid-cols-1 lg:grid-cols-2 p-5 gap-2 md:p-5 w-100 h-100"
+	>
+		<div class="w-full p-0">
+			<ul class="w-full">
+				<li
+					class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200"
 				>
-					<div class="coach-card">
-						<img [src]="coach.uri" class="coaches ap5-6" alt="" />
-						<div class="coaches-text">{{ coach.name }}</div>
-						<div class="coaches-text1 text-muted">
-							Experience: {{ coach.experience }}
-						</div>
+					<span>Classes</span>
+					<span class="ml-auto">PRICE</span>
+				</li>
+				<li
+					*ngFor="let item of data"
+					class="text-xl p-5 border-b border-zinc-200 flex"
+				>
+					<span class="text">{{ item.classes | titlecase }}</span>
+					<span class="ml-auto text-zinc-400 text-3xl">{{
+						item.price
+					}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="w-full h-auto" *ngIf="coaches.length !== 0">
+			<li class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200">
+				<span class="">COACHES</span>
+				<span class="ml-auto" style="color: #d10000"
+					>BE PART OF THE CLUB</span
+				>
+			</li>
+			<div class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto">
+				<div class="mt-5" *ngFor="let coach of coaches">
+					<img
+						[src]="coach.uri"
+						class="ap5-6 w-full"
+						style="height: 400px"
+						alt=""
+					/>
+					<div class="coaches-text">{{ coach.name }}</div>
+					<div class="coaches-text1 text-muted">
+						Experience: {{ coach.experience }}
 					</div>
 				</div>
 			</div>

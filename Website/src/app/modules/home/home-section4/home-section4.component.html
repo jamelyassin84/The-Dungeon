@@ -1,14 +1,16 @@
 <div
-	class="wrapper-container flex aic jcc fdc w-full text-center py-24 bg-zinc-900 md:h-screen"
+	class="wrapper-container p-10 md:px-5 flex aic jcc fdc w-full text-center py-24 bg-zinc-900 md:h-screen"
 	*ngIf="data"
 >
-	<div class="px-5 title w-full text-center text-2xl md:text-7xl">
+	<div class="title w-full text-left md:text-center text-2xl md:text-7xl">
 		{{ data.title }}
 	</div>
-	<div class="px:1 md:px-5 alert w-full text-center mt-3.5 text-xl">
+	<div class="px:1 mb-5 alert w-full text-left md:text-center mt-3.5 text-xl">
 		{{ data.notice }}
 	</div>
-	<div class="px:1 md:px-5 description mt-3.5 text-center text-xl md:px-64">
+	<div
+		class="px:1 description mt-3.5 text-left md:text-center text-xl md:px-64"
+	>
 		<span
 			style="
 				width: 655px;
@@ -19,16 +21,18 @@
 			>{{ data.body }}</span
 		>
 	</div>
-	<div class="p-0 m-0 w-full flex flex-wrap jcc md:px-28">
-		<PackageCard
-			*ngFor="let price of data.prices; let i = index"
-			[title]="price.duration"
-			[price]="price.price"
-			[billed]="price.billInterval"
-			[priceAndInterval]="price.summary"
-			[freeTrial]="price.trialPeriod"
-			[background]="price.backgroundColor"
-		>
-		</PackageCard>
+	<div class="flex aic jcc w-full">
+		<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full">
+			<PackageCard
+				*ngFor="let price of data.prices; let i = index"
+				[title]="price.duration"
+				[price]="price.price"
+				[billed]="price.billInterval"
+				[priceAndInterval]="price.summary"
+				[freeTrial]="price.trialPeriod"
+				[background]="price.backgroundColor"
+			>
+			</PackageCard>
+		</div>
 	</div>
 </div>

@@ -1,35 +1,11 @@
-.wrapper-container {
-	padding: 10vmin;
-	padding-top: 20vmin;
-}
-
-.coaching {
-	letter-spacing: 1.75px;
-	color: #1d1d1b;
-	text-transform: uppercase;
-	font-size: 2.1rem;
-	margin-bottom: 2.3rem;
-}
-
-th {
-	background-color: #e2e2e2;
-}
-
-tr,
-td {
-	padding: 1.2rem !important;
-	cursor: pointer;
-	font-family: Montserrat;
-	font-weight: 500;
-}
-
-tr:hover {
-	background-color: #f2f2f2b9;
-}
-
 img {
 	height: 232px;
 	border-radius: 5px;
+}
+
+.text {
+	font-weight: 400;
+	font-family: Montserrat;
 }
 
 .coaches-text {
@@ -48,11 +24,9 @@ img {
 }
 
 .coach-card {
-	margin-left: -1rem;
 	cursor: pointer;
 	background: white;
 	border-radius: 5px;
 	padding: 1rem;
 	transition: 0.4s ease;
-	margin-bottom: 20px;
 }
