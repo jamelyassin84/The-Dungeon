@@ -1,7 +1,11 @@
-<div class="wrapper-container w-100 d-flex aic jcc fdc" *ngIf="data">
-	<img class="bg px16-9" src="../../../../assets/app/location/bg.png" alt="" />
-	<div class="row m-0 p-0 mt-5 pt-5 d-flex aic jcc w-100">
-		<div class="col-md-6 p-0 aic">
+<div class="flex jcc fdc h:auto mt-10 md:h-screen md:mt-5" *ngIf="data">
+	<img
+		class="bg px16-9 h-screen"
+		src="../../../../assets/app/location/bg.png"
+		alt=""
+	/>
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 md:h-screen">
+		<div class="p-0 aic">
 			<div class="flex aic w-full jcc">
 				<img
 					class="h-20"
@@ -16,16 +20,15 @@
 				{{ data.address }} <br />
 				{{ data.state }}
 			</div>
-			<div class="link">
-				<a [href]="data.googleMapUri" target="_blank">{{
-					data.googleMapUri
-				}}</a>
+			<div class="link mt-10">
+				<a [href]="data.googleMapURI" target="_blank"
+					>View Map <i class="bi bi-arrow-right ml-4k"></i
+				></a>
 			</div>
-
-			<div class="email">{{ data.email }}</div>
-			<div class="phone">{{ data.contact }}</div>
+			<div class="email mt-10">{{ data.email }}</div>
+			<div class="phone mb-10">{{ data.contact }}</div>
 		</div>
-		<div class="col-md-6 p-0">
+		<div class="p-0 md:pt-24">
 			<img
 				class="map square animate__animated animate__fast animate__zoomIn"
 				[src]="data.uri"

@@ -124,7 +124,7 @@ export interface Location extends DateInterface {
 	email: string
 	state: string
 	contact: string
-	googleMapUri?: string
+	googleMapURI?: string
 	uri?: string
 }
 export interface OurStory extends DateInterface {

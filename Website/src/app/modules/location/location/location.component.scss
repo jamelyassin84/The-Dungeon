@@ -1,7 +1,6 @@
 .wrapper-container {
 	height: 100vh;
 	position: relative;
-	margin-bottom: -3vh;
 }
 
 .bg {
@@ -29,18 +28,23 @@
 	font-size: 1.4rem;
 }
 .link {
-	margin-top: 4rem;
 	* {
-		font-family: Montserrat;
 		font-weight: 400;
 		cursor: pointer;
 		letter-spacing: 1.05px;
 		font-size: 1.4rem;
 		color: #0090ff;
 	}
+	.bi {
+		transition: 0.3s ease;
+	}
+	&:hover {
+		.bi {
+			padding-left: 0.5rem;
+		}
+	}
 }
 .email {
-	margin-top: 8rem;
 	font-family: Montserrat;
 	font-family: Montserrat;
 	font-weight: 300;
