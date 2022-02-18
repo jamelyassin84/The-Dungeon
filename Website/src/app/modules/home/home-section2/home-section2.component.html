@@ -1,5 +1,5 @@
 <div class="h-auto" *ngIf="data">
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 md:h-screen">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-1 md:p-10 md:h-screen">
 		<div class="p-5 p-5 md:p-10 lg:p-24 xl:p-32">
 			<div class="relative">
 				<img
@@ -11,16 +11,19 @@
 			</div>
 		</div>
 		<div
-			class="text-left flex fdc p-5 :p-5 text-left md:p-16 lg:p-24 xl:p-3 md:item-center jcc"
+			class="text-left flex fdc p-5 text-left md:p-16 lg:p-24 xl:p-3 md:item-center jcc"
 		>
-			<div class="title text-3xl">
+			<div class="title text-4xl">
 				{{ data.title }}
 			</div>
-			<div class="description mt-5 text-xl">
+			<div class="description mt-5 text-3xl">
 				{{ data.body }}
 			</div>
 
-			<a routerLink="/our-story" class="button pr-5 mt-5 md:mt-5 ml-0">
+			<a
+				routerLink="/our-story"
+				class="button md:text-2xl pr-5 mt-5 md:mt-5 ml-0"
+			>
 				FIND OUT MORE <i class="bi bi-arrow-right"></i>
 			</a>
 		</div>
