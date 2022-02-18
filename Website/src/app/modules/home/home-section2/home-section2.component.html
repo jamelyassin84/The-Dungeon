@@ -1,13 +1,13 @@
 <div class="h-auto" *ngIf="data">
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 md:h-screen">
-		<div class="p-5 p-5 md:p-16 lg:p-24 xl:p-32">
+		<div class="p-5 p-5 md:p-10 lg:p-24 xl:p-32">
 			<div class="relative">
 				<img
 					class="relative hidden md:absolute block"
 					src="../../../../assets/app/home/2.png"
 					alt=""
 				/>
-				<img class="relative md:absolute" [src]="data.uri" alt="" />
+				<img class="relative" [src]="data.uri" alt="" />
 			</div>
 		</div>
 		<div

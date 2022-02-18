@@ -22,12 +22,14 @@ body {
 	--dark: #828385;
 	--bg: #ffffff;
 	overflow-x: hidden;
+	overflow-y: auto !important;
 }
 
 * {
 	font-family: normal;
 	font-weight: 200;
 	letter-spacing: 2.1px;
+	overflow: hidden;
 }
 
 .danger {
