@@ -27,7 +27,6 @@
 	text-align: center;
 	letter-spacing: 3.85px;
 	color: #ffffff;
-	font-size: 77px;
 	text-shadow: 0px 0px 6px #00000087;
 }
 
@@ -36,8 +35,6 @@
 	color: var(--unnamed-color-ffffff);
 	letter-spacing: 3.6px;
 	color: #d10000;
-	font-size: 72px;
-	margin-top: -2rem;
 	text-shadow: 0px 0px 6px #00000087;
 }
 
@@ -45,7 +42,6 @@
 	text-align: center;
 	letter-spacing: 12.6px;
 	color: #ffffff;
-	font-size: 24px;
 	margin-bottom: 60px;
 	text-shadow: 0px 0px 6px #00000087;
 }
@@ -54,7 +50,6 @@
 	text-align: center;
 	letter-spacing: 4.8px;
 	color: #ffffff;
-	font-size: 48px;
 	text-shadow: 0px 0px 6px #00000087;
 }
 
@@ -63,7 +58,6 @@
 	letter-spacing: 7.8px;
 	color: #ffffff;
 	margin-bottom: 60px;
-	font-size: 18px;
 	padding-left: calc(398px / 1.5);
 	padding-right: calc(398px / 1.5);
 	text-shadow: 0px 0px 6px #00000087;
@@ -80,59 +74,5 @@
 	text-align: center;
 	letter-spacing: 3.6px;
 	color: #ffffff;
-	font-size: 72px;
-	text-shadow: 0px 0px 6px #00000087;
-}
-
-.registration-container {
-	padding: 40px 48px;
-	background: rgba($color: #000000, $alpha: 0.8);
-	backdrop-filter: blur(25px);
-	box-shadow: 0px 3px 6px #00000029;
-	border-radius: 20px;
-	width: 536px;
-	align-self: flex-end;
-	justify-self: flex-end;
-	height: calc(753px);
-	text-shadow: 0px 0px 6px #00000087;
-}
-label {
-	color: #ffffff;
-	font-family: Montserrat;
-	font-weight: 300;
-	font-size: 0.8rem;
-	text-shadow: 0px 0px 6px #00000087;
-}
-.form-control {
-	color: #ffffff;
-	border-radius: 0;
-	text-shadow: 0px 0px 6px #00000087;
-}
-.smallTitle {
-	text-align: center;
-	letter-spacing: 1.05px;
-	color: #ffffff;
-	font-family: Montserrat;
-	font-size: 21px;
-	font-weight: 600;
-	text-shadow: 0px 0px 6px #00000087;
-}
-.largeTitle {
-	letter-spacing: 0px;
-	color: #d10000;
-	text-transform: uppercase;
-	text-align: center;
-	font-family: Montserrat;
-	font-size: 48px;
-	font-weight: 500;
-	text-shadow: 0px 0px 6px #00000087;
-}
-.callToActionTitle {
-	text-align: center;
-	color: #ffffff;
-	font-family: Montserrat;
-	letter-spacing: 0.9px;
-	font-size: 18px;
-	font-weight: 500;
 	text-shadow: 0px 0px 6px #00000087;
 }

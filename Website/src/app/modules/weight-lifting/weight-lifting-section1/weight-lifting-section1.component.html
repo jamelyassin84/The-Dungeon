@@ -1,85 +1,47 @@
-<div class="section d-flex jcc fdc" *ngIf="data && data.isSectionEnabled">
-	<div class="bg">
+<div
+	class="flex jcc fdc h:auto bg-zinc-900 md:h-screen md:mt-5 md:bg-transparent"
+	*ngIf="data && data.isSectionEnabled"
+>
+	<div class="bg hidden md:block">
 		<img *ngIf="data.uri" [src]="data.uri" alt="" class="px16-9" />
 	</div>
-	<div class="row mt-5">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
 		<div
-			class="col-md-6 d-flex w-100 aic jcc mt-5"
+			class="flex w-100 aic justify-center jcc mt-5"
 			*ngIf="data2 && data2.isSectionEnabled"
 		>
-			<div
-				class="registration-container animate__animated animate__fast animate__slideInDown"
-				*ngIf="data2"
-			>
-				<div class="smallTitle">{{ data2.smallTitle }}</div>
-				<div class="largeTitle">{{ data2.largeTitle }}</div>
-				<div class="callToActionTitle mb-4">
-					{{ data2.callToActionTitle }}
-				</div>
-				<div class="form-group">
-					<label for="fullname">Full name</label>
-					<input id="fullname" type="text" class="form-control" />
-				</div>
-				<div class="form-group">
-					<label for="Email">Email</label>
-					<input id="Email" type="text" class="form-control" />
-				</div>
-				<div class="form-group">
-					<label for="Phone">Mobile</label>
-					<input id="Phone" type="text" class="form-control" />
-				</div>
-				<div class="row">
-					<div
-						class="form-group col-md-6"
-						[class.col-md-12]="
-							i === data2.fields.length - 1 && i - (1 % 2)
-						"
-						*ngFor="let field of data2.fields; let i = index"
-					>
-						<label [for]="field.fieldName">{{ field.fieldName }}</label>
-						<input
-							[id]="field.fieldName"
-							[(ngModel)]="field.value"
-							type="text"
-							class="form-control"
-						/>
-					</div>
-				</div>
-				<div class="d-flex w-100 aic jcc">
-					<button class="register btn-app-primary p-3 mt-4">
-						Register Now!
-					</button>
-				</div>
-			</div>
+			<registration-form
+				class="justify-center"
+				[data2]="data2"
+			></registration-form>
 		</div>
-		<div class="col-md-6 text-center mt-5 pt-5" [class.col-md-12]="!data2">
-			<div class="competitionDate">{{ data.competitionDate }}</div>
-			<div
-				class="categoryType animate__animated animate__fast animate__zoomIn"
-			>
+		<div
+			class="text-center mt-5 pt-5 flex aic jcc fdc p-5 md:p-0"
+			[class.col-md-12]="!data2"
+		>
+			<div class="competitionDate mb-2 text-xl md:text-2xl">
+				{{ data.competitionDate }}
+			</div>
+
+			<div class="categoryType text-4xl md:text-7xl font-weight-bold">
 				{{ data.categoryType }}
 			</div>
-			<div class="category animate__animated animate__fast animate__zoomIn">
+			<div class="category text-4xl mb-2 md:text-7xl font-weight-bold">
 				{{ data.category }}
 			</div>
-			<div
-				class="hostedBy animate__animated animate__fast animate__fadeInDown"
-			>
+			<div class="hostedBy">
 				{{ data.hostedBy }}
 			</div>
-			<div class="levels animate__animated animate__fast animate__fadeInDown">
+			<div class="levels text-3xl mb-2 md:text-6xl font-weight-bold">
 				{{ data.levels }}
 			</div>
-			<div
-				class="deadline animate__animated animate__fast animate__fadeInDown"
-			>
+			<div class="deadline text-xl md:text-2xl">
 				{{ data.deadline }}
 			</div>
-			<div class="Timer animate__animated animate__fast animate__fadeInDown">
-				Time until the big event
-			</div>
-			<div class="time animate__animated animate__fast animate__fadeInDown">
-				{{ time }}
+			<div class="Timer">Time until the big event</div>
+			<div class="time text-5xl md:text-8xl font-weight-bold">
+				<!-- {{ time }} -->
+				43:01:23
 			</div>
 		</div>
 	</div>

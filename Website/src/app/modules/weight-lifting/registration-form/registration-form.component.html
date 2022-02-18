@@ -1,0 +1,38 @@
+<div class="registration-container" *ngIf="data2">
+	<div class="smallTitle">{{ data2.smallTitle }}</div>
+	<div class="largeTitle">{{ data2.largeTitle }}</div>
+	<div class="callToActionTitle mb-4">
+		{{ data2.callToActionTitle }}
+	</div>
+	<div class="fdc flex">
+		<label for="fullname">Full name</label>
+		<input id="fullname" type="text" class="form-control" />
+	</div>
+	<div class="fdc flex">
+		<label for="Email">Email</label>
+		<input id="Email" type="text" class="form-control" />
+	</div>
+	<div class="fdc flex">
+		<label for="Phone">Mobile</label>
+		<input id="Phone" type="text" class="form-control" />
+	</div>
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+		<div
+			class="fdc flex w-full"
+			*ngFor="let field of data2.fields; let i = index"
+		>
+			<label [for]="field.fieldName">{{ field.fieldName }}</label>
+			<input
+				[id]="field.fieldName"
+				[(ngModel)]="field.value"
+				type="text"
+				class="form-control"
+			/>
+		</div>
+	</div>
+	<div class="d-flex w-100 aic jcc">
+		<button class="register btn-app-primary p-3 mt-4 w-full">
+			Register Now!
+		</button>
+	</div>
+</div>
