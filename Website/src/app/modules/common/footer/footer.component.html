@@ -1,54 +1,40 @@
-<div class="footer d-flex aic" *ngIf="data && data.isSectionEnabled">
-	<div class="d-flex aic w-100">
+<div
+	class="footer flex aic flex-col md:flex-row px-5 py-5 md:px-8 md:py-8"
+	*ngIf="data && data.isSectionEnabled"
+>
+	<div class="flex flex-col w-full items-start md:flex-row md:items-center">
 		<img class="logo" src="../../../../assets/app/logo.svg" alt="" />
-		<div class="others d-flex aic">
-			<ul class="d-flex aic">
-				<li>
-					<a>privacy policy</a>
-				</li>
-				<li>
-					<a>terms of use</a>
-				</li>
-				<li>
-					<a>support</a>
-				</li>
-			</ul>
-		</div>
-		<div class="socials d-flex aic ml-auto" *ngIf="user">
+
+		<ul class="others flex m-0 flex-col mt-5 md:flex-row md:ml-5 md:mt-0">
+			<li>
+				<a>privacy policy</a>
+			</li>
+			<li>
+				<a>terms of use</a>
+			</li>
+			<li>
+				<a>support</a>
+			</li>
+		</ul>
+
+		<div
+			class="socials md:ml-auto mt-5 md:mt-0 flex md:aic flex-row"
+			*ngIf="user"
+		>
 			<a target="_blank" [href]="user.whatsApp">
-				<img
-					class="icons"
-					src="../../../../assets/app/footer/1.svg"
-					alt=""
-				/>
+				<i class="bi bi-whatsapp text-white text-2xl mr-2"></i>
 			</a>
 			<a target="_blank" [href]="user.facebook">
-				<img
-					class="icons"
-					src="../../../../assets/app/footer/2.svg"
-					alt=""
-				/>
+				<i class="bi bi-facebook text-white text-2xl mr-2"></i>
 			</a>
 			<a target="_blank" [href]="user.instagram">
-				<img
-					class="icons"
-					src="../../../../assets/app/footer/3.svg"
-					alt=""
-				/>
+				<i class="bi bi-instagram text-white text-2xl mr-2"></i>
 			</a>
 			<a target="_blank" [href]="user.twitter">
-				<img
-					class="icons"
-					src="../../../../assets/app/footer/4.svg"
-					alt=""
-				/>
+				<i class="bi bi-twitter text-white text-2xl mr-2"></i>
 			</a>
 			<a target="_blank" [href]="user.youtube">
-				<img
-					class="icons"
-					src="../../../../assets/app/footer/5.svg"
-					alt=""
-				/>
+				<i class="bi bi-youtube text-white text-2xl mr-2"></i>
 			</a>
 		</div>
 	</div>
