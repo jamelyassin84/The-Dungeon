@@ -2,11 +2,13 @@ import { Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
 import { CoachesService, CoachingService } from 'src/app/services/api.service'
 import { Coach, Coaches, Coaching } from 'src/app/models/types'
+import { listAnimation } from 'src/app/animations/list.animation'
 
 @Component({
 	selector: 'app-coaching',
 	templateUrl: './coaching.component.html',
 	styleUrls: ['./coaching.component.scss'],
+	animations: [listAnimation],
 })
 export class CoachingComponent implements OnInit {
 	constructor(
@@ -28,7 +30,8 @@ export class CoachingComponent implements OnInit {
 		this.coachService
 			.index()
 			.subscribe(
-				(data: any) => (this.coaches = [...data.females, ...data.males]),
+				(data: any) =>
+					(this.coaches = [...data.females, ...data.males]),
 			)
 	}
 }

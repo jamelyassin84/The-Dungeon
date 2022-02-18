@@ -11,7 +11,11 @@
 			</div>
 		</div>
 
-		<div class="col-md-6 p-0 m-0" *ngIf="data.images">
+		<div
+			class="col-md-6 p-0 m-0"
+			*ngIf="data.images"
+			[@listAnimation]="data"
+		>
 			<img *ngFor="let item of data.images" [src]="item.uri" alt="" />
 		</div>
 		<div class="hidden md:block">

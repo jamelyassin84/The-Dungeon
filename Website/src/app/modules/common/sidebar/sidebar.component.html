@@ -1,1 +1,56 @@
-<p>sidebar works!</p>
+<div class="sidebar w-screen px-15 h-screen">
+	<div class="wrapper-container w-full flex">
+		<span
+			(click)="close()"
+			class="text-white mr-auto text-4xl block absolute left-2 mt-5 md:hidden m-0 ml-4"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="26"
+				height="26"
+				fill="currentColor"
+				class="bi bi-x-lg"
+				viewBox="0 0 16 16"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
+				/>
+				<path
+					fill-rule="evenodd"
+					d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
+				/>
+			</svg>
+		</span>
+		<img
+			class="logo mr-auto absolute right-4 mt-5 md:mt-0 md:relative md:m-0 md:mr-0"
+			src="../../../../assets/app/logo.svg"
+			alt=""
+		/>
+	</div>
+
+	<div class="ml-auto aic w-full flex-col aic jcc mt-32">
+		<ul class="flex flex-col aic jcc" [@listAnimation]="6">
+			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+				<a routerLink="/">home</a>
+			</li>
+			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+				<a routerLink="/competition">Competition</a>
+			</li>
+			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+				<a routerLink="/location">location</a>
+			</li>
+			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+				<a routerLink="/coaching">coaching</a>
+			</li>
+			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+				<a routerLink="/our-story">our story</a>
+			</li>
+			<li (click)="close()" routerLink="/competition" class="join-now">
+				<button class="btn-app-primary">
+					join now <i class="bi bi-arrow-right"></i>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,9 +1,12 @@
-<div class="flex aic w-full flex fdc h:auto h:auto mt-24" *ngIf="data.length">
+<div
+	class="flex aic w-full flex fdc h:auto h:auto mt-24"
+	*ngIf="data && coaches"
+>
 	<div
 		class="grid container grid-cols-1 lg:grid-cols-2 p-5 gap-2 md:p-5 w-100 h-100"
 	>
 		<div class="w-full p-0">
-			<ul class="w-full">
+			<ul class="w-full" [@listAnimation]="data">
 				<li
 					class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200"
 				>
@@ -21,14 +24,17 @@
 				</li>
 			</ul>
 		</div>
-		<div class="w-full h-auto" *ngIf="coaches.length !== 0">
+		<div class="w-full h-auto">
 			<li class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200">
 				<span class="">COACHES</span>
 				<span class="ml-auto" style="color: #d10000"
 					>BE PART OF THE CLUB</span
 				>
 			</li>
-			<div class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto">
+			<div
+				class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto"
+				[@listAnimation]="data"
+			>
 				<div class="mt-5" *ngFor="let coach of coaches">
 					<img
 						[src]="coach.uri"

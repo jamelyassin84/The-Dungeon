@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 // App Modules
 import { HomeModule } from './modules/home/home.module'
 import { CoachingModule } from './modules/coaching/coaching.module'
@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http'
 		OurStoryModule,
 		WeightLiftingModule,
 		HttpClientModule,
+		BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

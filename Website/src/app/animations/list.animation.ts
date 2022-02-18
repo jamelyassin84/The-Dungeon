@@ -15,7 +15,6 @@ export const listAnimation = trigger('listAnimation', [
 				style({
 					opacity: 0,
 					transform: 'translate(0,15rem)',
-					'box-shadow': 'var(--dropShadow)',
 				}),
 				stagger(
 					'40ms',
@@ -24,7 +23,6 @@ export const listAnimation = trigger('listAnimation', [
 						style({
 							opacity: 1,
 							transform: 'translate(0px,0) ',
-							'box-shadow': 'none',
 						}),
 					),
 				),
@@ -33,7 +31,10 @@ export const listAnimation = trigger('listAnimation', [
 		),
 		query(
 			':leave',
-			animate('200ms', style({ opacity: 0, transform: 'translate(-15rem,0) ' })),
+			animate(
+				'200ms',
+				style({ opacity: 0, transform: 'translate(-15rem,0) ' }),
+			),
 			{ optional: true },
 		),
 	]),

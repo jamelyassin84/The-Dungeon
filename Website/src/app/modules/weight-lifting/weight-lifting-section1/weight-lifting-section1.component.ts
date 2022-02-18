@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { listAnimation } from 'src/app/animations/list.animation'
 import { CompetitionSection1, CompetitionSection2 } from 'src/app/models/types'
 import {
 	CompetitionSection1Service,
@@ -9,6 +10,7 @@ import {
 	selector: 'WeightLiftingSection1',
 	templateUrl: './weight-lifting-section1.component.html',
 	styleUrls: ['./weight-lifting-section1.component.scss'],
+	animations: [listAnimation],
 })
 export class WeightLiftingSection1Component implements OnInit {
 	constructor(

@@ -12,6 +12,7 @@ import { CommunityComponent } from './community/community.component'
 import { Title } from '@angular/platform-browser'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { WeightLiftersComponent } from './weight-lifters/weight-lifters.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
 	declarations: [
@@ -25,7 +26,12 @@ import { WeightLiftersComponent } from './weight-lifters/weight-lifters.componen
 		CommunityComponent,
 		WeightLiftersComponent,
 	],
-	imports: [CommonModule, RouterModule, IvyCarouselModule],
+	imports: [
+		CommonModule,
+		RouterModule,
+		IvyCarouselModule,
+		BrowserAnimationsModule,
+	],
 	exports: [
 		NavbarComponent,
 		FooterComponent,

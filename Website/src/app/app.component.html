@@ -1,3 +1,8 @@
-<Navbar></Navbar>
+<Navbar (onAction)="setAction($event)"></Navbar>
+<Sidebar
+	(onAction)="setAction($event)"
+	*ngIf="showSidebar"
+	[@dropDownAnim]="!showSidebar ? 'out' : 'in'"
+></Sidebar>
 <router-outlet></router-outlet>
 <Footer></Footer>

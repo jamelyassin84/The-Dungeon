@@ -19,7 +19,7 @@
 		<label for="Phone">Mobile</label>
 		<input id="Phone" type="text" class="form-control" />
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3" [@listAnimation]="5">
 		<div
 			class="fdc flex w-full"
 			*ngFor="let field of data2.fields; let i = index"
