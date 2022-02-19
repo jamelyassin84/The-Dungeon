@@ -12,16 +12,14 @@
 		>
 			<registration-form
 				appParallax
-				[factor]="5.3"
+				[factor]="3.3"
 				class="justify-end w-full ml-auto"
 				[data2]="data2"
 			></registration-form>
 		</div>
 		<div
-			appParallax
-			[factor]="-5.3"
 			[@listAnimation]="data"
-			class="text-center flex aic jcc fdc p-5 py-24 md:p-0 bg3 bg2"
+			class="text-center flex aic jcc fdc p-5 py-24 md:p-0 bg3 bg2 hidden md:block"
 			[class.col-md-12]="!data2"
 		>
 			<div class="competitionDate mb-2 text-xl md:text-2xl">
