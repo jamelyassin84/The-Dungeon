@@ -15,6 +15,7 @@ import { WeightLiftersComponent } from './weight-lifters/weight-lifters.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ParallaxModule } from 'ngx-parallax'
 import { ParallaxDirective } from 'src/app/directives/parallax.directive'
+import { PreloaderComponent } from './preloader/preloader.component'
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { ParallaxDirective } from 'src/app/directives/parallax.directive'
 		CommunityComponent,
 		WeightLiftersComponent,
 		ParallaxDirective,
+		PreloaderComponent,
 	],
 	imports: [
 		CommonModule,
@@ -46,6 +48,7 @@ import { ParallaxDirective } from 'src/app/directives/parallax.directive'
 		PackageCardComponent,
 		WeightLiftersComponent,
 		ParallaxDirective,
+		PreloaderComponent,
 	],
 	providers: [Title],
 })

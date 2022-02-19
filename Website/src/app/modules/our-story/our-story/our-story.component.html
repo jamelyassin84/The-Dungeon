@@ -1,3 +1,5 @@
+<app-preloader *ngIf="!data"></app-preloader>
+
 <div class="wrapper-container d-flex aic jcc fdc c-section" *ngIf="data">
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 m-0 p-0">
 		<div class="block md:hidden">
@@ -11,11 +13,7 @@
 			</div>
 		</div>
 
-		<div
-			class="p-0 c-main mt-64"
-			*ngIf="data.images"
-			[@listAnimation]="data"
-		>
+		<div class="p-0" *ngIf="data.images" [@listAnimation]="data">
 			<img
 				class="c-section"
 				style="height: 100vh; object-fit: cover; width: 100%"
