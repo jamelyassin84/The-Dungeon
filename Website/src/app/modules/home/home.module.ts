@@ -25,6 +25,7 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll'
 		Common,
 		RouterModule,
 		NgxParallaxScrollModule,
+		ParallaxModule,
 	],
 	exports: [],
 })

@@ -1,4 +1,4 @@
-<div class="h-auto relative c-section">
+<div class="h-auto relative c-section" id="scene" data-relative-input="true">
 	<div class="bg relative h-screen" *ngIf="data">
 		<img
 			[src]="data.uri"
@@ -12,17 +12,20 @@
 		*ngIf="data"
 	>
 		<div
-			class="title w-full animate__animated animate__fast animate__slideInDown p-0 text-4xl md:text-9xl pl-5 pr-5"
+			appParallax
+			[factor]="-3.5"
+			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.title }}
 		</div>
 		<div
-			class="body text-gray-400 w-full animate__animated animate__fadeInDown animate__fast p-0 text-xl md:text-3xl pl-5 pr-5 mt-3"
+			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.body }}
 		</div>
+
 		<div class="px-3">
 			<button
 				*ngIf="data.isButtonEnabled"

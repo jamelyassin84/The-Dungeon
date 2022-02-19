@@ -3,7 +3,7 @@
 		[data]="data"
 		*ngIf="data && data.images.length !== 0"
 	></ImagesCarousel>
-	<div class="wrapper-container" *ngIf="data">
+	<div class="wrapper-container" appParallax [factor]="0.3" *ngIf="data">
 		<div class="text w-full flex aic jcc fdc px-5 md:px-16">
 			<div
 				class="title text-3xl text-left md:text-center"

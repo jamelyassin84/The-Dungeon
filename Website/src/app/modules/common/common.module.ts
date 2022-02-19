@@ -13,6 +13,8 @@ import { Title } from '@angular/platform-browser'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { WeightLiftersComponent } from './weight-lifters/weight-lifters.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ParallaxModule } from 'ngx-parallax'
+import { ParallaxDirective } from 'src/app/directives/parallax.directive'
 
 @NgModule({
 	declarations: [
@@ -25,12 +27,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 		PackageCardComponent,
 		CommunityComponent,
 		WeightLiftersComponent,
+		ParallaxDirective,
 	],
 	imports: [
 		CommonModule,
 		RouterModule,
 		IvyCarouselModule,
 		BrowserAnimationsModule,
+		ParallaxModule,
 	],
 	exports: [
 		NavbarComponent,
@@ -41,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 		HomeCarouselImgsComponent,
 		PackageCardComponent,
 		WeightLiftersComponent,
+		ParallaxDirective,
 	],
 	providers: [Title],
 })

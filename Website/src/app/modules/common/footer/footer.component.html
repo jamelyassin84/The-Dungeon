@@ -21,7 +21,7 @@
 			class="socials md:ml-auto mt-5 md:mt-0 flex md:aic flex-row"
 			*ngIf="user"
 		>
-			<a target="_blank" [href]="user.whatsApp">
+			<a target="_blank" [href]="'https://wa.me/' + user.whatsApp">
 				<i class="bi bi-whatsapp text-white text-2xl mr-2"></i>
 			</a>
 			<a target="_blank" [href]="user.facebook">

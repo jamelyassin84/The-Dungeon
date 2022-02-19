@@ -1,23 +1,27 @@
 <div
-	class="flex jcc fdc h:auto bg-zinc-900 mt-10 md:h-screen md:mt-5 md:bg-transparent c-section"
+	class="flex jcc fdc h:auto bg-zinc-900 md:h-screen md:bg-transparent c-section"
 	*ngIf="data && data.isSectionEnabled"
 >
 	<div class="bg hidden md:block bg-zinc-900">
 		<img *ngIf="data.uri" [src]="data.uri" alt="" class="px16-9" />
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-5">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
 		<div
 			class="flex w-full aic justify-end mt-5"
 			*ngIf="data2 && data2.isSectionEnabled"
 		>
 			<registration-form
+				appParallax
+				[factor]="5.3"
 				class="justify-end w-full ml-auto"
 				[data2]="data2"
 			></registration-form>
 		</div>
 		<div
+			appParallax
+			[factor]="-5.3"
 			[@listAnimation]="data"
-			class="text-center flex aic jcc fdc p-5 py-24 md:p-0"
+			class="text-center flex aic jcc fdc p-5 py-24 md:p-0 bg2 md:bg3"
 			[class.col-md-12]="!data2"
 		>
 			<div class="competitionDate mb-2 text-xl md:text-2xl">

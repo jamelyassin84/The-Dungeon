@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="c-main">
 	<head>
 		<meta charset="utf-8" />
 		<title>The Dungeon Gym</title>
@@ -21,16 +21,12 @@
 			href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
 		/>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	</head>
-	<main class="c-main">
-		<app-root></app-root>
-	</main>
+	<app-root></app-root>
 </html>
 
 <style>
-	body {
-		overflow: hidden;
-	}
 	.c-main {
 		padding: 0;
 		margin: 0;
@@ -41,6 +37,7 @@
 		scroll-snap-type: y mandatory;
 		position: relative;
 		z-index: 9;
+		scroll-behavior: smooth;
 	}
 
 	.c-section {

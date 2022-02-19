@@ -14,7 +14,10 @@
 		}}</span>
 	</div>
 	<div class="flex aic jcc w-full">
-		<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full">
+		<div
+			appParallax
+			class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full"
+		>
 			<PackageCard
 				*ngFor="let price of data.prices; let i = index"
 				[title]="price.duration"
