@@ -12,19 +12,19 @@
 
 		<div class="ml-auto aic hidden w-full md:flex md:w-auto">
 			<ul class="flex aic">
-				<li>
+				<li [class.active]="activeTab === 1">
 					<a routerLink="/">home</a>
 				</li>
-				<li>
+				<li [class.active]="activeTab === 2">
 					<a routerLink="/competition">Competition</a>
 				</li>
-				<li>
+				<li [class.active]="activeTab === 3">
 					<a routerLink="/location">location</a>
 				</li>
-				<li>
+				<li [class.active]="activeTab === 4">
 					<a routerLink="/coaching">coaching</a>
 				</li>
-				<li>
+				<li [class.active]="activeTab === 5">
 					<a routerLink="/our-story">our story</a>
 				</li>
 				<li routerLink="/competition" class="join-now">

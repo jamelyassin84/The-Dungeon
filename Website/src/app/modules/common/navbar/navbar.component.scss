@@ -10,6 +10,12 @@
 		height: 40.26px;
 	}
 }
+.active {
+	background-color: #373737 !important;
+	color: black !important;
+	padding: 0.5rem 2rem;
+	border-radius: 9999px;
+}
 
 li {
 	list-style: none;
@@ -22,6 +28,7 @@ li {
 			color: var(--accent);
 		}
 	}
+	transition: transform 0.3s ease-out;
 }
 
 .join-now {

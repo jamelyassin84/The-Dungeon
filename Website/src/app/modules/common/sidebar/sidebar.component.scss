@@ -1,8 +1,14 @@
 .sidebar {
 	background-color: rgba(0, 0, 0, 1);
 	position: fixed;
-	z-index: 11;
+	top: 0;
+	z-index: 99999999991;
 	.logo {
 		height: 40.26px;
 	}
+}
+.active {
+	background-color: #373737 !important;
+	padding: 0.5rem 2rem;
+	border-radius: 9999px;
 }

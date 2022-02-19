@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core'
+import { Router } from '@angular/router'
 import { listAnimation } from 'src/app/animations/list.animation'
 
 @Component({
@@ -8,7 +9,9 @@ import { listAnimation } from 'src/app/animations/list.animation'
 	animations: [listAnimation],
 })
 export class SidebarComponent implements OnInit {
-	constructor() {}
+	constructor(private router: Router) {
+		router.events.subscribe(() => this.changeTab())
+	}
 
 	@Output() onAction: EventEmitter<any> = new EventEmitter()
 
@@ -16,5 +19,25 @@ export class SidebarComponent implements OnInit {
 
 	close() {
 		this.onAction.emit(false)
+	}
+
+	activeTab: number = 1
+
+	changeTab() {
+		if (this.router.url.includes('home')) {
+			this.activeTab = 1
+		}
+		if (this.router.url.includes('competition')) {
+			this.activeTab = 2
+		}
+		if (this.router.url.includes('location')) {
+			this.activeTab = 3
+		}
+		if (this.router.url.includes('coaching')) {
+			this.activeTab = 4
+		}
+		if (this.router.url.includes('our-story')) {
+			this.activeTab = 5
+		}
 	}
 }

@@ -1,4 +1,4 @@
-<div class="sidebar w-screen px-15 h-screen">
+<div class="sidebar w-screen px-15 h-screen fixed">
 	<div class="wrapper-container w-full flex">
 		<span
 			(click)="close()"
@@ -22,28 +22,43 @@
 				/>
 			</svg>
 		</span>
-		<img
-			class="logo mr-auto absolute right-4 mt-5 md:mt-0 md:relative md:m-0 md:mr-0"
-			src="../../../../assets/app/logo.svg"
-			alt=""
-		/>
 	</div>
 
 	<div class="ml-auto aic w-full flex-col aic jcc mt-32">
 		<ul class="flex flex-col aic jcc" [@listAnimation]="6">
-			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+			<li
+				[class.active]="activeTab === 1"
+				(click)="close()"
+				class="mb-16 text-3xl text-gray-200"
+			>
 				<a routerLink="/">home</a>
 			</li>
-			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+			<li
+				[class.active]="activeTab === 2"
+				(click)="close()"
+				class="mb-16 text-3xl text-gray-200"
+			>
 				<a routerLink="/competition">Competition</a>
 			</li>
-			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+			<li
+				[class.active]="activeTab === 3"
+				(click)="close()"
+				class="mb-16 text-3xl text-gray-200"
+			>
 				<a routerLink="/location">location</a>
 			</li>
-			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+			<li
+				[class.active]="activeTab === 4"
+				(click)="close()"
+				class="mb-16 text-3xl text-gray-200"
+			>
 				<a routerLink="/coaching">coaching</a>
 			</li>
-			<li (click)="close()" class="mb-16 text-3xl text-gray-200">
+			<li
+				[class.active]="activeTab === 5"
+				(click)="close()"
+				class="mb-16 text-3xl text-gray-200"
+			>
 				<a routerLink="/our-story">our story</a>
 			</li>
 			<li (click)="close()" routerLink="/competition" class="join-now">
