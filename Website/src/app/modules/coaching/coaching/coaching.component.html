@@ -1,50 +1,56 @@
 <div
-	class="flex aic w-full flex fdc h:auto h:auto mt-24"
+	class="flex aic w-full flex fdc h:auto h:auto mt-24 section c-section pt-24"
 	*ngIf="data && coaches"
 >
-	<div
-		class="grid container grid-cols-1 lg:grid-cols-2 p-5 gap-2 md:p-5 w-100 h-100"
-	>
+	<div class="grid grid-cols-1 lg:grid-cols-2 p-5 gap-2 md:p-5 w-100 h-100">
 		<div class="w-full p-0">
 			<ul class="w-full" [@listAnimation]="data">
 				<li
-					class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200"
+					class="text-xl p-5 border-b border-zinc-00 flex bg-zinc-200"
 				>
-					<span>Classes</span>
-					<span class="ml-auto">PRICE</span>
+					<span>PRICE</span>
+					<span class="ml-auto">Classes</span>
 				</li>
 				<li
 					*ngFor="let item of data"
 					class="text-xl p-5 border-b border-zinc-200 flex"
 				>
-					<span class="text">{{ item.classes | titlecase }}</span>
-					<span class="ml-auto text-zinc-400 text-3xl">{{
-						item.price
+					<span
+						class="text-zinc-800 text-4xl text"
+						style="font-weight: 800"
+						>{{ item.price }}</span
+					>
+					<span class="text ml-auto">{{
+						item.classes | titlecase
 					}}</span>
 				</li>
 			</ul>
 		</div>
 		<div class="w-full h-auto">
 			<li class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200">
-				<span class="">COACHES</span>
-				<span class="ml-auto" style="color: #d10000"
-					>BE PART OF THE CLUB</span
-				>
+				<span class="">The COACHES</span>
 			</li>
 			<div
 				class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto"
 				[@listAnimation]="data"
 			>
-				<div class="mt-5" *ngFor="let coach of coaches">
+				<div
+					class="mt-5 border border-zing-200"
+					*ngFor="let coach of coaches"
+				>
 					<img
 						[src]="coach.uri"
 						class="ap5-6 w-full"
 						style="height: 400px"
 						alt=""
 					/>
-					<div class="coaches-text">{{ coach.name }}</div>
-					<div class="coaches-text1 text-muted">
-						Experience: {{ coach.experience }}
+					<div class="px-5 py-2">
+						<div class="coaches-text text-xl">
+							{{ coach.name }}
+						</div>
+						<div class="coaches-text1 text-zinc-400">
+							Experience: {{ coach.experience }}
+						</div>
 					</div>
 				</div>
 			</div>

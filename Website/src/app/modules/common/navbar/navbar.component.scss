@@ -2,9 +2,10 @@
 	width: 100%;
 	background-color: rgba(0, 0, 0, 1);
 	padding: 1.5rem 20vmin;
-	position: fixed;
+	position: sticky;
 	border-radius: 0;
-	z-index: 9;
+	z-index: 1239;
+	top: 0;
 	.logo {
 		height: 40.26px;
 	}

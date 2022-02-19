@@ -14,7 +14,6 @@
 
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css');
 
-html,
 body {
 	--darkest: #1d1d1b;
 	--accent: #d10000;
@@ -22,7 +21,6 @@ body {
 	--dark: #828385;
 	--bg: #ffffff;
 	overflow-x: hidden;
-	overflow-y: auto !important;
 }
 
 * {

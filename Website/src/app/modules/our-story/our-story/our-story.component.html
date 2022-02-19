@@ -11,12 +11,14 @@
 			</div>
 		</div>
 
-		<div
-			class="col-md-6 p-0 m-0"
-			*ngIf="data.images"
-			[@listAnimation]="data"
-		>
-			<img *ngFor="let item of data.images" [src]="item.uri" alt="" />
+		<div class="p-0 m-0 c-main" *ngIf="data.images" [@listAnimation]="data">
+			<img
+				class="c-section"
+				style="height: 100vh; object-fit: cover; width: 100%"
+				*ngFor="let item of data.images"
+				[src]="item.uri"
+				alt=""
+			/>
 		</div>
 		<div class="hidden md:block">
 			<div class="wrapper">

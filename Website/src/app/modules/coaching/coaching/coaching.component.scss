@@ -1,6 +1,9 @@
 img {
 	height: 232px;
-	border-radius: 5px;
+}
+
+.section {
+	min-height: 100vh;
 }
 
 .text {
@@ -11,14 +14,9 @@ img {
 .coaches-text {
 	letter-spacing: 0.75px;
 	color: #1d1d1b;
-	font-size: 1rem;
-	text-align: center;
-	margin-top: 0.5rem;
 }
 .coaches-text1 {
 	letter-spacing: 0.75px;
-	font-size: 0.9rem;
-	text-align: center;
 	font-family: Montserrat;
 	font-weight: 500;
 }
