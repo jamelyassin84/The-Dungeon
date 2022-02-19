@@ -56,7 +56,7 @@ export class HomeSection4Component implements OnInit {
 	}
 
 	addField() {
-		this.data.prices.unshift({
+		this.data.prices.push({
 			duration: '',
 			price: '',
 			billInterval: '',

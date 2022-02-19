@@ -53,7 +53,7 @@ export class HomeSection3Component implements OnInit {
 		Array.from(this.files).forEach((file: File) => {
 			const reader = new FileReader()
 			reader.onload = () => {
-				this.images.unshift(String(reader.result))
+				this.images.push(String(reader.result))
 			}
 			reader.readAsDataURL(file)
 		})

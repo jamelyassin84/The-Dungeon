@@ -34,7 +34,7 @@ export class CoachingSection2Component implements OnInit {
 	}
 
 	addCoach(sex: 'males' | 'females') {
-		this.data[sex].unshift({
+		this.data[sex].push({
 			sex: sex,
 			name: '',
 			experience: '',

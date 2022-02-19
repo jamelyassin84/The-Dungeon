@@ -41,7 +41,7 @@ export class Settings1Component implements OnInit {
 	}
 
 	addEmail() {
-		this.data.emails.unshift({ email: '' })
+		this.data.emails.push({ email: '' })
 	}
 
 	remove(index: number) {

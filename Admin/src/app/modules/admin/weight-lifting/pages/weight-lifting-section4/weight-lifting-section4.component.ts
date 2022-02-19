@@ -21,7 +21,7 @@ export class WeightLiftingSection4Component implements OnInit {
 	data: Review[] = []
 
 	add(): void {
-		this.data.unshift({
+		this.data.push({
 			name: '',
 			comment: '',
 			rating: '',

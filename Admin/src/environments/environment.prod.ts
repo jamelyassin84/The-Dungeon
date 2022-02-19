@@ -1,4 +1,5 @@
 export const environment = {
 	production: true,
-	api: 'http://10.39.1.39:8000/api/',
+	// api: 'http://localhost:8000/api/',
+	api: 'http://thedungeon.ae/server/public/api/',
 }
