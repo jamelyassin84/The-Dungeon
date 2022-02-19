@@ -1,5 +1,6 @@
-<div class="h-auto relative c-section" id="scene" data-relative-input="true">
-	<div class="bg relative h-screen" *ngIf="data">
+<app-preloader *ngIf="!data"></app-preloader>
+<div class="h-auto relative c-section" *ngIf="data">
+	<div class="bg relative h-screen bg-zinc-900">
 		<img
 			[src]="data.uri"
 			alt=""
@@ -13,7 +14,7 @@
 	>
 		<div
 			appParallax
-			[factor]="-3.5"
+			[factor]="-4.5"
 			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5"
 			*ngIf="data.isTextsEnabled"
 		>

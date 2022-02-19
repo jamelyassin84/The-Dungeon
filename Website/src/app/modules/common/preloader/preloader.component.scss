@@ -1,164 +1,82 @@
-.logo {
-	width: 100%;
+.shimmer {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.1);
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#d10000),
+		to(#222),
+		color-stop(0.5, #fff)
+	);
+	background: -moz-gradient(
+		linear,
+		left top,
+		right top,
+		from(#222),
+		to(#222),
+		color-stop(0.5, #fff)
+	);
+	background: gradient(
+		linear,
+		left top,
+		right top,
+		from(#222),
+		to(#d10000),
+		color-stop(0.5, #fff)
+	);
+	-webkit-background-size: 125px 100%;
+	-moz-background-size: 125px 100%;
+	background-size: 125px 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-animation-name: shimmer;
+	-moz-animation-name: shimmer;
+	animation-name: shimmer;
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: #222;
 }
 
-.swing div {
-	border-radius: 50%;
-	float: left;
-	height: 5em;
-	width: 5em;
-}
-.swing div:nth-of-type(1) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.swing div:nth-of-type(2) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.swing div:nth-of-type(3) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.swing div:nth-of-type(4) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.swing div:nth-of-type(5) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #bb4034 100%);
-	background: linear-gradient(to right, #d10000 0%, #bb4034 100%);
-}
-.swing div:nth-of-type(6) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.swing div:nth-of-type(7) {
-	background: -webkit-linear-gradient(left, #d10000 0%, #d10000 100%);
-	background: linear-gradient(to right, #d10000 0%, #d10000 100%);
-}
-.shadow {
-	clear: left;
-	padding-top: 1.5em;
-}
-.shadow div {
-	-webkit-filter: blur(1px);
-	filter: blur(1px);
-	float: left;
-	width: 5em;
-	height: 2.25em;
-	border-radius: 50%;
-	background: black;
+@-moz-keyframes shimmer {
+	0% {
+		background-position: top left;
+	}
+	100% {
+		background-position: top right;
+	}
 }
 
-@-webkit-keyframes ball-l {
-	0%,
-	50% {
-		-webkit-transform: rotate(0) translateX(0);
-		transform: rotate(0) translateX(0);
-	}
-	100% {
-		-webkit-transform: rotate(50deg) translateX(-2.5em);
-		transform: rotate(50deg) translateX(-2.5em);
-	}
-}
-@keyframes ball-l {
-	0%,
-	50% {
-		-webkit-transform: rotate(0) translate(0);
-		transform: rotate(0) translateX(0);
-	}
-	100% {
-		-webkit-transform: rotate(50deg) translateX(-2.5em);
-		transform: rotate(50deg) translateX(-2.5em);
-	}
-}
-@-webkit-keyframes ball-r {
+@-webkit-keyframes shimmer {
 	0% {
-		-webkit-transform: rotate(-50deg) translateX(2.5em);
-		transform: rotate(-50deg) translateX(2.5em);
+		background-position: top left;
 	}
-	50%,
 	100% {
-		-webkit-transform: rotate(0) translateX(0);
-		transform: rotate(0) translateX(0);
+		background-position: top right;
 	}
 }
-@keyframes ball-r {
+
+@-o-keyframes shimmer {
 	0% {
-		-webkit-transform: rotate(-50deg) translateX(2.5em);
-		transform: rotate(-50deg) translateX(2.5em);
-	}
-	50%,
-	100% {
-		-webkit-transform: rotate(0) translateX(0);
-		transform: rotate(0) translateX(0);
-	}
-}
-@-webkit-keyframes shadow-l-n {
-	0%,
-	50% {
-		opacity: 0.5;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
+		background-position: top left;
 	}
 	100% {
-		opacity: 0.125;
-		-webkit-transform: translateX(-1.57em);
-		transform: translateX(-1.75em);
+		background-position: top right;
 	}
 }
-@keyframes shadow-l-n {
-	0%,
-	50% {
-		opacity: 0.5;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-	100% {
-		opacity: 0.125;
-		-webkit-transform: translateX(-1.75);
-		transform: translateX(-1.75em);
-	}
-}
-@-webkit-keyframes shadow-r-n {
+
+@keyframes shimmer {
 	0% {
-		opacity: 0.125;
-		-webkit-transform: translateX(1.75em);
-		transform: translateX(1.75em);
+		background-position: top left;
 	}
-	50%,
 	100% {
-		opacity: 0.5;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
+		background-position: top right;
 	}
-}
-@keyframes shadow-r-n {
-	0% {
-		opacity: 0.125;
-		-webkit-transform: translateX(1.75em);
-		transform: translateX(1.75em);
-	}
-	50%,
-	100% {
-		opacity: 0.5;
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-	}
-}
-.swing-l {
-	-webkit-animation: ball-l 0.425s ease-in-out infinite alternate;
-	animation: ball-l 0.425s ease-in-out infinite alternate;
-}
-.swing-r {
-	-webkit-animation: ball-r 0.425s ease-in-out infinite alternate;
-	animation: ball-r 0.425s ease-in-out infinite alternate;
-}
-.shadow-l {
-	-webkit-animation: shadow-l-n 0.425s ease-in-out infinite alternate;
-	animation: shadow-l-n 0.425s ease-in-out infinite alternate;
-}
-.shadow-r {
-	-webkit-animation: shadow-r-n 0.425s ease-in-out infinite alternate;
-	animation: shadow-r-n 0.425s ease-in-out infinite alternate;
 }
