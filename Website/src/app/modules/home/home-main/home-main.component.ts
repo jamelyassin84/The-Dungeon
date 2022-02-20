@@ -19,4 +19,12 @@ export class HomeMainComponent implements OnInit {
 	ngOnInit(): void {
 		this.title.setTitle('The Dungeon | Home')
 	}
+
+	ngAfterViewInit(): void {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		})
+	}
 }

@@ -165,3 +165,11 @@ carousel {
 settings {
 	display: none !important;
 }
+.scale {
+	transform: scale(0.5) !important;
+	transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.scaleNow {
+	transform: scale3d(1, 1, 1) !important;
+}

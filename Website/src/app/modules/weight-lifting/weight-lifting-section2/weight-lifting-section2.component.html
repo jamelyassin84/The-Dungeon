@@ -4,7 +4,11 @@
 	*ngIf="data"
 >
 	<div class="grid container grid-cols-1 lg:grid-cols-2 gap-2">
-		<div class="p-5 md:p-16">
+		<div
+			class="p-5 md:p-16 animate__animated"
+			[class.animate__fadeOutLeft]="!scaleNow"
+			[class.animate__fadeInLeft]="scaleNow"
+		>
 			<div class="competition">COMPETITION</div>
 			<div class="rules">RULES</div>
 			<ul class="dashed mb-3">
@@ -36,6 +40,12 @@
 				</li>
 			</ul>
 		</div>
-		<img class="square w-full" [src]="data.uri" alt="" />
+
+		<img
+			class="square w-full md:scale"
+			[class.scaleNow]="scaleNow"
+			[src]="data.uri"
+			alt=""
+		/>
 	</div>
 </div>

@@ -1,6 +1,8 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div class="w-screen h-auto md:h-screen c-section">
 	<ImagesCarousel
+		class="scale"
+		[class.scaleNow]="scaleNow"
 		[data]="data"
 		*ngIf="data && data.images.length !== 0"
 	></ImagesCarousel>

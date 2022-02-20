@@ -23,4 +23,12 @@ export class OurStoryComponent implements OnInit {
 	get(): void {
 		this.service.index().subscribe((data) => (this.data = data))
 	}
+
+	ngAfterViewInit(): void {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		})
+	}
 }

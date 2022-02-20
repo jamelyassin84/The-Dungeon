@@ -24,7 +24,7 @@ export class ParallaxDirective {
 
 	@HostListener('window:scroll', ['$event'])
 	onWindowScroll() {
-		this.scroll = ` translateY(${this.getTranslation()}px)`
+		this.scroll = ` translateY(${this.getTranslation()}px) !important`
 	}
 
 	private getTranslation() {

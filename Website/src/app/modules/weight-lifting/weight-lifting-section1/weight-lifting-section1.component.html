@@ -11,13 +11,13 @@
 			*ngIf="data2 && data2.isSectionEnabled"
 		>
 			<registration-form
-				class="justify-end w-full ml-auto"
+				class="justify-end w-full ml-auto animate__animated animate__fadeInLeft animate__faster"
 				[data2]="data2"
 			></registration-form>
 		</div>
 		<div
 			[@listAnimation]="data"
-			class="text-center flex aic jcc fdc p-5 py-24 md:p-0 bg3 bg2 hidden md:block"
+			class="text-center flex aic jcc fdc p-5 py-24 md:p-0 bg3 bg2 hidden md:block animate__animated animate__fadeInRight"
 			[class.col-md-12]="!data2"
 		>
 			<div class="competitionDate mb-2 text-xl md:text-2xl">

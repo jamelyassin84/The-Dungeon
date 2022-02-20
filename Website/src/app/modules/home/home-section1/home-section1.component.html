@@ -15,13 +15,13 @@
 		<div
 			appParallax
 			[factor]="-4.5"
-			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5"
+			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5 animate__animated animate__bounceInDown"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.title }}
 		</div>
 		<div
-			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3"
+			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3 animate__animated animate__fadeInUp"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.body }}

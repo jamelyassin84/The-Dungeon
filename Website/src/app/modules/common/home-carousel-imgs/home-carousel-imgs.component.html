@@ -6,7 +6,11 @@
 	[dots]="false"
 	[margin]="0"
 >
-	<div *ngFor="let image of data.images" class="carousel-cell ap4-3">
+	<div
+		@listAnimation
+		*ngFor="let image of data.images"
+		class="carousel-cell ap4-3"
+	>
 		<img [src]="image.uri" alt="" class="ap4-3" />
 	</div>
 </carousel>

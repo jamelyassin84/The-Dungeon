@@ -1,5 +1,5 @@
 import { Rule } from './../../../models/types'
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { RuleService } from 'src/app/services/api.service'
 
 @Component({
@@ -19,5 +19,18 @@ export class WeightLiftingSection2Component implements OnInit {
 		this.service.index().subscribe((data) => {
 			this.data = data
 		})
+	}
+
+	scaleNow = false
+	@HostListener('window:scroll', ['$event'])
+	onWindowScroll() {
+		const start = 100 * 2
+		const offset = 680 * 2
+		console.log(window.scrollY)
+		if (window.scrollY > start && window.scrollY < offset) {
+			this.scaleNow = true
+		} else {
+			this.scaleNow = false
+		}
 	}
 }

@@ -36,4 +36,12 @@ export class CoachingComponent implements OnInit {
 					(this.coaches = [...data.females, ...data.males]),
 			)
 	}
+
+	ngAfterViewInit(): void {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		})
+	}
 }

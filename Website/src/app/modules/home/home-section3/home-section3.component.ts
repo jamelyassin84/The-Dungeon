@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { HomeSection3 } from 'src/app/models/types'
 import { HomeSection3Service } from 'src/app/services/api.service'
 
@@ -22,5 +22,18 @@ export class HomeSection3Component implements OnInit {
 			.subscribe((data) =>
 				data.id !== undefined ? (this.data = data) : void 0,
 			)
+	}
+
+	scaleNow = false
+	@HostListener('window:scroll', ['$event'])
+	onWindowScroll() {
+		const start = 100 * 3
+		const offset = 680 * 3
+		console.log(window.scrollY)
+		if (window.scrollY > start && window.scrollY < offset) {
+			this.scaleNow = true
+		} else {
+			this.scaleNow = false
+		}
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { IParallaxScrollConfig } from 'ngx-parallax-scroll'
 import { HomeSection2 } from 'src/app/models/types'
 import { HomeSection2Service } from 'src/app/services/api.service'
@@ -26,5 +26,18 @@ export class HomeSection2Component implements OnInit {
 		parallaxDirection: 'reverse',
 		parallaxTimingFunction: 'ease-in',
 		parallaxThrottleTime: 80,
+	}
+
+	scaleNow = false
+	@HostListener('window:scroll', ['$event'])
+	onWindowScroll() {
+		const start = 100 * 2
+		const offset = 680 * 2
+		console.log(window.scrollY)
+		if (window.scrollY > start && window.scrollY < offset) {
+			this.scaleNow = true
+		} else {
+			this.scaleNow = false
+		}
 	}
 }

@@ -1,19 +1,30 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div class="h-auto c-section" *ngIf="data">
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-1 md:p-10 md:h-screen">
-		<div class="p-5 p-5 md:p-10 lg:p-24 xl:p-32">
+	<div
+		class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-1 h-auto md:p-10 md:h-screen"
+	>
+		<div
+			class="p-5 p-5 md:p-10 lg:p-24 xl:p-32 scale"
+			[class.scaleNow]="scaleNow"
+		>
 			<div class="relative">
 				<img
-					class="relative hidden md:absolute block"
+					class="absolute hidden md:block"
 					src="../../../../assets/app/home/2.png"
 					alt=""
+					style="
+						transform: scale(1.1, 1.3) translateY(30px);
+						transform-origin: top;
+					"
 				/>
 
-				<img class="relative" [src]="data.uri" alt="" />
+				<img class="relative md:absolute" [src]="data.uri" alt="" />
 			</div>
 		</div>
 		<div
-			class="text-left flex fdc p-5 text-left md:p-16 lg:p-24 xl:p-3 md:item-center jcc"
+			[class.animate__fadeInLeft]="!scaleNow"
+			[class.animate__fadeInRight]="scaleNow"
+			class="text-left flex fdc p-5 text-left md:p-16 lg:p-24 xl:p-3 md:item-center jcc animate__animated"
 		>
 			<div class="title text-4xl md:text-5xl">
 				{{ data.title }}
