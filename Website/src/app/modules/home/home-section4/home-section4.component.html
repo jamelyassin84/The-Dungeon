@@ -1,6 +1,6 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div
-	class="c-section wrapper-container p-10 md:px-5 flex aic fdc w-full text-center py-24 bg-zinc-900 md:h-screen"
+	class="c-section wrapper-container md:px-5 flex aic fdc w-full text-center p-5 md:py-24 bg-zinc-900 md:h-screen"
 	*ngIf="data"
 >
 	<div class="title w-full text-left md:text-center text-2xl md:text-7xl">
@@ -10,9 +10,12 @@
 		{{ data.notice }}
 	</div>
 	<div class="description md:text-center text-xl px-0 md:px-64 text-left">
-		<span style="font-weight: 300; font-family: Montserrat">
+		<p
+			class="text-left md:text-center break-word"
+			style="font-weight: 300; font-family: Montserrat"
+		>
 			{{ data.body }}
-		</span>
+		</p>
 	</div>
 	<div class="flex aic jcc w-full">
 		<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full">

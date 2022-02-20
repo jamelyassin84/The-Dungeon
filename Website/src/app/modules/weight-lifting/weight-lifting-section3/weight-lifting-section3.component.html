@@ -1,9 +1,11 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div
-	class="w-full h-auto md:py-16 c-section bg-white"
+	class="w-full h-auto p-0 md:py-16 c-section bg-white"
 	*ngIf="data && data.length"
 >
-	<div class="title mt-10 mb-10">JOIN OUR COMMUNITY</div>
+	<div class="title text-left md:text-center p-5 text-2xl md:text-4xl">
+		JOIN OUR COMMUNITY
+	</div>
 	<div class="p-0 m-0 w-full flex flex-wrap jcc mb-10">
 		<Community
 			class="mr-0 md:mr-5"
