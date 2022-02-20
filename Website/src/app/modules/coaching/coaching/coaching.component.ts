@@ -1,3 +1,4 @@
+import { Router } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
 import { CoachesService, CoachingService } from 'src/app/services/api.service'
@@ -15,6 +16,7 @@ export class CoachingComponent implements OnInit {
 		private service: CoachingService,
 		private coachService: CoachesService,
 		private title: Title,
+		private router: Router,
 	) {}
 
 	ngOnInit(): void {
@@ -43,5 +45,9 @@ export class CoachingComponent implements OnInit {
 			left: 0,
 			behavior: 'smooth',
 		})
+	}
+
+	enroll() {
+		this.router.navigate(['/competition'])
 	}
 }

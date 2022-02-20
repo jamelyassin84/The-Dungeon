@@ -6,6 +6,16 @@ img {
 	height: 100vh;
 	z-index: -1;
 }
+.bg {
+	width: 100%;
+	img {
+		width: 100%;
+		object-fit: cover;
+		height: inherit;
+	}
+	position: absolute;
+	z-index: -1;
+}
 
 .title {
 	letter-spacing: 3.05px;

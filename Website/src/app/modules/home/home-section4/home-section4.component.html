@@ -1,8 +1,16 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div
-	class="c-section wrapper-container jcc md:px-5 flex aic fdc w-full text-center p-5 md:py-16 bg-zinc-900 md:h-screen"
+	class="c-section wrapper-container jcc md:px-5 flex aic fdc w-full text-center p-5 md:py-16 bg-zinc-900 md:bg-transparent md:h-screen"
 	*ngIf="data"
 >
+	<div class="bg absolute h-screen bg-zinc-900 hidden md:block">
+		<img
+			[src]="data.uri"
+			alt=""
+			class="px16-9 absolute h-screen object-cover w-ful"
+		/>
+		<div class="overlay h-screen absolute w-ful"></div>
+	</div>
 	<div class="title w-full text-left md:text-center text-2xl md:text-7xl">
 		{{ data.title }}
 	</div>

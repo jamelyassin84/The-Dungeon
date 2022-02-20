@@ -174,12 +174,12 @@ settings {
 	transform: scale3d(1, 1, 1) !important;
 }
 .carousel-dot {
-	width: 70px !important;
-	margin-right: 30px !important;
-	height: 3px !important;
-	border: 2px solid #bfbfbf !important;
+	// width: 70px !important;
+	// margin-right: 30px !important;
+	// height: 3px !important;
+	border: 5px solid #bfbfbf !important;
 	transform: translateY(30px);
 }
 .carousel-dot-active {
-	border: 2px solid #868686 !important;
+	border: 5px solid black !important;
 }

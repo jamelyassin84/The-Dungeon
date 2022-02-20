@@ -1,6 +1,6 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div class="h-auto relative c-section" *ngIf="data">
-	<div class="bg relative h-screen bg-zinc-900">
+	<div class="bg absolute h-screen bg-zinc-900">
 		<img
 			[src]="data.uri"
 			alt=""
@@ -15,13 +15,13 @@
 		<div
 			appParallax
 			[factor]="-4.5"
-			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5 animate__animated animate__bounceInDown"
+			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.title }}
 		</div>
 		<div
-			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3 animate__animated animate__fadeInUp"
+			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.body }}
