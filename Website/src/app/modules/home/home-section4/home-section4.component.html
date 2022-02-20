@@ -1,6 +1,6 @@
 <app-preloader *ngIf="!data"></app-preloader>
 <div
-	class="c-section wrapper-container p-10 md:px-5 flex aic jcc fdc w-full text-center py-24 bg-zinc-900 md:h-screen"
+	class="c-section wrapper-container p-10 md:px-5 flex aic fdc w-full text-center py-24 bg-zinc-900 md:h-screen"
 	*ngIf="data"
 >
 	<div class="title w-full text-left md:text-center text-2xl md:text-7xl">
@@ -9,16 +9,13 @@
 	<div class="px:1 mb-5 alert w-full text-left md:text-center mt-3.5 text-xl">
 		{{ data.notice }}
 	</div>
-	<div class="description mt-3.5 text-left md:text-center text-xl md:px-64">
-		<span style="font-weight: 300; font-family: Montserrat">{{
-			data.body
-		}}</span>
+	<div class="description md:text-center text-xl px-0 md:px-64 text-left">
+		<span style="font-weight: 300; font-family: Montserrat">
+			{{ data.body }}
+		</span>
 	</div>
 	<div class="flex aic jcc w-full">
-		<div
-			appParallax
-			class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full"
-		>
+		<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0 md:px-28 w-full">
 			<PackageCard
 				*ngFor="let price of data.prices; let i = index"
 				[title]="price.duration"
