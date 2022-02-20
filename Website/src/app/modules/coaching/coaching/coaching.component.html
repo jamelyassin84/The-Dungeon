@@ -1,36 +1,34 @@
 <app-preloader *ngIf="!data || !coaches"></app-preloader>
 <div
-	class="flex aic w-full flex fdc h:auto h:auto section c-section pt-24 relative"
+	class="flex aic w-full flex fdc h:auto h:auto section c-section md:pt-16 relative"
 	*ngIf="data && coaches"
 >
 	<div
 		class="grid grid-cols-1 container lg:grid-cols-2 p-5 gap-2 md:p-5 w-100 h-100"
 	>
-		<div class="w-full p-0" appParallax [factor]="-1.3">
+		<div class="w-full p-0 md:px-16" appParallax [factor]="-1.3">
 			<ul class="w-full" [@listAnimation]="data">
-				<li
-					class="text-xl p-5 border-b border-zinc-00 flex bg-zinc-200"
-				>
-					<span>Classes</span>
-					<span class="ml-auto"> PRICE</span>
+				<li class="text-3xl md:text-4xl md:py-4 flex">
+					<span class="underline">Classes</span>
 				</li>
 				<li
 					*ngFor="let item of data"
-					class="text-xl p-5 border-b border-zinc-200 flex"
+					class="text-xl py-5 border-b border-zinc-200 flex fdc"
 				>
-					<span>{{ item.classes | titlecase }}</span>
-					<span
-						class="text-zinc-800 text-2xl text text ml-auto"
-						style="font-weight: 800"
-						>{{ item.price }}</span
+					<div class="text">{{ item.classes | titlecase }}</div>
+					<div
+						class="text-3xl"
+						style="font-weight: 800; color: #d10000"
 					>
+						{{ item.price }}
+					</div>
 				</li>
 			</ul>
 		</div>
-		<div class="w-full h-auto" appParallax [factor]="-1.3">
-			<li class="text-xl p-5 border-b border-zinc-200 flex bg-zinc-200">
-				<span class="">The COACHES</span>
-			</li>
+		<div class="w-full h-auto md:px-16">
+			<div class="text-3xl md:text-4xl md:py-4 flex">
+				<span class="underline">The Coaches</span>
+			</div>
 			<div
 				class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto"
 				[@listAnimation]="data"
