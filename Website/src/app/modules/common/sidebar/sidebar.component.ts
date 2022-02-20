@@ -9,13 +9,13 @@ import { listAnimation } from 'src/app/animations/list.animation'
 	animations: [listAnimation],
 })
 export class SidebarComponent implements OnInit {
-	constructor(private router: Router) {
-		router.events.subscribe(() => this.changeTab())
-	}
+	constructor(private router: Router) {}
 
 	@Output() onAction: EventEmitter<any> = new EventEmitter()
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.changeTab()
+	}
 
 	close() {
 		this.onAction.emit(false)

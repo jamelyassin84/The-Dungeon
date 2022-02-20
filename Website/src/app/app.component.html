@@ -1,5 +1,6 @@
 <Navbar (onAction)="setAction($event)"></Navbar>
 <Sidebar
+	[class.animate__slideOutLeft]="showSidebar"
 	(onAction)="setAction($event)"
 	*ngIf="showSidebar"
 	[@dropDownAnim]="!showSidebar ? 'out' : 'in'"

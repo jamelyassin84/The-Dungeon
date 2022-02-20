@@ -1,4 +1,6 @@
-<div class="sidebar w-screen px-15 h-screen fixed">
+<div
+	class="sidebar w-screen px-15 h-screen fixed animate__animated animate__slideInLeft animate__faster"
+>
 	<div class="wrapper-container w-full flex">
 		<span
 			(click)="close()"
@@ -25,7 +27,7 @@
 	</div>
 
 	<div class="ml-auto aic w-full flex-col aic jcc mt-32">
-		<ul class="flex flex-col aic jcc" [@listAnimation]="6">
+		<ul class="flex flex-col aic jcc" @listAnimation>
 			<li
 				[class.active]="activeTab === 1"
 				(click)="close()"
