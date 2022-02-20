@@ -1,4 +1,4 @@
-import { Title } from '@angular/platform-browser'
+import { Meta, Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
 import { LocationService } from 'src/app/services/api.service'
 import { Location } from 'src/app/models/types'
@@ -9,9 +9,29 @@ import { Location } from 'src/app/models/types'
 	styleUrls: ['./location.component.scss'],
 })
 export class LocationComponent implements OnInit {
-	constructor(private service: LocationService, private title: Title) {}
+	constructor(
+		private service: LocationService,
+		private title: Title,
+		private meta: Meta,
+	) {}
 
 	ngOnInit(): void {
+		this.meta.addTags([
+			{
+				name: 'description',
+				content: 'The Dungeon Gym Home',
+			},
+			{
+				name: 'author',
+				content: 'Jamel Eid Yassin',
+			},
+			{
+				name: 'keywords',
+				content:
+					'Gym, Dubai Gym, Gym UAE, Weightlifting, Competition, Fitness, Dungeon, dungeon gym, bodybuilders ,powerlifters,line equipment’s, trainers, coaches, Open weightlifting ,dungeon members, contenders, coaches, coaching, classes, gym classes, gym community ',
+			},
+		])
+
 		this.title.setTitle('The Dungeon | Location')
 		this.get()
 	}

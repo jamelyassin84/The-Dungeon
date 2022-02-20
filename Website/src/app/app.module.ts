@@ -13,10 +13,11 @@ import { WeightLiftingModule } from './modules/weight-lifting/weight-lifting.mod
 
 // Components
 import { AppComponent } from './app.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, PageNotFoundComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

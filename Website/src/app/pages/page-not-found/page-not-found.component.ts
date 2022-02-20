@@ -1,15 +1,13 @@
-import { Meta, Title } from '@angular/platform-browser'
 import { Component, OnInit } from '@angular/core'
+import { Meta, Title } from '@angular/platform-browser'
 
 @Component({
-	selector: 'app-weight-lifting-main',
-	templateUrl: './weight-lifting-main.component.html',
-	styleUrls: ['./weight-lifting-main.component.scss'],
+	selector: 'app-page-not-found',
+	templateUrl: './page-not-found.component.html',
+	styleUrls: ['./page-not-found.component.scss'],
 })
-export class WeightLiftingMainComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit {
 	constructor(private title: Title, private meta: Meta) {}
-
-	timer: any
 
 	ngOnInit(): void {
 		this.meta.addTags([
@@ -28,6 +26,6 @@ export class WeightLiftingMainComponent implements OnInit {
 			},
 		])
 
-		this.title.setTitle('The Dungeon | Competition')
+		this.title.setTitle('The Dungeon | Page Not Found')
 	}
 }

@@ -15,17 +15,17 @@
 		<div
 			appParallax
 			[factor]="-4.5"
-			class="title w-full p-0 text-4xl md:text-9xl pl-5 pr-5"
+			class="title w-full p-0 text-5xl md:text-9xl pl-5 pr-5"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.title }}
 		</div>
-		<div
-			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-3"
+		<p
+			class="body text-gray-400 w-full p-0 text-xl md:text-3xl pl-5 pr-5 mt-5"
 			*ngIf="data.isTextsEnabled"
 		>
 			{{ data.body }}
-		</div>
+		</p>
 
 		<div class="px-3">
 			<button
