@@ -1,6 +1,6 @@
 <app-preloader *ngIf="!data || !coaches"></app-preloader>
 <div
-	class="flex aic w-full flex fdc h:auto h:auto section c-section md:pt-16 relative"
+	class="flex aic w-full flex fdc h:auto h:auto section c-section md:pt-8 relative"
 	*ngIf="data && coaches"
 >
 	<div
@@ -13,14 +13,30 @@
 				</li>
 				<li
 					*ngFor="let item of data"
-					class="text-xl py-5 border-b border-zinc-200 flex fdc"
+					class="text-xl py-4 flex w-full aic"
 				>
-					<div class="text">{{ item.classes | titlecase }}</div>
+					<div class="flex fdc">
+						<div class="text-3xl text-gray-900">
+							{{ item.price }}
+						</div>
+						<span class="mt-1">
+							<i class="bi bi-check2 mr-1 text-green-500"></i>
+							<span class="text">
+								{{ item.classes | lowercase }}</span
+							>
+						</span>
+					</div>
 					<div
-						class="text-3xl"
-						style="font-weight: 800; color: #d10000"
+						routerLink="/competition"
+						class="ml-auto"
+						style="z-index: 5"
+						role="button"
 					>
-						{{ item.price }}
+						<button
+							class="btn-app-primary px-4 w-auto hover:bg-zinc-900"
+						>
+							enroll now
+						</button>
 					</div>
 				</li>
 			</ul>
@@ -30,7 +46,7 @@
 				<span class="underline">The Coaches</span>
 			</div>
 			<div
-				class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-100 h-auto"
+				class="grid grid-cols-2 lg:grid-cols-2 gap-2 w-100 h-auto"
 				[@listAnimation]="data"
 			>
 				<div
@@ -48,7 +64,7 @@
 							{{ coach.name }}
 						</div>
 						<div class="coaches-text1 text-zinc-400">
-							Experience: {{ coach.experience }}
+							Exp: {{ coach.experience }}
 						</div>
 					</div>
 				</div>

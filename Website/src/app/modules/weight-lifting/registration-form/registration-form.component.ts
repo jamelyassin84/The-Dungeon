@@ -13,4 +13,8 @@ export class RegistrationFormComponent implements OnInit {
 	@Input() data2: any
 
 	ngOnInit(): void {}
+
+	register() {
+		alert('Coming Soon')
+	}
 }

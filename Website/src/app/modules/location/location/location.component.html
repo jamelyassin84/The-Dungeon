@@ -8,7 +8,9 @@
 		src="../../../../assets/app/location/bg.png"
 		alt=""
 	/>
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-10 md:h-screen">
+	<div
+		class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-5 md:h-screen text-left md:text-center"
+	>
 		<div class="p-0 aic">
 			<div class="flex aic w-full jcc">
 				<img
@@ -21,18 +23,18 @@
 			<div
 				class="address animate__animated animate__fast animate__slideInDown"
 			>
-				{{ data.address }} <br />
-				{{ data.state }}
+				<div class="text-white">{{ data.address }}</div>
+				<div class="text-zinc-500">{{ data.state }}</div>
 			</div>
 			<div class="link mt-10">
 				<a [href]="data.googleMapURI" target="_blank"
 					>View Map <i class="bi bi-arrow-right ml-4k"></i
 				></a>
 			</div>
-			<div class="email mt-10">{{ data.email }}</div>
-			<div class="phone mb-10">{{ data.contact }}</div>
+			<div class="email mt-10 text-white">{{ data.email }}</div>
+			<div class="phone mb-10 text-zinc-500">{{ data.contact }}</div>
 		</div>
-		<div class="p-0 md:pt-24">
+		<div class="p-0 md:pt-8">
 			<img
 				class="map square animate__animated animate__fast animate__zoomIn"
 				[src]="data.uri"

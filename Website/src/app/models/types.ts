@@ -96,7 +96,7 @@ export interface HomeSection3 extends DateInterface {
 	isSliderEnabled: boolean
 	title: string
 	body: string
-	images?: HomeSliderImage[]
+	images: HomeSliderImage[]
 }
 export interface HomeSection4 extends DateInterface {
 	isSectionEnabled: boolean
