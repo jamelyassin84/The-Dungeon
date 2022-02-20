@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+
 // App Modules
 import { HomeModule } from './modules/home/home.module'
 import { CoachingModule } from './modules/coaching/coaching.module'
@@ -13,7 +15,7 @@ import { WeightLiftingModule } from './modules/weight-lifting/weight-lifting.mod
 
 // Components
 import { AppComponent } from './app.component'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
 
 @NgModule({
@@ -30,7 +32,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 		HttpClientModule,
 		BrowserAnimationsModule,
 	],
-	providers: [],
+	providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
