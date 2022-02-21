@@ -15,6 +15,7 @@ use App\Http\Controllers\HomeSection1Controller;
 use App\Http\Controllers\HomeSection2Controller;
 use App\Http\Controllers\HomeSection3Controller;
 use App\Http\Controllers\HomeSection4Controller;
+use App\Http\Controllers\HomeSection6Controller;
 use App\Http\Controllers\HomeSliderImageController;
 use App\Http\Controllers\InboxController;
 use App\Http\Controllers\InteractedController;
@@ -87,6 +88,7 @@ Route::resource('home-section1', HomeSection1Controller::class);
 Route::resource('home-section2', HomeSection2Controller::class);
 Route::resource('home-section3', HomeSection3Controller::class);
 Route::resource('home-section4', HomeSection4Controller::class);
+Route::resource('home-section6', HomeSection6Controller::class);
 
 Route::resource('home-slider', HomeSliderImageController::class);
 Route::resource('home-pricing', HomePricingController::class);

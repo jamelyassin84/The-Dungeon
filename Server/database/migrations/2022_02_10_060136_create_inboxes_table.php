@@ -15,6 +15,9 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('message')->nullable();
             $table->string('data', 999);
+
+            $table->boolean('isRead')->nullable();
+            $table->boolean('isAddedToParticipants')->nullable();
         });
     }
 

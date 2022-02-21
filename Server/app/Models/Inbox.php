@@ -13,10 +13,12 @@ class Inbox extends Model
         'email',
         'message',
         'data',
+        'isRead',
+        'isAddedToParticipants',
     ];
 
     protected $casts = [
-        'isSectionEnabled' => 'boolean',
-        'isPricingEnabled' => 'boolean',
+        'isRead' => 'boolean',
+        'isAddedToParticipants' => 'boolean',
     ];
 }
