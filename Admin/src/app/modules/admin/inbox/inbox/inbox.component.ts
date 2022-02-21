@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Inbox } from './../../../../models/types'
+import { Component, OnInit } from '@angular/core'
+import { InboxService } from 'app/services/api.service'
 
 @Component({
-  selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.scss']
+	selector: 'app-inbox',
+	templateUrl: './inbox.component.html',
+	styleUrls: ['./inbox.component.scss'],
 })
 export class InboxComponent implements OnInit {
+	constructor(private service: InboxService) {}
 
-  constructor() { }
+	ngOnInit(): void {
+		this.get()
+	}
 
-  ngOnInit(): void {
-  }
+	data!: Inbox
 
+	get() {
+		this.service.index().subscribe({
+			next: (data) => {
+				if (data !== null) {
+					this.data = data
+				}
+			},
+			error: () => {},
+		})
+	}
 }

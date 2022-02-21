@@ -1,4 +1,4 @@
-<div class="flex flex-col flex-auto min-w-0">
+<div class="flex flex-col flex-auto min-w-0" *ngIf="data">
 	<div
 		class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
 	>
@@ -11,7 +11,7 @@
 						svgIcon="heroicons_outline:mail-open"
 						class="icon-size-10 text-warn top-icon mr-2"
 					></mat-icon>
-					JAMEL EID YASSIN
+					{{ data.data.displayName }}
 				</h2>
 			</div>
 		</div>
@@ -22,40 +22,60 @@
 			<div class="header flex border-b border-zinc-200 py-5">
 				<div class="icon" role="button">
 					<mat-icon
+						(click)="back()"
 						svgIcon="heroicons_outline:chevron-left"
 						class="icon-size-7 text-zinc-900 top-icon mr-3"
 					></mat-icon>
 				</div>
 				<div class="text">
 					<h1 class="font-bold">
-						From: Jamel Eid Yassin | jamelyassin84@gmail.com
+						From: {{ data.data.displayName }} |
+						{{ data.data.email }}
 					</h1>
 					<div>To: Admin</div>
 				</div>
 			</div>
-			<div class="body">
-				<h1
-					class="text-1xl md:text-2xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
-				>
-					Subject: Competition Submission
-				</h1>
-				<p>
-					Hi There! Attached below is my data for your review and
-					consideration.
-				</p>
-				<br />
-				<p>Best Regards,</p>
-				<span class="font-bold">Jamel Eid Yassin</span>
-
-				<ul [@listAnimation]="5" class="mt-5 w-1/4">
-					<li
-						class="w-full flex aic border-b border-zinc-200 py-5"
-						*ngFor="let item of [1, 2, 3, 4, 5, 6]"
+			<div
+				class="body w-full contaier flex fdc aic jcc text-center bg-zinc-200 md:px-128"
+			>
+				<div class="bg-white pt-16">
+					<div class="flex aic jcc">
+						<img
+							class="square"
+							alt=""
+							style="height: 20vmin; width: 20vmin"
+							[src]="data.data.uri.url"
+						/>
+					</div>
+					<h1
+						class="text-1xl md:text-2xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate mt-5"
 					>
-						<span class="w-1/2">Phone</span>
-						<span class="w-1/2 ml-auto text-right">0567995775</span>
-					</li>
-				</ul>
+						Subject: Competition Submission
+					</h1>
+					<p>
+						Hi There! Attached below is my data for your review and
+						consideration.
+					</p>
+					<br />
+					<p>Best Regards,</p>
+					<span class="font-bold">{{ data.data.displayName }}</span>
+
+					<ul [@listAnimation]="5" class="align-center w/2 px-5">
+						<li
+							[hidden]="index == data.data.length - 1"
+							class="w-full flex aic border-b border-zinc-200 py-5"
+							*ngFor="
+								let item of data.data | keyvalue;
+								let i = index
+							"
+						>
+							<span class="">{{ item.key | titlecase }}</span>
+							<span class="ml-auto text-right">{{
+								item.value
+							}}</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

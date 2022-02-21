@@ -30,18 +30,16 @@
 			</thead>
 			<tbody>
 				<tr
+					[class.font-bold]="data.isRead !== true"
 					class="hover:bg-zinc-100"
-					routerLink="/message/1"
+					[routerLink]="'/message/' + data.id"
 					role="button"
-					*ngFor="let item of [1, 2, 3, 4, 5]"
+					*ngFor="let data of data"
 				>
-					<td>Mohammed@gmail</td>
-					<td>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing
-						elit,
-					</td>
-					<td>01-01-22</td>
-					<td>08:53 PM</td>
+					<td>{{ data.email }}</td>
+					<td>Competition Submission</td>
+					<td>{{ data.created_at | date: 'MMMM, dd, yyyy' }}</td>
+					<td>{{ data.created_at | date: 'hh:mm a' }}</td>
 				</tr>
 			</tbody>
 		</table>
