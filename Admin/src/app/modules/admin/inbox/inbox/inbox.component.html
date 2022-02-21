@@ -22,10 +22,11 @@
 		<table class="table w-full p-5">
 			<thead class="w-full bg-zinc-900 text-white">
 				<tr>
-					<td>Email</td>
-					<td>Message</td>
-					<td>Date</td>
-					<td>Time</td>
+					<td class="font-bold">Email</td>
+					<td class="font-bold">Message</td>
+					<td class="font-bold">Date</td>
+					<td class="font-bold">Time</td>
+					<td class="font-bold"></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,26 @@
 					<td>Competition Submission</td>
 					<td>{{ data.created_at | date: 'MMMM, dd, yyyy' }}</td>
 					<td>{{ data.created_at | date: 'hh:mm a' }}</td>
+					<td>
+						<button
+							mat-flat-button
+							[color]="'accent'"
+							[disabled]="isProcessing === true"
+							(click)="remove(data.id)"
+						>
+							<span *ngIf="isProcessing === false">
+								Remove Application</span
+							>
+							<span *ngIf="isProcessing === 'complete'">
+								Redirecting...</span
+							>
+							<mat-progress-spinner
+								*ngIf="isProcessing === true"
+								[diameter]="24"
+								[mode]="'indeterminate'"
+							></mat-progress-spinner>
+						</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>

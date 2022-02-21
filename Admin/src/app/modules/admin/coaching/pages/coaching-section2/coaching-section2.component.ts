@@ -42,7 +42,6 @@ export class CoachingSection2Component implements OnInit {
 			src: undefined,
 			file: undefined,
 		})
-		console.log(this.data)
 	}
 
 	get() {

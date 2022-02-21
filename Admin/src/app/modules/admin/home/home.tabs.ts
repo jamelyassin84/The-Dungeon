@@ -20,6 +20,11 @@ export const HomeTabs: Tab[] = [
 		route: '/home/4',
 	},
 	{
+		id: 6,
+		name: 'LAST SECTION',
+		route: '/home/6',
+	},
+	{
 		id: 5,
 		name: 'FOOTER ',
 		route: '/home/5',

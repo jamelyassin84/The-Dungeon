@@ -75,6 +75,15 @@ export interface HomePricing extends DateInterface {
 	trialPeriod: string
 	backgroundColor: string
 }
+export interface HomeSection6 extends DateInterface {
+	isSectionEnabled: boolean
+	isButtonEnabled: boolean
+	buttonText: string
+	buttonColor: string
+	title: string
+	body: string
+	uri?: string
+}
 export interface HomeSection1 extends DateInterface {
 	isSectionEnabled: boolean
 	isButtonEnabled: boolean

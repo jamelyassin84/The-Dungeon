@@ -4,6 +4,7 @@ import { HomeSection1Component } from './pages/home-section1/home-section1.compo
 import { HomeSection3Component } from './pages/home-section3/home-section3.component'
 import { HomeSection4Component } from './pages/home-section4/home-section4.component'
 import { HomeSection5Component } from './pages/home-section5/home-section5.component'
+import { HomeSection6Component } from 'app/modules/home/pages/home-section6/home-section6.component'
 
 export const HomeRoutes: Route[] = [
 	{
@@ -32,5 +33,9 @@ export const HomeRoutes: Route[] = [
 	{
 		path: '5',
 		component: HomeSection5Component,
+	},
+	{
+		path: '6',
+		component: HomeSection6Component,
 	},
 ]

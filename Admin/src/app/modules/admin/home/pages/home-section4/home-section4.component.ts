@@ -47,7 +47,6 @@ export class HomeSection4Component implements OnInit {
 				if (data !== null) {
 					this.data = data
 				}
-				console.log(data)
 			},
 			error: () => {
 				this.isProcessing = false

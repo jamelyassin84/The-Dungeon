@@ -21,6 +21,7 @@ import {
 	Rule,
 	StoryImages,
 	RuleValue,
+	HomeSection6,
 } from './../models/types'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
@@ -117,6 +118,15 @@ export class Footer5Service extends BaseService<Footer> {
 export class HomePricingService extends BaseService<HomePricing> {
 	constructor(public _http: HttpClient) {
 		super(_http, API.HOME_PRICING)
+	}
+}
+
+@Injectable({
+	providedIn: 'root',
+})
+export class HomeSection6Service extends BaseService<HomeSection6> {
+	constructor(public _http: HttpClient) {
+		super(_http, API.HOME_SECTION_6)
 	}
 }
 

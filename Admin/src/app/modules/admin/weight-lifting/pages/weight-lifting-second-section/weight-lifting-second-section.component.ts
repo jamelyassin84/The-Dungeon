@@ -38,7 +38,6 @@ export class WeightLiftingSecondSectionComponent implements OnInit {
 				if (data.created_at !== undefined) {
 					this.data = data
 				}
-				console.log(this.data)
 				if (data.rules.length === 0) {
 					this.addInitialRule()
 				}

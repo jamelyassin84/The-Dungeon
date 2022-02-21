@@ -7,13 +7,32 @@
 	>
 		<img
 			src="/assets/app/home/bg4.png"
-			style="position: absolute"
+			style="position: absolute; opacity: 0.5"
 			class="logo"
 			alt=""
 		/>
-		<!-- Content -->
 		<div class="z-10 relative w-full max-w-2xl">
-			<img class="w-250 mb-5" src="/assets/app/logo.svg" />
+			<img
+				class="w-250 mb-5"
+				src="/assets/app/logo.svg"
+				style="
+					box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+						rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+				"
+			/>
+		</div>
+
+		<div class="text-white absolute bottom-20">
+			<span class="font-medium text-white"
+				>Developed by:
+				<span class="text-warn">
+					<a
+						href="http://digitalbrandwork.com/contact-us.php#"
+						target="_blank"
+						>Digital Brand Work</a
+					>
+				</span></span
+			>
 		</div>
 	</div>
 	<div
@@ -26,6 +45,7 @@
 			>
 				Welcome Back!
 			</div>
+			<p>Log-in to your super administrator account</p>
 
 			<!-- Alert -->
 			<fuse-alert
@@ -86,17 +106,6 @@
 					</button>
 					<mat-error> Password is required </mat-error>
 				</mat-form-field>
-
-				<!-- Actions -->
-				<div
-					class="inline-flex items-end justify-between w-full mt-1.5"
-				>
-					<a
-						class="text-md font-medium text-dark-500 hover:underline"
-						[routerLink]="['/forgot-password']"
-						>Forgot password?
-					</a>
-				</div>
 
 				<!-- Submit button -->
 				<button

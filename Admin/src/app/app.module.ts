@@ -1,3 +1,4 @@
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { WeightLiftingModule } from './modules/admin/weight-lifting/weight-lifting.module'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -20,6 +21,18 @@ import { OurStoryModule } from './modules/admin/our-story/our-story.module'
 import { InboxModule } from './modules/admin/inbox/inbox.module'
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { MainInterceptor } from './interceptors/main.interceptor'
+import { HomeSection6Component } from './modules/home/pages/home-section6/home-section6.component'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { FuseCardModule } from '@fuse/components/card'
+import { FuseAlertModule } from '@fuse/components/alert'
+import { SharedModule } from './shared/shared.module'
+import { FormsModule } from '@angular/forms'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 const routerConfig: ExtraOptions = {
 	preloadingStrategy: PreloadAllModules,
@@ -27,7 +40,7 @@ const routerConfig: ExtraOptions = {
 }
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, HomeSection6Component],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
@@ -54,6 +67,20 @@ const routerConfig: ExtraOptions = {
 		CoachingModule,
 		OurStoryModule,
 		InboxModule,
+
+		IvyCarouselModule,
+		MatButtonModule,
+		MatCheckboxModule,
+		MatFormFieldModule,
+		MatIconModule,
+		MatInputModule,
+		MatProgressSpinnerModule,
+		FuseCardModule,
+		FuseAlertModule,
+		SharedModule,
+		FormsModule,
+		MatSlideToggleModule,
+		BrowserAnimationsModule,
 	],
 	providers: [
 		{

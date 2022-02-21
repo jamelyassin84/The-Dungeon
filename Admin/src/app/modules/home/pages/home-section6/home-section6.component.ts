@@ -1,17 +1,15 @@
-import { HomeSection1Service } from './../../../../../services/api.service'
 import { Component, OnInit } from '@angular/core'
-import { HomeSection1 } from 'app/models/types'
 import { AlertMessage } from 'app/constants/Alert'
-import { fuseAnimations } from '@fuse/animations'
+import { HomeSection6 } from 'app/models/types'
+import { HomeSection6Service } from 'app/services/api.service'
 
 @Component({
-	selector: 'app-home-section1',
-	templateUrl: './home-section1.component.html',
-	styleUrls: ['./home-section1.component.scss'],
-	animations: fuseAnimations,
+	selector: 'app-home-section6',
+	templateUrl: './home-section6.component.html',
+	styleUrls: ['./home-section6.component.scss'],
 })
-export class HomeSection1Component implements OnInit {
-	constructor(private service: HomeSection1Service) {}
+export class HomeSection6Component implements OnInit {
+	constructor(private service: HomeSection6Service) {}
 
 	ngOnInit(): void {
 		this.getHomeData()
@@ -25,10 +23,9 @@ export class HomeSection1Component implements OnInit {
 
 	src: any = undefined
 
-	data: HomeSection1 = {
+	data: HomeSection6 = {
 		isSectionEnabled: true,
 		isButtonEnabled: false,
-		isTextsEnabled: false,
 		buttonText: '',
 		buttonColor: '',
 		title: '',

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { fuseAnimations } from '@fuse/animations'
 import { listAnimation } from 'app/animations/list.animation'
+import { Fire } from 'app/constants/Alert'
 import { InboxService } from 'app/services/api.service'
 
 @Component({
@@ -15,7 +16,6 @@ export class InboxDetailsComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private service: InboxService,
-		private router: Router,
 		private location: Location,
 	) {}
 
@@ -28,12 +28,24 @@ export class InboxDetailsComponent implements OnInit {
 		this.service.show(id).subscribe({
 			next: (data) => {
 				this.data = data
-				console.log(data)
 			},
 		})
 	}
 
 	back() {
 		this.location.back()
+	}
+
+	isProcessing: boolean | 'complete' = false
+
+	remove() {
+		Fire(
+			'Do you want to remove this applicant?',
+			'This will permanently deleted and will never be retrieved again.',
+			'question',
+			() => {
+				this.service.destroy(this.data.id).subscribe(() => this.back())
+			},
+		)
 	}
 }

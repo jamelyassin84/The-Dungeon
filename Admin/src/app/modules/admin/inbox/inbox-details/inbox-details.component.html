@@ -75,6 +75,28 @@
 							}}</span>
 						</li>
 					</ul>
+
+					<div>
+						<button
+							class="fuse-mat-button-large mt-6"
+							mat-flat-button
+							[color]="'accent'"
+							[disabled]="isProcessing === true"
+							(click)="remove()"
+						>
+							<span *ngIf="isProcessing === false">
+								Remove Application</span
+							>
+							<span *ngIf="isProcessing === 'complete'">
+								Redirecting...</span
+							>
+							<mat-progress-spinner
+								*ngIf="isProcessing === true"
+								[diameter]="24"
+								[mode]="'indeterminate'"
+							></mat-progress-spinner>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

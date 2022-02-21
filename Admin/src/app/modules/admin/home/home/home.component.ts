@@ -38,5 +38,8 @@ export class HomeComponent implements OnInit {
 		if (this.router.url.includes('5')) {
 			this.activeTab = 5
 		}
+		if (this.router.url.includes('6')) {
+			this.activeTab = 6
+		}
 	}
 }
