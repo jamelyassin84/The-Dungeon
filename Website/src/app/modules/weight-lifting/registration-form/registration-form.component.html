@@ -1,5 +1,5 @@
 <div
-	class="registration-container ml-auto mr-auto p-5 py-16 w-full md:w-1/2"
+	class="registration-container ml-auto mr-auto p-5 py-8 w-full md:w-1/2"
 	*ngIf="data2"
 >
 	<div class="smallTitle">{{ data2.smallTitle }}</div>
@@ -9,15 +9,30 @@
 	</div>
 	<div class="fdc flex">
 		<label for="fullname">Full name</label>
-		<input id="fullname" type="text" class="form-control" />
+		<input
+			[(ngModel)]="data.data.displayName"
+			d="fullname"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 	<div class="fdc flex">
 		<label for="Email">Email</label>
-		<input id="Email" type="text" class="form-control" />
+		<input
+			[(ngModel)]="data.email"
+			id="Email"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 	<div class="fdc flex">
 		<label for="Phone">Mobile</label>
-		<input id="Phone" type="text" class="form-control" />
+		<input
+			[(ngModel)]="data.phone"
+			id="Phone"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3" [@listAnimation]="5">
 		<div
@@ -30,8 +45,20 @@
 				[(ngModel)]="field.value"
 				type="text"
 				class="form-control"
+				[(ngModel)]="data.data[field.fieldName]"
 			/>
 		</div>
+	</div>
+	<div class="fdc flex mb-5">
+		<label for="Photo">Your Photo</label>
+		<input
+			accept="image/*"
+			(change)="readFile($event)"
+			id="Photo"
+			type="file"
+			style="font-family: Montserrat; font-weight: 500"
+			class="p-0 text-white"
+		/>
 	</div>
 	<div class="d-flex w-100 aic jcc">
 		<button

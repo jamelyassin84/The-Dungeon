@@ -183,3 +183,17 @@ settings {
 .carousel-dot-active {
 	border: 5px solid black !important;
 }
+
+.swal2-container {
+	backdrop-filter: blur(25px);
+	* {
+		color: white !important;
+	}
+}
+.swal2-popup {
+	background: black !important;
+}
+
+.swal2-styled.swal2-confirm {
+	background: red !important;
+}

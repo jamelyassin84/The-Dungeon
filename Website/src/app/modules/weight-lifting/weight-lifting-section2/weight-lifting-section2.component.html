@@ -1,8 +1,5 @@
 <app-preloader *ngIf="!data"></app-preloader>
-<div
-	class="section flex jcc aic fdc pb-8 h-auto c-section bg-white md:h-screen"
-	*ngIf="data"
->
+<div class="section flex aic fdc pb-8 h-auto c-section bg-white" *ngIf="data">
 	<div class="grid container grid-cols-1 lg:grid-cols-2 gap-2">
 		<div
 			class="p-5 md:p-16 animate__animated"
@@ -13,30 +10,33 @@
 			<div class="rules">RULES</div>
 			<ul class="dashed mb-3">
 				<li
-					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					class="rule text-xl p-3 pl-0"
 					*ngFor="let rule of data.rules[2].data"
 				>
-					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+					<i class="bi bi-check2-square text-red-500 mr-1"></i>
+					{{ rule.name }}
 				</li>
 			</ul>
 
 			<div class="title mt-10 text-2xl">{{ data.rules[1].name }}S</div>
 			<ul class="dashed mb-3">
 				<li
-					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					class="rule text-xl p-3 pl-0"
 					*ngFor="let rule of data.rules[1].data"
 				>
-					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+					<i class="bi bi-check2-square text-red-500 mr-1"></i>
+					{{ rule.name }}
 				</li>
 			</ul>
 
 			<div class="title mt-10 text-2xl">{{ data.rules[0].name }}S</div>
 			<ul class="dashed mb-3">
 				<li
-					class="rule text-xl p-3 pl-0 border-b border-zinc-200"
+					class="rule text-xl p-3 pl-0"
 					*ngFor="let rule of data.rules[0].data"
 				>
-					<i class="bi bi-check2-square mr-1"></i> {{ rule.name }}
+					<i class="bi bi-check2-square text-red-500 mr-1"></i>
+					{{ rule.name }}
 				</li>
 			</ul>
 		</div>
