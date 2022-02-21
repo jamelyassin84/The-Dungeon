@@ -21,20 +21,22 @@ export class NavbarComponent implements OnInit {
 	}
 
 	changeTab() {
-		if (this.router.url.includes('home')) {
-			this.activeTab = 1
-		}
-		if (this.router.url.includes('competition')) {
-			this.activeTab = 2
-		}
-		if (this.router.url.includes('location')) {
-			this.activeTab = 3
-		}
-		if (this.router.url.includes('coaching')) {
-			this.activeTab = 4
-		}
-		if (this.router.url.includes('our-story')) {
-			this.activeTab = 5
+		if (this.router.url !== '/') {
+			if (this.router.url.includes('home')) {
+				this.activeTab = 1
+			}
+			if (this.router.url.includes('competition')) {
+				this.activeTab = 2
+			}
+			if (this.router.url.includes('location')) {
+				this.activeTab = 3
+			}
+			if (this.router.url.includes('coaching')) {
+				this.activeTab = 4
+			}
+			if (this.router.url.includes('our-story')) {
+				this.activeTab = 5
+			}
 		}
 	}
 }

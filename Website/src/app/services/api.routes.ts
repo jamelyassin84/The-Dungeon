@@ -27,4 +27,5 @@ export enum API {
 	STORY_IMAGE = 'story-image',
 	INBOX = 'inbox',
 	INTERACTED = 'interacted',
+	ADD_MEMBER = 'add-member',
 }

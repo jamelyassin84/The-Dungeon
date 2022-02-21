@@ -29,7 +29,6 @@ export class HomeSection3Component implements OnInit {
 	onWindowScroll() {
 		const start = 100 * 3
 		const offset = 680 * 3
-		console.log(window.scrollY)
 		if (window.scrollY > start && window.scrollY < offset) {
 			this.scaleNow = true
 		} else {

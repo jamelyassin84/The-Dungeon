@@ -281,3 +281,12 @@ export class LogoutService extends BaseService<User> {
 		super(_http, API.LOGOUT)
 	}
 }
+
+@Injectable({
+	providedIn: 'root',
+})
+export class MemberService extends BaseService<any> {
+	constructor(public _http: HttpClient) {
+		super(_http, API.ADD_MEMBER)
+	}
+}

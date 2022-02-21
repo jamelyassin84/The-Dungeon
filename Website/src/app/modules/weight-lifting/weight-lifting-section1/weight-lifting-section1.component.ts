@@ -31,7 +31,7 @@ export class WeightLiftingSection1Component implements OnInit {
 			if (data.id !== undefined) {
 				this.data = data
 			}
-			this.countDownSinceNow(data.date, data.time)
+			// this.countDownSinceNow(data.date, data.time)
 		})
 		this.service2.index().subscribe((data) => {
 			if (data.id !== undefined) {
