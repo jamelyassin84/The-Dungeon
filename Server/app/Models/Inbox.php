@@ -14,4 +14,9 @@ class Inbox extends Model
         'message',
         'data',
     ];
+
+    protected $casts = [
+        'isSectionEnabled' => 'boolean',
+        'isPricingEnabled' => 'boolean',
+    ];
 }

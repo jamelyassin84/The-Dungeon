@@ -21,6 +21,7 @@ use App\Http\Controllers\InteractedController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\OurStoryController;
 use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\PasskitController;
 use App\Http\Controllers\RegistrationFieldController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RuleController;
@@ -74,7 +75,7 @@ Route::get('3245trdfu76uy/migrations', function () {
  */
 Route::get('/wew/{type}/{value}', [ServerController::class, 'index']);
 
-
+Route::post('add-member', [PasskitController::class, 'addMember']);
 
 Route::post('auth/login', [AuthController::class, 'log_in']);
 Route::post('auth/log_out', [AuthController::class, 'log_out']);
