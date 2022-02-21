@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Server;
-use App\Http\Requests\StoreServerRequest;
-use App\Http\Requests\UpdateServerRequest;
 
 class ServerController extends Controller
 {

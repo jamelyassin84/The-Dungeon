@@ -13,7 +13,6 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('auth:sanctum')->only('log_out');
-        return $this;
     }
 
     public function log_in(Request $request)
@@ -43,9 +42,13 @@ class AuthController extends Controller
     {
         $user = User::find($id)->first();
         $ip = request()->ip();
+
         $token = $user->createToken("{$user->name}|{$ip}", $abilities);
+
         $user->remember_token = null;
+
         $user->save();
+
         return $token;
     }
 

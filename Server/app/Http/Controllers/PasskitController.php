@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RuleValueController extends Controller
+class PasskitController extends Controller
 {
+    //
 }
