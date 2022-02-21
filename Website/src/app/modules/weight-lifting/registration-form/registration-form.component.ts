@@ -111,6 +111,7 @@ export class RegistrationFormComponent implements OnInit {
 					'We are reviewing your application. Please see your email.',
 					'success',
 				)
+				location.reload()
 			},
 		})
 	}
