@@ -19,6 +19,10 @@ export class WeightLiftingSection4Component implements OnInit {
 	data!: CompetitionSection3
 
 	get(): void {
-		this.service.index().subscribe((data: any) => (this.data = data))
+		this.service
+			.index()
+			.subscribe(
+				(data: any) => data?.id !== undefined || data?.id == null,
+			)
 	}
 }

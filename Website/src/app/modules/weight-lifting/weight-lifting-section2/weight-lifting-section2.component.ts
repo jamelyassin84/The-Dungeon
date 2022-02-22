@@ -16,9 +16,9 @@ export class WeightLiftingSection2Component implements OnInit {
 
 	data!: Rule | any
 	get(): void {
-		this.service.index().subscribe((data) => {
-			this.data = data
-		})
+		this.service
+			.index()
+			.subscribe((data) => data?.id !== undefined || data?.id == null)
 	}
 
 	scaleNow = false

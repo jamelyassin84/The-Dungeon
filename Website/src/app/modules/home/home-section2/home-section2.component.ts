@@ -18,7 +18,13 @@ export class HomeSection2Component implements OnInit {
 	data!: HomeSection2
 
 	get(): void {
-		this.service.index().subscribe((data) => (this.data = data))
+		this.service
+			.index()
+			.subscribe((data) =>
+				data?.id !== undefined || data?.id == null
+					? (this.data = data)
+					: void 0,
+			)
 	}
 	ngParallaxConf: IParallaxScrollConfig = {
 		parallaxSpeed: 1,

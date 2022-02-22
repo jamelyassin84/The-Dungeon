@@ -81,7 +81,7 @@ export class RegistrationFormComponent implements OnInit {
 
 		this.service.create(this.data).subscribe({
 			next: (data) => {
-				this.saveFile(data.id)
+				this.saveFile(data?.id)
 
 				this.isProcessing = false
 			},

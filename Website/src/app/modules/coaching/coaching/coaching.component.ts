@@ -56,7 +56,9 @@ export class CoachingComponent implements OnInit {
 	get(): void {
 		this.service
 			.index()
-			.subscribe((data: any) => (this.data = data.reverse()))
+			.subscribe((data: any) =>
+				data?.id !== undefined ? (this.data = data) : void 0,
+			)
 
 		this.coachService
 			.index()
