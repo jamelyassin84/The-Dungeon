@@ -5,7 +5,8 @@ import {
 	CompetitionSection1Service,
 	CompetitionSection2Service,
 } from 'src/app/services/api.service'
-
+import * as moment from 'moment'
+import 'moment-timezone'
 @Component({
 	selector: 'WeightLiftingSection1',
 	templateUrl: './weight-lifting-section1.component.html',
@@ -23,15 +24,19 @@ export class WeightLiftingSection1Component implements OnInit {
 	}
 
 	data!: CompetitionSection1
+
 	data2!: CompetitionSection2
-	time: any
-	timer: any
+
+	time: any = undefined
+
 	get(): void {
 		this.service.index().subscribe((data) => {
 			if (data?.id !== undefined || data?.id == null) {
 				this.data = data
+				setInterval(() => {
+					this.getTimeRemaining(new Date(data.date).getTime())
+				}, 1000)
 			}
-			// this.countDownSinceNow(data.date, data.time)
 		})
 		this.service2.index().subscribe((data) => {
 			if (data?.id !== undefined) {
@@ -40,29 +45,25 @@ export class WeightLiftingSection1Component implements OnInit {
 		})
 	}
 
-	countDownSinceNow(date: any, time: any) {
-		const timeArray = time.split(':')
-		const min = timeArray[1].split(' ')
-		setInterval(() => {
-			const endTime: any = new Date(date).getTime() / 1000
-			const elapsed: any = Date.now() / 1000
-			const totalSec: number = parseInt(endTime) - parseInt(elapsed)
-			const h = (totalSec / 3600 + parseInt(timeArray[0])).toFixed()
-			const m = (
-				((totalSec / 60) % 60) +
-				parseInt(min[1].includes('PM') ? min[0] / 2 : min[0])
-			).toFixed()
-			const s = (totalSec % 60).toFixed()
-			this.time =
-				this.minTwoDigits(parseInt(h)) +
-				':' +
-				this.minTwoDigits(m) +
-				':' +
-				this.minTwoDigits(s)
-		}, 1000)
+	getTimeRemaining(endTime: any) {
+		moment.tz('Asia/Dubai').format()
+
+		var now = moment(new Date(), 'Asia/Dubai')
+
+		var end = moment(endTime)
+
+		var duration = moment.duration(end.diff(now))
+
+		this.time = {
+			days: 0,
+			hours: this.min2(duration.get('hours')),
+			minutes: this.min2(duration.get('minutes')),
+			seconds: this.min2(duration.get('seconds')),
+			eventStarted: duration.get('minutes') < 0 ? true : false,
+		}
 	}
 
-	minTwoDigits(number: any) {
-		return (number < 10 ? '0' : '') + number
+	min2(n: number) {
+		return (n < 10 ? '0' : '') + n
 	}
 }

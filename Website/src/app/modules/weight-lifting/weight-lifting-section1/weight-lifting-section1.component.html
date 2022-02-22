@@ -40,9 +40,27 @@
 			<div class="deadline text-xl md:text-2xl">
 				{{ data.deadline }}
 			</div>
-			<div class="Timer">Time until the big event</div>
-			<div class="time text-5xl md:text-8xl font-weight-bold">
-				{{ time }}
+			<div class="Timer">
+				{{
+					time.eventStarted === false
+						? 'Registration Ends within'
+						: 'Registration status:'
+				}}
+			</div>
+			<div
+				*ngIf="time !== undefined && !time.eventStarted"
+				class="time text-white text-5xl md:text-8xl font-weight-bold"
+			>
+				<div>
+					<span *ngIf="time.hours !== 0"> {{ time.hours }}:</span>
+					<span>{{ time.minutes }}:{{ time.seconds }}</span>
+				</div>
+			</div>
+			<div
+				class="text-5xl md:text-8xl font-weight-bold text-red-400"
+				*ngIf="time !== undefined && time.eventStarted"
+			>
+				Closed <br />
 			</div>
 		</div>
 	</div>
