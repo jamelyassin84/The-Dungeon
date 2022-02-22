@@ -24,6 +24,7 @@ import {
 	Coaches,
 	Location,
 	User,
+	HomeSection6,
 } from './../models/types'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
@@ -288,5 +289,13 @@ export class LogoutService extends BaseService<User> {
 export class MemberService extends BaseService<any> {
 	constructor(public _http: HttpClient) {
 		super(_http, API.ADD_MEMBER)
+	}
+}
+@Injectable({
+	providedIn: 'root',
+})
+export class HomeSection6Service extends BaseService<HomeSection6> {
+	constructor(public _http: HttpClient) {
+		super(_http, API.HOME_SECTION_6)
 	}
 }

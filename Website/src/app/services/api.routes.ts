@@ -7,6 +7,8 @@ export enum API {
 	HOME_SECTION_2 = 'home-section2',
 	HOME_SECTION_3 = 'home-section3',
 	HOME_SECTION_4 = 'home-section4',
+	HOME_SECTION_6 = 'home-section6',
+
 	HOME_SLIDER = 'home-slider',
 	HOME_PRICING = 'home-pricing',
 	FOOTER = 'footer',

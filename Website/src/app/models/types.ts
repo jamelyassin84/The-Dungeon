@@ -21,6 +21,16 @@ export interface Coaching extends DateInterface {
 	classes: string
 	price: string
 }
+
+export interface HomeSection6 extends DateInterface {
+	isSectionEnabled: boolean
+	isButtonEnabled: boolean
+	buttonText: string
+	buttonColor: string
+	title: string
+	body: string
+	uri?: string
+}
 export interface CompetitionSection1 extends DateInterface {
 	isSectionEnabled: boolean
 	competitionDate: string
