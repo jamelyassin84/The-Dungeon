@@ -33,10 +33,12 @@ import { FuseAlertModule } from '@fuse/components/alert'
 import { SharedModule } from './shared/shared.module'
 import { FormsModule } from '@angular/forms'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 const routerConfig: ExtraOptions = {
 	preloadingStrategy: PreloadAllModules,
 	scrollPositionRestoration: 'enabled',
+	useHash: true,
 }
 
 @NgModule({
@@ -88,6 +90,7 @@ const routerConfig: ExtraOptions = {
 			useClass: MainInterceptor,
 			multi: true,
 		},
+		{ provide: LocationStrategy, useClass: HashLocationStrategy },
 	],
 	bootstrap: [AppComponent],
 })
