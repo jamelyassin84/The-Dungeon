@@ -40,9 +40,10 @@
 			<div class="deadline text-xl md:text-2xl">
 				{{ data.deadline }}
 			</div>
+
 			<div class="Timer">
 				{{
-					time.eventStarted === false
+					time !== undefined && time.eventStarted === false
 						? 'Registration Ends within'
 						: 'Registration status:'
 				}}

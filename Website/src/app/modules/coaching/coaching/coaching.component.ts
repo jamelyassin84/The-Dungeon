@@ -57,7 +57,9 @@ export class CoachingComponent implements OnInit {
 		this.service
 			.index()
 			.subscribe((data: any) =>
-				data?.id !== undefined ? (this.data = data) : void 0,
+				data?.id !== undefined || data?.id !== null
+					? (this.data = data)
+					: void 0,
 			)
 
 		this.coachService
