@@ -24,18 +24,21 @@ export const HomeRoutes: Route[] = [
 		path: '3',
 		component: HomeSection3Component,
 	},
-
 	{
 		path: '4',
+		component: HomeSection3Component,
+	},
+	{
+		path: '5',
 		component: HomeSection4Component,
 	},
 
 	{
-		path: '5',
+		path: '6',
 		component: HomeSection5Component,
 	},
 	{
-		path: '6',
+		path: '7',
 		component: HomeSection6Component,
 	},
 ]

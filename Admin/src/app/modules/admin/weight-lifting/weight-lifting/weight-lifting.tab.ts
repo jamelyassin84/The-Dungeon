@@ -3,7 +3,7 @@ import { Tab } from '../../home/home.tabs'
 export const WeightLiftingTabs: Tab[] = [
 	{
 		id: 1,
-		name: 'BANNER',
+		name: 'COMPETITION DETAILS',
 		route: '/competition/1',
 	},
 	{
@@ -18,7 +18,7 @@ export const WeightLiftingTabs: Tab[] = [
 	},
 	{
 		id: 4,
-		name: 'PARTICIPANTS',
+		name: 'LEADERBOARDS',
 		route: '/competition/4',
 	},
 	{
